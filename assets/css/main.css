@@ -154,8 +154,9 @@ p {
 }
 
 .logo-img {
-  height: 200px;
+  height: 200px !important;
   width: auto;
+  max-height: none;
 }
 
 .logo-text {
