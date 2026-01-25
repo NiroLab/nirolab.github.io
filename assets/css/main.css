@@ -137,7 +137,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 70px;
 }
 
 .logo {
@@ -154,7 +154,7 @@ p {
 }
 
 .logo-img {
-  height: 60px;
+  height: 50px;
   width: auto;
 }
 
@@ -163,10 +163,17 @@ p {
 }
 
 /* Navigation */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
 .nav-list {
   display: flex;
   list-style: none;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link {
@@ -822,7 +829,7 @@ p {
 
   .main-nav {
     position: absolute;
-    top: 80px;
+    top: 70px;
     left: 0;
     right: 0;
     background: var(--color-background);
