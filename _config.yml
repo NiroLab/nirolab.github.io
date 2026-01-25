@@ -1,0 +1,52 @@
+# Site settings
+title: NIRO Lab
+description: NSU Intelligent Robotics Lab - Advancing robotics research through innovation and collaboration
+url: "https://nirolab.github.io"
+baseurl: ""
+
+# Contact
+email: nirolab@northsouth.edu
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /news/:year/:month/:day/:title/
+
+# Collections
+collections:
+  people:
+    output: true
+    permalink: /people/:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "people"
+    values:
+      layout: "person"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+# Plugins (GitHub Pages supported)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

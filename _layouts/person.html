@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<article class="person-detail">
+  <div class="container">
+    <div class="person-header">
+      <div class="person-image-large">
+        {% if page.image %}
+        <img src="{{ page.image | relative_url }}" alt="{{ page.name }}">
+        {% else %}
+        <div class="placeholder-image">{{ page.name | slice: 0 }}</div>
+        {% endif %}
+      </div>
+      <div class="person-info">
+        <h1>{{ page.name }}</h1>
+        <p class="person-role">{{ page.role }}</p>
+        {% if page.email %}
+        <p class="person-email"><a href="mailto:{{ page.email }}">{{ page.email }}</a></p>
+        {% endif %}
+        {% if page.website %}
+        <p class="person-website"><a href="{{ page.website }}" target="_blank">Personal Website</a></p>
+        {% endif %}
+        {% if page.scholar %}
+        <p class="person-scholar"><a href="{{ page.scholar }}" target="_blank">Google Scholar</a></p>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if page.research_interests %}
+    <div class="person-section">
+      <h2>Research Interests</h2>
+      <p>{{ page.research_interests }}</p>
+    </div>
+    {% endif %}
+
+    <div class="person-bio">
+      {{ content }}
+    </div>
+
+    <a href="{{ '/people/' | relative_url }}" class="back-link">&larr; Back to People</a>
+  </div>
+</article>
