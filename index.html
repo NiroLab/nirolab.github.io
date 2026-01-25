@@ -3,14 +3,32 @@ layout: default
 title: Home
 ---
 
-<section class="hero">
-  <div class="container">
-    <h1>NIRO Lab</h1>
-    <p class="hero-subtitle">NSU Intelligent Robotics Lab - Advancing robotics research through innovation and collaboration</p>
+<section class="hero-image">
+  <div class="hero-image-bg" style="background-image: url('{{ '/assets/images/hero-bg.jpg' | relative_url }}');"></div>
+  <div class="hero-image-overlay"></div>
+  <div class="hero-image-content">
+    <div class="container">
+      <h1>NIRO Lab</h1>
+      <p class="hero-subtitle">NSU Intelligent Robotics Lab</p>
+    </div>
   </div>
 </section>
 
 <section class="section">
+  <div class="container">
+    <div class="intro-section">
+      <h2>About NIRO Lab</h2>
+      <p>
+        The NSU Intelligent Robotics Lab (NIRO Lab) is a cutting-edge research facility at North South University dedicated to advancing the frontiers of robotics, artificial intelligence, and autonomous systems. Our multidisciplinary team of researchers, faculty, and students work collaboratively on innovative projects that address real-world challenges in areas such as computer vision, machine learning, human-robot interaction, and autonomous navigation.
+      </p>
+      <p style="margin-top: var(--spacing-lg);">
+        <a href="{{ '/about/' | relative_url }}" class="btn btn-primary">Learn more about us</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
   <div class="container">
     <div class="section-title">
       <h2>Recent News</h2>
@@ -37,22 +55,8 @@ title: Home
     </div>
 
     <p style="text-align: center; margin-top: var(--spacing-xl);">
-      <a href="{{ '/news/' | relative_url }}" class="back-link">View all news &rarr;</a>
+      <a href="{{ '/news/' | relative_url }}" class="btn btn-outline">View all news</a>
     </p>
-  </div>
-</section>
-
-<section class="section section-alt">
-  <div class="container">
-    <div class="intro-section" style="padding: 0;">
-      <h2>About NIRO Lab</h2>
-      <p>
-        The NSU Intelligent Robotics Lab (NIRO Lab) is a cutting-edge research facility at North South University dedicated to advancing the frontiers of robotics, artificial intelligence, and autonomous systems. Our multidisciplinary team of researchers, faculty, and students work collaboratively on innovative projects that address real-world challenges in areas such as computer vision, machine learning, human-robot interaction, and autonomous navigation.
-      </p>
-      <p style="margin-top: var(--spacing-lg);">
-        <a href="{{ '/about/' | relative_url }}" class="back-link">Learn more about us &rarr;</a>
-      </p>
-    </div>
   </div>
 </section>
 
@@ -107,7 +111,7 @@ title: Home
     </div>
 
     <p style="text-align: center; margin-top: var(--spacing-xl);">
-      <a href="{{ '/projects/' | relative_url }}" class="back-link">View all projects &rarr;</a>
+      <a href="{{ '/projects/' | relative_url }}" class="btn btn-outline">View all projects</a>
     </p>
   </div>
 </section>

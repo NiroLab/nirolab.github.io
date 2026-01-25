@@ -1,0 +1,43 @@
+# Photo Gallery
+# Add photos by creating entries below
+# Categories: lab, events, research, team
+
+- image: /assets/images/gallery/lab-1.jpg
+  caption: NIRO Lab workspace
+  category: lab
+
+- image: /assets/images/gallery/lab-2.jpg
+  caption: Robot testing area
+  category: lab
+
+- image: /assets/images/gallery/research-1.jpg
+  caption: Autonomous navigation experiment
+  category: research
+
+- image: /assets/images/gallery/research-2.jpg
+  caption: Computer vision testing
+  category: research
+
+- image: /assets/images/gallery/research-3.jpg
+  caption: Multi-robot coordination
+  category: research
+
+- image: /assets/images/gallery/team-1.jpg
+  caption: NIRO Lab team photo
+  category: team
+
+- image: /assets/images/gallery/team-2.jpg
+  caption: Weekly lab meeting
+  category: team
+
+- image: /assets/images/gallery/events-1.jpg
+  caption: Fall 2024 Research Showcase
+  category: events
+
+- image: /assets/images/gallery/events-2.jpg
+  caption: Workshop on robotics
+  category: events
+
+- image: /assets/images/gallery/events-3.jpg
+  caption: Lab inauguration ceremony
+  category: events
