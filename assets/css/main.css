@@ -884,7 +884,119 @@ p {
 }
 
 /* ========================================
-   Hero Image Section
+   Hero Cards Slider
+   ======================================== */
+.hero-cards {
+  position: relative;
+  height: 70vh;
+  min-height: 450px;
+  max-height: 650px;
+  overflow: hidden;
+  background: var(--color-primary-dark);
+}
+
+.hero-cards-slider {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero-card {
+  flex: 0 0 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-primary-dark);
+}
+
+.hero-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+}
+
+.hero-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-3xl);
+  color: #fff;
+  z-index: 1;
+}
+
+.hero-card-content h2 {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.hero-card-content p {
+  font-size: 1.25rem;
+  opacity: 0.95;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+  max-width: 600px;
+}
+
+/* Hero Navigation */
+.hero-cards-nav {
+  position: absolute;
+  bottom: var(--spacing-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  z-index: 10;
+}
+
+.hero-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: 2px solid rgba(255,255,255,0.5);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-nav-btn:hover {
+  background: rgba(255,255,255,0.3);
+  border-color: #fff;
+}
+
+.hero-dots {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.hero-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.hero-dot:hover,
+.hero-dot.active {
+  background: #fff;
+  transform: scale(1.2);
+}
+
+/* ========================================
+   Hero Image Section (Legacy/Alternative)
    ======================================== */
 .hero-image {
   position: relative;
@@ -1140,6 +1252,29 @@ p {
    Responsive - Hero & Gallery
    ======================================== */
 @media (max-width: 768px) {
+  .hero-cards {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .hero-card-content {
+    padding: var(--spacing-2xl);
+  }
+
+  .hero-card-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-card-content p {
+    font-size: 1rem;
+  }
+
+  .hero-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+
   .hero-image {
     height: 50vh;
     min-height: 300px;
@@ -1164,6 +1299,23 @@ p {
 }
 
 @media (max-width: 480px) {
+  .hero-cards {
+    height: 45vh;
+    min-height: 300px;
+  }
+
+  .hero-card-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .hero-card-content p {
+    font-size: 0.9rem;
+  }
+
+  .hero-cards-nav {
+    bottom: var(--spacing-md);
+  }
+
   .hero-image-content h1 {
     font-size: 2rem;
   }
