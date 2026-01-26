@@ -16,7 +16,7 @@ At the NSU Intelligent Robotics Lab (NIRO), our vision is to serve as the corner
 
 Ultimately, our vision is to transform North South University into a central hub for intelligent systems research. A place where "impossible" ideas are systematically dismantled and rebuilt into functional, intelligent solutions that solve the challenges of tomorrow.
 
-![NIRO Lab Innovation Cycle](/assets/Robot-Innovation-Cycle.png)
+![NIRO Lab Innovation Cycle](/assets/images/Robot-Innovation-Cycle.png)
 *Figure 1: Our structured approach to robotics innovation at NSU.*
 
 ## Mission
