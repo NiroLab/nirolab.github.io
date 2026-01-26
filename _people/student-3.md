@@ -5,10 +5,12 @@ category: student
 order: 3
 email: ahnaf.ojayer@northsouth.edu
 image: /assets/images/people/Ahnaf_Ojayer.jpg
-research_interests: Robotic Manipulation, Grasping
+research_interests: Robotic Manipulation, Grasping, Machine Learning
 ---
 
 
-Ahnaf Ojayer is a student researcher focusing on robotic manipulation and grasping.
+As a student researcher, Ahnaf Ojayer advances robotic manipulation and control through two complementary lines of inquiry.
 
-They are developing algorithms that enable robots to pick up and manipulate objects of various shapes and sizes.
+His primary track develops practical algorithms for robotic grasping and manipulation, targeting reliable pick-and-place and in-hand operations on a wide variety of objects—including irregular geometries, varying scales, deformable items, and unseen instances. By improving perception-to-action pipelines and generalization, this work supports more capable robots in unstructured real-world scenarios, with potential impact in warehouse automation, elderly assistance, and manufacturing.
+
+Ahnaf Ojayer is currently working on a novel training method that integrates ideas from control theory — specifically Control Lyapunov Functions (CLFs) directly into the deep learning optimization loop. The approach monitors a lightweight energy proxy and predictively scales gradients only when instability is imminent.
