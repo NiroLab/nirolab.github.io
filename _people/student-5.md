@@ -1,13 +1,13 @@
 ---
-name: Student Name Five
+name: Faiza Zabin Fiza
 role: Student Researcher
 category: student
 order: 5
-email: student5@northsouth.edu
+email: faiza.fiza@northsouth.edu
 image: /assets/images/people/student-5.jpg
-research_interests: Natural Language Processing, Voice Interfaces
+research_interests: Human-Robot Interaction, Automation, Social Robotics
 ---
 
-Student Name Five is a student researcher interested in natural language processing for robotics.
+As a student researcher, Faiza is actively working on a Human-Robot Interaction (HRI) project, which focuses on analyzing whether socially assistive robots can promote anti-litter behavior among pedestrians.
 
-They are building voice-controlled interfaces that allow users to interact with robots using natural language commands.
+Her research aims to develop a sustainable, technology-driven approach to environmental awareness through robotics.

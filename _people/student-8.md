@@ -1,13 +1,22 @@
 ---
-name: Student Name Eight
+name: Farhana Mehazbin Tusti
 role: Student Researcher
 category: student
 order: 8
-email: student8@northsouth.edu
+email: farhana.tusti@northsouth.edu
 image: /assets/images/people/student-8.jpg
-research_interests: Hardware Design, 3D Printing
+research_interests: Autonomous Systems, Task and Motion Planning, Robotics Simulation, Computer Vision, Machine Learning
 ---
 
-Student Name Eight is a student researcher focused on hardware design and rapid prototyping.
+As a student researcher, Farhana Mehazbin Tusti is interested in advancing autonomous robotic systems through the integration of perception, learning, and simulation-driven development. Her work focuses on building reliable and adaptable robots capable of operating in dynamic and unstructured environments using data-driven and physics-aware approaches.
 
-They design and fabricate custom robot parts using 3D printing and other manufacturing techniques.
+## Research Areas
+
+Her interests include:
+- Robotic perception, visual servoing, and manipulation in simulated and real-world settings
+- Leveraging ROS2 and Gazebo to design, test, and validate autonomous behaviors
+- Improving sim-to-real transfer through techniques such as self-supervised learning
+
+In parallel, she explores machine learning applications in scientific and medical domains, working on projects in advanced deep learning methods and computer vision.
+
+She aims to combine simulation, data-driven modeling, and intelligent control to develop scalable, interpretable, and real-world-ready autonomous systems.

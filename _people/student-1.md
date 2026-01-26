@@ -1,13 +1,13 @@
 ---
-name: Student Name One
+name: Musfiq Ahmed
 role: Student Researcher
 category: student
 order: 1
-email: student1@northsouth.edu
+email: musfiq.ahmed01@northsouth.edu
 image: /assets/images/people/student-1.jpg
-research_interests: Robot Perception, Sensor Fusion
+research_interests: Learning-Based Control, Multi-Agent Systems, Deep Reinforcement Learning
 ---
 
-Student Name One is an undergraduate student researcher working on robot perception systems.
+As a research assistant at NIRO Lab, Musfiq's primary objective is to develop a robust control algorithm using deep reinforcement learning techniques, optimal control, and control theory of continuous time dynamical systems to maximize safety in autonomous decision making.
 
-They are exploring sensor fusion techniques to improve robot awareness of the surrounding environment.
+He is also working on a project on multi-robot decision making and consensus where he intends to design a robot swarm following the concepts of algebraic graph theory, consensus in multi-agent systems and Boid's flocking algorithm.
