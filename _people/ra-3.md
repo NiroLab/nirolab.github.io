@@ -1,10 +1,10 @@
 ---
 name: Musfiq Ahmed
-role: Student Researcher
-category: student
-order: 1
+role: Research Assistant
+category: ra
+order: 3
 email: musfiq.ahmed01@northsouth.edu
-image: /assets/images/people/student-1.jpg
+image: /assets/images/people/ra-3.jpg
 research_interests: Learning-Based Control, Multi-Agent Systems, Deep Reinforcement Learning
 ---
 
