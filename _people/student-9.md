@@ -2,7 +2,7 @@
 name: Mohammed Mofiz Uddin
 role: Student Researcher
 category: student
-order: 9
+order: 5
 email: mohammed.mofiz161@gmail.com
 image: /assets/images/people/student-9.jpg
 linkedin: https://www.linkedin.com/in/mofizuddin/

@@ -2,7 +2,7 @@
 name: Md Yasin Arafat
 role: Student Researcher
 category: student
-order: 6
+order: 7
 email: yasin.arafat03@northsouth.edu
 image: /assets/images/people/student-6.jpg
 research_interests: Robotic Perception, Mobile Manipulation, Human-Robot Interaction, Vision-Language-Action (VLA), Deep Learning

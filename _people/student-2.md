@@ -2,7 +2,7 @@
 name: Anika Akter Rim
 role: Student Researcher
 category: student
-order: 2
+order: 6
 email: anika.rim@northsouth.edu
 image: /assets/images/people/student-2.jpg
 research_interests: Autonomous Mobile Robotics, Computer Vision, Embedded Systems, AI

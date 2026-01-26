@@ -2,7 +2,7 @@
 name: Faiza Zabin Fiza
 role: Student Researcher
 category: student
-order: 5
+order: 2
 email: faiza.fiza@northsouth.edu
 image: /assets/images/people/student-5.jpg
 research_interests: Human-Robot Interaction, Automation, Social Robotics
