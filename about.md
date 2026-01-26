@@ -12,7 +12,9 @@ Supported by expert faculty and passionate students, the lab is equipped with ad
 
 ## Vision
 
-To be a leading robotics research lab in South Asia, recognized globally for our contributions to intelligent systems, autonomous robotics, and human-centered AI that positively impacts society.
+At the NSU Intelligent Robotics Lab (NIRO), our vision is to serve as the cornerstone of a self-sustaining robotics ecosystem in Bangladesh. We envision a future where the gap between theoretical academic research and industrial application is seamlessly bridged, positioning our nation as a significant contributor to the global robotics revolution.
+
+Ultimately, our vision is to transform North South University into a central hub for intelligent systems research. A place where "impossible" ideas are systematically dismantled and rebuilt into functional, intelligent solutions that solve the challenges of tomorrow.
 
 ## Mission
 
