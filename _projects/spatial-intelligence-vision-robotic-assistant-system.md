@@ -1,10 +1,10 @@
-﻿---
+---
 title: Spatial-Intelligence Vision-Robotic Assistant System
 description: Vision-guided autonomous mobile manipulator for real-time user following, voice-command-driven grasping, and context-aware object placement.
 status: Active
 featured: false
-order: 1
-image: /assets/images/projects/spatial-intelligence-robot.jpeg
+order: 3
+image: /assets/images/projects/spatial-intelligence-robot.jpg
 duration: 2024 - Present
 funding: University Research Grant
 team:
@@ -13,6 +13,8 @@ team:
   - Ahnaf Ojayer
   - Dr. Shahnewaz Siddique
 ---
+
+![Spatial-Intelligence Vision-Robotic Assistant System](/assets/images/projects/spatial-intelligence-robot.jpg)
 
 ## Overview
 
@@ -32,7 +34,7 @@ Using modern AI vision models and a ROS2-based modular architecture, the system 
 
 ## Methodology
 
-The proposed system leverages a modular ROS2 architecture deployed on NVIDIA Jetson platforms, integrating high-fidelity perception, cognitive reasoning, and coordinated motion control. Visual state estimation employs YOLOv8 for real-time detection and EFS-StrongSORT for robust multi-object tracking, where 2D bounding boxes are stabilized and mapped to the robot’s 3D coordinate frame via hand-eye TF transformations. High-level task planning is orchestrated by a Large Language Model (LLM) utilizing Chain-of-Thought (CoT) prompting to interpret unstructured voice commands . For autonomous navigation, the system combines Simultaneous Localization and Mapping (SLAM) with the Timed Elastic Band (TEB) planner to ensure dynamic obstacle avoidance, facilitated by the omnidirectional mobility of mecanum wheels. Active user-following is achieved through a decoupled visual servoing scheme, where a PID controller governs base standoff distance while the 6-DOF manipulator dynamically adjusts yaw and pitch joints for target centering. Finally, manipulation tasks are modeled and executed within a high-fidelity Gazebo simulation environment via MoveIt2 to validate collision-free trajectory planning and kinematic feasibility prior to physical deployment.
+The proposed system leverages a modular ROS2 architecture deployed on NVIDIA Jetson platforms, integrating high-fidelity perception, cognitive reasoning, and coordinated motion control. Visual state estimation employs YOLOv8 for real-time detection and EFS-StrongSORT for robust multi-object tracking, where 2D bounding boxes are stabilized and mapped to the robot's 3D coordinate frame via hand-eye TF transformations. High-level task planning is orchestrated by a Large Language Model (LLM) utilizing Chain-of-Thought (CoT) prompting to interpret unstructured voice commands . For autonomous navigation, the system combines Simultaneous Localization and Mapping (SLAM) with the Timed Elastic Band (TEB) planner to ensure dynamic obstacle avoidance, facilitated by the omnidirectional mobility of mecanum wheels. Active user-following is achieved through a decoupled visual servoing scheme, where a PID controller governs base standoff distance while the 6-DOF manipulator dynamically adjusts yaw and pitch joints for target centering. Finally, manipulation tasks are modeled and executed within a high-fidelity Gazebo simulation environment via MoveIt2 to validate collision-free trajectory planning and kinematic feasibility prior to physical deployment.
 
 ## Current Progress
 
@@ -45,5 +47,3 @@ Completed modular simulation in Gazebo for individual components:
   - Part 6: Autonomous navigation to specified locations for object delivery
 - Part-wise real-world deployment is ongoing, validating each module separately
 - Upcoming milestones: full integration of all modules in Gazebo simulation, closed-loop testing of perception-action pipeline, and final deployment of the fully integrated system
-
-
