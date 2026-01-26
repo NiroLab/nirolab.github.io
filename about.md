@@ -28,18 +28,20 @@ Ultimately, our vision is to transform North South University into a central hub
 
 Our research spans multiple domains within robotics and AI:
 
-- **Autonomous Navigation** - Developing algorithms for robot localization, mapping, and path planning
-- **Computer Vision** - Image processing, object detection, and visual perception systems
-- **Machine Learning** - Deep learning, reinforcement learning, and neural network architectures
-- **Human-Robot Interaction** - Designing intuitive and safe interfaces between humans and robots
-- **Embedded Systems** - Real-time computing and hardware-software integration
-- **Multi-Robot Systems** - Coordination and cooperation among multiple autonomous agents
+- **Artificial Intelligence (AI) driven robotics** 
+- **Multi-Robot Systems** 
+- **Edge AI computing for robotic systems**
+- **Autonomous and context aware robotics system**
+- **Ariel and Underwater Robotics**
+- **Adaptive and Decision making in robotics**
+- **Uncertainty quantification and inference in robotics**  
+- **Integration of IoT, Edge and cloud computing, and blockchain to Robotics** 
 
 ## Contact
 
 We welcome inquiries about potential collaborations, graduate research opportunities, and partnerships.
 
-**Email**: [nirolab@northsouth.edu](mailto:nirolab@northsouth.edu)
+**Email**: [nirolaboratory@gmail.com](mailto:nirolaboratory@gmail.com)
 
 **Address**:
 NIRO Lab
