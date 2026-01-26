@@ -1,15 +1,26 @@
 ---
-name: Dr. Faculty Name One
-role: Professor & Lab Director
+name: Dr. Shahnewaz Siddique
+role: Associate Professor & Lab Director
 category: faculty
 order: 1
-email: faculty1@northsouth.edu
+email: shahnewaz.siddique@northsouth.edu
+phone: "+88 02 55668200 Ext – 1515"
+office: SAC 1019
 image: /assets/images/people/faculty-1.jpg
-website:
+website: https://ece.northsouth.edu/people/dr-shahnewaz-siddique/
 scholar:
-research_interests: Robotics, Computer Vision, Machine Learning
+research_interests: Controls, Robotics, Intelligent Systems, Artificial Intelligence, Modeling and Simulation
 ---
 
-Dr. Faculty Name One is the founder and director of NIRO Lab. With over 15 years of experience in robotics research, they lead the lab's strategic direction and mentor graduate students.
+Dr. Shahnewaz Siddique is the founder and director of NIRO Lab (NSU Intelligent Robotics Lab). He is an Associate Professor in the Department of Electrical and Computer Engineering at North South University.
 
-Their research focuses on autonomous systems and intelligent robotics, with numerous publications in top-tier venues.
+## Education
+
+- **PhD** in Aerospace Engineering, Georgia Institute of Technology
+- **MS** in Aeronautics/Astronautics, Stanford University
+- **MS** in Computational Mathematics, Stanford University
+- **B.Eng** in Electrical and Computer Engineering, McGill University
+
+## Research Focus
+
+Dr. Siddique's research focuses on controls, robotics, and intelligent systems. His work encompasses Artificial Intelligence & Robotics alongside Modeling and Simulation, driving innovation in autonomous systems and intelligent robotics at NIRO Lab.
