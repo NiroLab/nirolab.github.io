@@ -6,9 +6,9 @@ subtitle: Learn more about the NSU Intelligent Robotics Lab
 
 ## About NIRO Lab
 
-The NSU Intelligent Robotics Lab (NIRO Lab) is a premier research facility at North South University, established to advance the boundaries of robotics, artificial intelligence, and intelligent systems. Our lab brings together talented researchers, faculty members, and students to tackle challenging problems at the intersection of computer science, engineering, and cognitive science.
+Officially established in October 2024 at North South University, the NSU Intelligent Robotics Lab (NIRO) serves as an innovation hub where creativity meets cutting-edge research. Our mission is to make robotics research accessible, impactful, and future-focused, transforming theoretical concepts into tangible, real-world solutions.
 
-Located in the heart of North South University's campus in Dhaka, Bangladesh, NIRO Lab serves as a hub for innovation and discovery. We are committed to producing world-class research while nurturing the next generation of roboticists and AI researchers.
+Supported by expert faculty and passionate students, the lab is equipped with advanced facilities for every stage of development. Through a structured cycle of conceptualization, simulation, design, fabrication, assembly, software integration and testing, NIRO Lab delivers innovative real-world solutions while shaping a self-sustaining robotics ecosystem. 
 
 ## Vision
 
