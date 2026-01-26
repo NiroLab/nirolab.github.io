@@ -1,7 +1,7 @@
 ---
 name: Dr. Shahnewaz Siddique
 role: Associate Professor & Lab Director
-category: faculty
+category: founding_faculty
 order: 1
 email: shahnewaz.siddique@northsouth.edu
 phone: "+88 02 55668200 Ext – 1515"

@@ -10,12 +10,40 @@ title: People
       <p class="page-subtitle">Meet our team of researchers and students</p>
     </header>
 
-    <!-- Faculty -->
+    <!-- Founding Faculty Members -->
     <div class="people-section">
-      <h3>Faculty</h3>
+      <h3>Founding Faculty Members</h3>
       <div class="people-grid">
-        {% assign faculty = site.people | where: "category", "faculty" | sort: "order" %}
-        {% for person in faculty %}
+        {% assign founding_faculty = site.people | where: "category", "founding_faculty" | sort: "order" %}
+        {% for person in founding_faculty %}
+        <div class="person-card">
+          <a href="{{ person.url | relative_url }}">
+            <div class="person-image">
+              {% if person.image %}
+              <img src="{{ person.image | relative_url }}" alt="{{ person.name }}">
+              {% else %}
+              <div class="placeholder-image">{{ person.name | slice: 0 }}</div>
+              {% endif %}
+            </div>
+          </a>
+          <h4 class="person-name">
+            <a href="{{ person.url | relative_url }}">{{ person.name }}</a>
+          </h4>
+          <p class="person-role">{{ person.role }}</p>
+          {% if person.email %}
+          <p class="person-email"><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Affiliated Faculty Members -->
+    <div class="people-section">
+      <h3>Affiliated Faculty Members</h3>
+      <div class="people-grid">
+        {% assign affiliated_faculty = site.people | where: "category", "affiliated_faculty" | sort: "order" %}
+        {% for person in affiliated_faculty %}
         <div class="person-card">
           <a href="{{ person.url | relative_url }}">
             <div class="person-image">
