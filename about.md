@@ -18,8 +18,23 @@ Ultimately, our vision is to transform North South University into a central hub
 
 ![NIRO Lab Robot Innovation Cycle](/assets/Robot%20Innovation%20Cycle.png)
 
+## Our Innovation Cycle
 
-*Figure 1: Our structured approach to robotics innovation at NSU.*
+At NIRO Lab, we follow a systematic six-stage **Robotics Innovation Cycle** that transforms ideas into fully functional robotic systems:
+
+1. **Modelling and Simulation**: Every project begins with rigorous computational modeling and simulation to validate concepts before physical implementation, minimizing risks and optimizing designs.
+
+2. **Design**: Based on simulation results, we create detailed mechanical and electronic designs, ensuring every component is optimized for performance and manufacturability.
+
+3. **Fabrication**: Our lab facilities enable in-house fabrication of custom parts using 3D printing, CNC machining, and other manufacturing techniques.
+
+4. **Assembling**: Components are carefully integrated, with attention to mechanical tolerances, electrical connections, and system architecture.
+
+5. **Software Development**: We develop robust control algorithms, perception systems, and AI-driven decision-making software tailored to each robot's mission.
+
+6. **Physical Testing**: Rigorous real-world testing validates performance, identifies areas for improvement, and feeds insights back into the cycle for continuous refinement.
+
+This iterative approach ensures our research delivers reliable, innovative solutions that bridge the gap between academic exploration and real-world application.
 
 ## Mission
 
