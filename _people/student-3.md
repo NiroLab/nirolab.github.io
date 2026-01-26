@@ -8,7 +8,7 @@ image: /assets/images/people/Ahnaf_Ojayer.png
 research_interests: Robotic Manipulation, Grasping
 ---
 
-![Ahnaf Ojayer]({{ page.image }})
+![Ahnaf Ojayer headshot]({{ page.image }})
 
 Ahnaf Ojayer is a student researcher focusing on robotic manipulation and grasping.
 
