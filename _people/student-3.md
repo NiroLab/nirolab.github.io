@@ -4,7 +4,7 @@ role: Student Researcher
 category: student
 order: 3
 email: ahnaf.ojayer@northsouth.edu
-image: /assets/images/people/Ahnaf_Ojayer.jpg
+image: /assets/images/people/ahnaf-ojayer.jpg
 research_interests: Robotic Manipulation, Grasping, Machine Learning
 ---
 

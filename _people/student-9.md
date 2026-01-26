@@ -4,7 +4,7 @@ role: Student Researcher
 category: student
 order: 5
 email: mohammed.mofiz161@gmail.com
-image: /assets/images/people/student-9.jpg
+image: /assets/images/people/mohammed-mofiz-uddin.jpg
 linkedin: https://www.linkedin.com/in/mofizuddin/
 research_interests: Human-Robot Interaction, Human-Computer Interaction, Intelligent Systems, Autonomous Systems, Embedded Assistive Technology
 ---

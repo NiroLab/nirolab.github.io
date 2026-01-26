@@ -4,7 +4,7 @@ role: Former Research Assistant
 category: alumni
 order: 1
 email: saif.ahammod@gmail.com
-image: /assets/images/people/alumni-1.jpg
+image: /assets/images/people/saif-ahammod-khan.jpg
 website: https://saifahammod.github.io/
 linkedin: https://www.linkedin.com/in/saifahammod
 current_position: Co-Founder & Lead Engineer at Codatron

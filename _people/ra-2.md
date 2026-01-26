@@ -4,7 +4,7 @@ role: Research Assistant
 category: ra
 order: 2
 email: shoaib6174@gmail.com
-image: /assets/images/people/ra-2.jpg
+image: /assets/images/people/mohammad-shoaib.jpg
 website: https://shoaib6174.github.io
 github: https://github.com/shoaib6174
 linkedin: https://linkedin.com/in/shoaib6174

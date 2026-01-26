@@ -4,7 +4,7 @@ role: Research Assistant
 category: ra
 order: 1
 email: nasimmahmud1301@gmail.com
-image: /assets/images/people/ra-1.jpg
+image: /assets/images/people/nasim-mahmud-mishu.jpg
 website: https://nasim-mahmud.github.io
 github: https://github.com/nasim-mahmud
 research_interests: Swarm Robotics, Autonomous Agents, Deep Reinforcement Learning, Intelligent Robotic Systems
