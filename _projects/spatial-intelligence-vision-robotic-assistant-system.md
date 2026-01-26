@@ -4,7 +4,7 @@ description: Vision-guided autonomous mobile manipulator for real-time user foll
 status: Active
 featured: false
 order: 1
-image: /assets/images/projects/spatial-intelligence-robot.jpg
+image: /assets/images/projects/spatial-intelligence-robot.jpeg
 duration: 2024 - Present
 funding: University Research Grant
 team:
@@ -45,4 +45,5 @@ Completed modular simulation in Gazebo for individual components:
   - Part 6: Autonomous navigation to specified locations for object delivery
 - Part-wise real-world deployment is ongoing, validating each module separately
 - Upcoming milestones: full integration of all modules in Gazebo simulation, closed-loop testing of perception-action pipeline, and final deployment of the fully integrated system
+
 
