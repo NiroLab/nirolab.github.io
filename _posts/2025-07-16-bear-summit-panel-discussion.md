@@ -2,10 +2,10 @@
 layout: post
 title: "NIRO Lab Director Moderates Panel on Robotics and Industry 4.0 at BEAR Summit 2025"
 date: 2025-07-16
-image: /assets/images/news/bear-summit-2024.png
+image: /assets/images/news/bear-summit-panel-2025.jpg
 ---
 
-![BEAR Summit 2025](/assets/images/news/bear-summit-2024.png)
+![BEAR Summit 2025 Panel Discussion](/assets/images/news/bear-summit-panel-2025.jpg)
 
 **Dr. Shahnewaz Siddique, Director of NIRO Lab, moderated a key panel discussion on robotics and industrial revolution at the inaugural BEAR Summit 2025.**
 
