@@ -4,7 +4,7 @@ title: "NIRO EDU BOT Achieves Top 3 Position at BEAR Summit 2025"
 date: 2025-07-15
 ---
 # NIRO EDU BOT Secures Top 3 Position in Robotics Segment at BEAR Summit 2025
-![NIRO EDU BOT at BEAR Summit 2025](NIROBEAR%20CREST.jpg)
+![NIRO EDU BOT at BEAR Summit 2025](NIROBEARCREST.jpg)
 
 The **NSU Intelligent Robotics Lab (NIRO)** achieved a notable accomplishment as its project, **NIRO EDU BOT**, secured a **Top 3 position** in the **Robotics** segment at **BEAR Summit 2025**, held in **Dhaka** in **July 2025**.
 
