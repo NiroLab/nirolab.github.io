@@ -5,7 +5,22 @@ title: Home
 
 <section class="hero-cards">
   <div class="hero-cards-slider">
+    <!-- First slide: Innovation Cycle Graphic -->
+    <div class="hero-card hero-card-graphic">
+      <div class="hero-graphic-container">
+        <div class="hero-graphic-text">
+          <h2>NIRO Lab</h2>
+          <p class="hero-tagline">NSU Intelligent Robotics Lab</p>
+          <p class="hero-description">Transforming ideas into intelligent robotic solutions through our systematic innovation cycle</p>
+          <a href="{{ '/about/' | relative_url }}" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="hero-graphic-image">
+          <img src="{{ '/assets/Robot Innovation Cycle.png' | relative_url }}" alt="NIRO Lab Innovation Cycle">
+        </div>
+      </div>
+    </div>
     {% for slide in site.data.hero_slides %}
+    {% if forloop.first == false %}
     <div class="hero-card" style="background-image: url('{{ slide.image | relative_url }}');">
       <div class="hero-card-overlay"></div>
       <div class="hero-card-content">
@@ -13,6 +28,7 @@ title: Home
         <p>{{ slide.subtitle }}</p>
       </div>
     </div>
+    {% endif %}
     {% endfor %}
   </div>
   <div class="hero-cards-nav">

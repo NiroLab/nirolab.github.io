@@ -948,6 +948,76 @@ p {
   max-width: 600px;
 }
 
+/* Hero Graphic Slide */
+.hero-card-graphic {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
+}
+
+.hero-graphic-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  gap: var(--spacing-2xl);
+}
+
+.hero-graphic-text {
+  flex: 1;
+  color: #fff;
+  max-width: 500px;
+}
+
+.hero-graphic-text h2 {
+  color: #fff;
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-xs);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-graphic-text .hero-tagline {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  margin-bottom: var(--spacing-lg);
+  font-weight: 500;
+}
+
+.hero-graphic-text .hero-description {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-xl);
+}
+
+.hero-graphic-text .btn {
+  background: #fff;
+  color: var(--color-primary-dark);
+  border: none;
+  font-weight: 600;
+}
+
+.hero-graphic-text .btn:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.hero-graphic-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+}
+
+.hero-graphic-image img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+}
+
 /* Hero Navigation */
 .hero-cards-nav {
   position: absolute;
@@ -1259,12 +1329,43 @@ p {
    ======================================== */
 @media (max-width: 768px) {
   .hero-cards {
-    height: 50vh;
+    height: auto;
     min-height: 350px;
   }
 
   .hero-card-content {
     padding: var(--spacing-2xl);
+  }
+
+  .hero-graphic-container {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    gap: var(--spacing-lg);
+  }
+
+  .hero-graphic-text {
+    max-width: 100%;
+  }
+
+  .hero-graphic-text h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-graphic-text .hero-tagline {
+    font-size: 1.2rem;
+  }
+
+  .hero-graphic-text .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-graphic-image {
+    max-width: 300px;
+  }
+
+  .hero-graphic-image img {
+    max-height: 250px;
   }
 
   .hero-card-content h2 {
