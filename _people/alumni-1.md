@@ -1,5 +1,6 @@
 ---
 name: Md. Saif Ahammod Khan
+slug: saif-ahammod-khan
 role: Former Research Assistant
 category: alumni
 order: 1

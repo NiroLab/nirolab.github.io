@@ -1,5 +1,6 @@
 ---
 name: Dr. Mohammad Abdul Qayum
+slug: mohammad-abdul-qayum
 role: Assistant Professor
 category: affiliated_faculty
 order: 3

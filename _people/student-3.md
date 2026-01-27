@@ -1,5 +1,6 @@
 ---
 name: Ahnaf Ojayer
+slug: ahnaf-ojayer
 role: Student Researcher
 category: student
 order: 3

@@ -1,5 +1,6 @@
 ---
 name: Dr. Lamia Iftekhar
+slug: lamia-iftekhar
 role: Professor & Lab Co-Director
 category: founding_faculty
 order: 2

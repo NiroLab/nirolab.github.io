@@ -1,5 +1,6 @@
 ---
 name: Shafwan Ahmed
+slug: shafwan-ahmed
 role: Student Researcher
 category: student
 order: 9

@@ -1,5 +1,6 @@
 ---
 name: Faiza Zabin Fiza
+slug: faiza-zabin-fiza
 role: Student Researcher
 category: student
 order: 2

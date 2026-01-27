@@ -1,5 +1,6 @@
 ---
 name: Dr. Md Shahriar Karim
+slug: shahriar-karim
 role: Associate Professor & Graduate Coordinator
 category: affiliated_faculty
 order: 1

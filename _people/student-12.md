@@ -1,5 +1,6 @@
 ---
 name: Md Tasbeer Ahmed
+slug: tasbeer-ahmed
 role: Student Researcher
 category: student
 order: 11

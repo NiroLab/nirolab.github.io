@@ -1,5 +1,6 @@
 ---
 name: Ramisa Lamya
+slug: ramisa-lamya
 role: Student Researcher
 category: student
 order: 4

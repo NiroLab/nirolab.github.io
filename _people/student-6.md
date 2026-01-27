@@ -1,5 +1,6 @@
 ---
 name: Md Yasin Arafat
+slug: yasin-arafat
 role: Student Researcher
 category: student
 order: 7

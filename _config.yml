@@ -5,7 +5,7 @@ url: "https://nirolab.github.io"
 baseurl: ""
 
 # Contact
-email: nirolab@northsouth.edu
+email: nirolaboratory@gmail.com
 
 # Build settings
 markdown: kramdown
@@ -16,7 +16,7 @@ permalink: /news/:year/:month/:day/:title/
 collections:
   people:
     output: true
-    permalink: /people/:name/
+    permalink: /people/:slug/
   projects:
     output: true
     permalink: /projects/:name/

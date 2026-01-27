@@ -1,5 +1,6 @@
 ---
 name: Farhana Mehazbin Tusti
+slug: farhana-mehazbin-tusti
 role: Student Researcher
 category: student
 order: 8

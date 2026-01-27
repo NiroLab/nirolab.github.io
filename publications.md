@@ -10,6 +10,10 @@ title: Publications
       <p class="page-subtitle">Research papers and publications from our lab</p>
     </header>
 
+    <div class="under-development-notice">
+      <p>This section is currently under development. Check back soon for our complete publication list.</p>
+    </div>
+
     {% assign publications_by_year = site.data.publications | group_by: "year" | sort: "name" | reverse %}
 
     {% for year_group in publications_by_year %}

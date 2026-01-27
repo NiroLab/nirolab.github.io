@@ -1,5 +1,6 @@
 ---
 name: Mohammed Mofiz Uddin
+slug: mohammed-mofiz-uddin
 role: Student Researcher
 category: student
 order: 5

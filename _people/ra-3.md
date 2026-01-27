@@ -1,5 +1,6 @@
 ---
 name: Musfiq Ahmed
+slug: musfiq-ahmed
 role: Research Assistant
 category: ra
 order: 3

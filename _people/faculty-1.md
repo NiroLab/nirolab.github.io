@@ -1,5 +1,6 @@
 ---
 name: Dr. Shahnewaz Siddique
+slug: shahnewaz-siddique
 role: Associate Professor & Lab Director
 category: founding_faculty
 order: 1

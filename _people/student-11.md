@@ -1,5 +1,6 @@
 ---
 name: Tajnimul Hossain
+slug: tajnimul-hossain
 role: Student Researcher
 category: student
 order: 10

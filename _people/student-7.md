@@ -1,5 +1,6 @@
 ---
 name: Mahtab Newaz
+slug: mahtab-newaz
 role: Student Researcher
 category: student
 order: 1

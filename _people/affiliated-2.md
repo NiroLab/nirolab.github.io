@@ -1,5 +1,6 @@
 ---
 name: Dr. Riasat Khan
+slug: riasat-khan
 role: Associate Professor
 category: affiliated_faculty
 order: 2

@@ -10,6 +10,10 @@ title: Gallery
       <p class="page-subtitle">Moments from our lab, events, and research activities</p>
     </header>
 
+    <div class="under-development-notice">
+      <p>This section is currently under development. Check back soon for photos from our lab activities.</p>
+    </div>
+
     <!-- Gallery Filter -->
     <div class="gallery-filter">
       <button class="filter-btn active" data-filter="all">All</button>

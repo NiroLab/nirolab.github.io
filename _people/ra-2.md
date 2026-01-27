@@ -1,5 +1,6 @@
 ---
 name: Mohammad Shoaib
+slug: mohammad-shoaib
 role: Research Assistant
 category: ra
 order: 2

@@ -1,5 +1,6 @@
 ---
 name: Nasim Mahmud Mishu
+slug: nasim-mahmud-mishu
 role: Research Assistant
 category: ra
 order: 1

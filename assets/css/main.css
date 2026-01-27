@@ -1335,3 +1335,21 @@ p {
     aspect-ratio: 1;
   }
 }
+
+/* ========================================
+   Under Development Notice
+   ======================================== */
+.under-development-notice {
+  background-color: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.under-development-notice p {
+  color: #92400e;
+  font-weight: 500;
+  margin: 0;
+}
