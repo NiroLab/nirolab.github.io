@@ -5,7 +5,7 @@ status: Active
 featured: false
 order: 5
 image: /assets/images/projects/pursuit-evasion.gif
-duration: 2024 - Present
+duration: October 2025 - Present
 team:
   - Dr. Shahnewaz Siddique,
   - Mohammad Shoaib
