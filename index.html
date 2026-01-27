@@ -19,7 +19,7 @@ title: Home
       </div>
     </div>
     {% for slide in site.data.hero_slides %}
-    <div class="hero-card" style="background-image: url('{{ slide.image | relative_url }}');">
+    <div class="hero-card" style="background-image: url('{{ slide.image | relative_url }}');{% if slide.bg_size %} background-size: {{ slide.bg_size }};{% endif %}{% if slide.bg_position %} background-position: {{ slide.bg_position }};{% endif %}">
       <div class="hero-card-overlay"></div>
       <div class="hero-card-content">
         <h2>{{ slide.title }}</h2>
