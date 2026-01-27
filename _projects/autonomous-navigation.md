@@ -3,7 +3,7 @@ title: Autonomous Indoor Delivery Robot
 description: An AI-enabled mobile robot for secure autonomous delivery in indoor office environments
 status: Active
 featured: false
-order: 1
+order: 2
 image: /assets/images/projects/autonomous-indoor-delivery-robot.jpg
 duration: 2024 - Present
 funding: University Research Grant

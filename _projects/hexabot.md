@@ -3,7 +3,7 @@ title: Project Hexa: Modular Hexapod Research Platform for Terrain-Adaptive Auto
 description: A six-legged autonomous hexapod platform designed for rough terrain navigation, featuring modular architecture for advanced sensor integration and adaptive locomotion control.
 status: Active
 featured: true
-order: 3
+order: 4
 image: /assets/images/projects/hexbot.jpeg
 duration: February 2025 - Present
 funding: University Research Grant

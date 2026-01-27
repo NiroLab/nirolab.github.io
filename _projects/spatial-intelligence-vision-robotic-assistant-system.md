@@ -3,7 +3,7 @@ title: Spatial-Intelligence Vision-Robotic Assistant System
 description: Vision-guided autonomous mobile manipulator for real-time user following, voice-command-driven grasping, and context-aware object placement.
 status: Active
 featured: false
-order: 3
+order: 6
 image: /assets/images/projects/spatial-intelligence-robot-sim.jpeg
 duration: 2024 - Present
 funding: University Research Grant
