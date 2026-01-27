@@ -36,9 +36,8 @@ The software framework leverages microcontroller programming for real-time senso
 Documentation and knowledge transfer follow open-source principles, ensuring reproducibility and community-driven refinement. The design philosophy prioritizes accessibility for novice users while maintaining pathways for advanced experimentation, creating a learning trajectory that mirrors real-world robotics engineering workflows from fundamental concepts to sophisticated autonomous systems.
 
 ## Current Progress
+
 - Core hardware architecture finalized with integrated differential drive system, sensor suite (gyroscope, IR, ultrasonic), and microcontroller framework supporting autonomous navigation functions
 - Functional prototypes demonstrate obstacle avoidance, line following, and wireless connectivity capabilities with validated PCB-based design reducing manufacturing complexity
 - Comprehensive technical documentation and presentation materials in development for broader institutional recognition and potential funding opportunities
 - Advanced integration modules including Raspberry Pi compatibility and expanded sensor capabilities positioned for next-phase implementation following initial platform validation
-
----
