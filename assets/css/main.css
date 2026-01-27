@@ -910,8 +910,9 @@ p {
 .hero-card {
   flex: 0 0 100%;
   position: relative;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
   background-color: var(--color-primary-dark);
 }
 
