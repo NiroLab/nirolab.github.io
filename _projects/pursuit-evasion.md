@@ -2,7 +2,7 @@
 title: Multi-Agent Pursuit-Evasion Game
 description: Training robots to play chase using reinforcement learning
 status: Active
-featured: true
+featured: false
 order: 5
 image: /assets/images/projects/pursuit-evasion.gif
 duration: 2024 - Present
