@@ -55,38 +55,6 @@ title: Home
 <section class="section section-alt">
   <div class="container">
     <div class="section-title">
-      <h2>Recent News</h2>
-    </div>
-
-    <div class="news-list news-list-compact">
-      {% assign recent_posts = site.posts | limit: 4 %}
-      {% for post in recent_posts %}
-      <div class="news-item">
-        <div class="news-date">
-          <span class="day">{{ post.date | date: "%d" }}</span>
-          <span class="month">{{ post.date | date: "%b" }}</span>
-        </div>
-        <div class="news-content">
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
-        </div>
-      </div>
-      {% endfor %}
-
-      {% if site.posts.size == 0 %}
-      <p style="text-align: center; color: var(--color-text-light);">No news posted yet. Check back soon!</p>
-      {% endif %}
-    </div>
-
-    <p style="text-align: center; margin-top: var(--spacing-xl);">
-      <a href="{{ '/news/' | relative_url }}" class="btn btn-outline">View all news</a>
-    </p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-title">
       <h2>Featured Projects</h2>
     </div>
 
@@ -136,6 +104,38 @@ title: Home
 
     <p style="text-align: center; margin-top: var(--spacing-xl);">
       <a href="{{ '/projects/' | relative_url }}" class="btn btn-outline">View all projects</a>
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Recent News</h2>
+    </div>
+
+    <div class="news-list news-list-compact">
+      {% assign recent_posts = site.posts | limit: 4 %}
+      {% for post in recent_posts %}
+      <div class="news-item">
+        <div class="news-date">
+          <span class="day">{{ post.date | date: "%d" }}</span>
+          <span class="month">{{ post.date | date: "%b" }}</span>
+        </div>
+        <div class="news-content">
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+        </div>
+      </div>
+      {% endfor %}
+
+      {% if site.posts.size == 0 %}
+      <p style="text-align: center; color: var(--color-text-light);">No news posted yet. Check back soon!</p>
+      {% endif %}
+    </div>
+
+    <p style="text-align: center; margin-top: var(--spacing-xl);">
+      <a href="{{ '/news/' | relative_url }}" class="btn btn-outline">View all news</a>
     </p>
   </div>
 </section>
