@@ -1,5 +1,5 @@
 ---
-title: NIRO Educational Bot: An Affordable Modular Robotics Platform
+title: "NIRO Educational Bot: An Affordable Modular Robotics Platform"
 description: A contextually innovative, modular robotics platform making quality STEM education accessible through open-source, cost-effective design.
 status: Active
 featured: true
