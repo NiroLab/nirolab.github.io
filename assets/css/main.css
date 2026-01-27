@@ -104,6 +104,42 @@ p {
   margin-bottom: var(--spacing-md);
 }
 
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: var(--spacing-xl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+th, td {
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+th {
+  background: var(--color-primary-dark);
+  color: #fff;
+  font-weight: 600;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:nth-child(even) {
+  background: var(--color-background-alt);
+}
+
+td:first-child {
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 /* ========================================
    Layout
    ======================================== */
@@ -566,6 +602,14 @@ p {
   border-radius: var(--radius-md);
   overflow: hidden;
   margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.project-image-large img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 .project-meta {
@@ -586,6 +630,15 @@ p {
 .project-content {
   font-family: var(--font-serif);
   line-height: 1.8;
+}
+
+.project-content img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+  margin: var(--spacing-lg) auto;
+  border-radius: var(--radius-md);
 }
 
 /* ========================================
