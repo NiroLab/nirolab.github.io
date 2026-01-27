@@ -20,9 +20,10 @@ The workshop covered a comprehensive range of foundational robotics topics. Part
 
 As part of the hands-on component, the instructors, with active participation from attendees, **built an RC car from scratch**, demonstrating the complete development process—from circuit design to final implementation. The workshop concluded with an **interactive question-and-answer session**, allowing participants to clarify technical concepts and reflect on their learning experiences. A group photo session followed, capturing the engagement and enthusiasm of the participants.
 
-![RC Car Demonstration at NIRO Lab](assets/images/news/nw3.jpg)
+![RC Car Demonstration at NIRO Lab](/assets/images/news/nw3.jpg)
 
 Feedback received from participants was overwhelmingly positive, highlighting the clarity of technical explanations, structured content delivery, and the practical approach of the sessions. Participants also provided constructive suggestions, including optimizing session duration and incorporating additional equipment to enable individual project building alongside the instructor.
 
 The successful completion of the workshop reflects **NIRO Lab’s continued commitment to robotics education, practical learning, and skill development**. The lab looks forward to organizing more structured, hands-on workshops in the future to further support student learning and innovation.
+
 
