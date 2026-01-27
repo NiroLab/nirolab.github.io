@@ -19,7 +19,6 @@ title: Home
       </div>
     </div>
     {% for slide in site.data.hero_slides %}
-    {% if forloop.first == false %}
     <div class="hero-card" style="background-image: url('{{ slide.image | relative_url }}');">
       <div class="hero-card-overlay"></div>
       <div class="hero-card-content">
@@ -27,7 +26,6 @@ title: Home
         <p>{{ slide.subtitle }}</p>
       </div>
     </div>
-    {% endif %}
     {% endfor %}
   </div>
   <div class="hero-cards-nav">

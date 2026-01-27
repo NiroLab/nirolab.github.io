@@ -2,9 +2,10 @@
 # Add/edit slides for the homepage hero carousel
 # Note: First slide (Innovation Cycle) is now embedded in index.html
 
-- title: NIRO Lab
-  subtitle: NSU Intelligent Robotics Lab
-  image: /assets/images/hero/slide-1.jpg
+- title: "Championship Award at BEAR Summit 2025"
+  subtitle: "Our Autonomous Delivery Robot received the Championship Award at BEAR Summit 2025"
+  image: /assets/images/news/bear-summit-2025-3.jpg
+  link: /news/2025/07/10/bear-summit-championship-award/
 
 - title: Advancing Robotics Research
   subtitle: Innovative solutions for real-world challenges
