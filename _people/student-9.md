@@ -1,8 +1,8 @@
 ---
 name: Mohammed Mofiz Uddin
 slug: mohammed-mofiz-uddin
-role: Student Researcher
-category: student
+role: Research Assistant
+category: ra
 order: 5
 email: mohammed.mofiz161@gmail.com
 image: /assets/images/people/mohammed-mofiz-uddin.jpg
