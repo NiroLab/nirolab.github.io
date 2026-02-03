@@ -4,7 +4,7 @@ description: A six-legged autonomous hexapod platform designed for rough terrain
 status: Active
 featured: false
 order: 4
-image: /assets/images/projects/hexbot.jpeg
+image: /assets/images/projects/hexbot.gif
 duration: February 2025 - Present
 funding: University Research Grant
 team:
