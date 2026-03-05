@@ -9,7 +9,7 @@ phone: "+88 02 55668200 Ext – 1515"
 office: SAC 1019
 image: /assets/images/people/faculty-1.jpg
 website: https://ece.northsouth.edu/people/dr-shahnewaz-siddique/
-scholar:
+scholar: https://scholar.google.com/citations?hl=en&user=6XLqr5QAAAAJ
 research_interests: Controls, Robotics, Intelligent Systems, Artificial Intelligence, Modeling and Simulation
 ---
 
