@@ -9,35 +9,57 @@ NIRO Lab website - a Jekyll-based static site for NSU Intelligent Robotics Lab, 
 ## Development Commands
 
 ```bash
-# Install dependencies
-bundle install
-
-# Run local development server (visit http://localhost:4000)
-bundle exec jekyll serve
-
-# Build for production
-bundle exec jekyll build
+bundle install                  # Install dependencies
+bundle exec jekyll serve        # Local dev server at http://localhost:4000
+bundle exec jekyll build        # Production build (output in _site/)
 ```
 
 ## Architecture
 
-**Jekyll Collections** (configured in `_config.yml`):
-- `_people/` - Team member profiles (uses `person` layout)
-- `_projects/` - Research projects (uses `project` layout)
-- `_posts/` - News posts (uses `post` layout, named `YYYY-MM-DD-title-slug.md`)
+### Layout Chain
 
-**Data Files** (`_data/`):
-- `publications.yml` - Publication entries by year
-- `navigation.yml` - Site navigation menu
-- `hero_slides.yml` - Homepage hero carousel
-- `gallery.yml` - Image gallery data
+`default.html` is the base layout (HTML head, header/footer includes, `{{ content }}`). All other layouts either extend `default` or are used directly:
+- `page.html` - Generic pages (about, people listing, etc.)
+- `person.html` - Individual team member profiles
+- `project.html` - Individual project pages
+- `post.html` - News posts
 
-**Layouts** (`_layouts/`):
-- `default.html` - Base layout with header/footer
-- `page.html`, `person.html`, `project.html`, `post.html` - Content-specific layouts
+Page-level templates like `people.md`, `projects.md`, and `index.html` use `layout: default` directly and contain their own Liquid logic for querying collections.
 
-**Styling**: Single CSS file at `assets/css/main.css` with CSS custom properties for theming.
+### Collections and Content
+
+**People** (`_people/`): Files named by role prefix (`faculty-1.md`, `ra-2.md`, `student-5.md`, `alumni-1.md`, `affiliated-3.md`). The `category` front matter field determines grouping on the people page. Valid categories: `founding_faculty`, `affiliated_faculty`, `ra`, `student`, `alumni`. The `order` field controls sort order within each category.
+
+**Projects** (`_projects/`): Named by slug. The `featured: true` front matter flag makes them appear on the homepage (up to 3).
+
+**Posts** (`_posts/`): Standard Jekyll naming `YYYY-MM-DD-title-slug.md`. Layout auto-assigned via `_config.yml` defaults.
+
+### Data Files (`_data/`)
+
+- `publications.yml` - Publication entries (currently empty, page shows "under development")
+- `navigation.yml` - Top nav menu items (title + url pairs)
+- `hero_slides.yml` - Homepage carousel slides (title, subtitle, image, optional bg_size/bg_position)
+- `gallery.yml` - Gallery data (page currently under development)
+
+### Content Templates
+
+`templates/` directory contains submission templates for non-technical contributors (person, project, news, gallery, publication). These are not part of the Jekyll build.
+
+### Styling
+
+Single CSS file at `assets/css/main.css` using CSS custom properties (`:root` variables) for theming. Fonts: Inter (sans-serif) and Merriweather (serif) loaded from Google Fonts.
+
+### Homepage (`index.html`)
+
+Contains inline JavaScript for the hero carousel (auto-advance, keyboard nav, dot indicators). Featured projects are pulled via `site.projects | where: "featured", true`. Recent news shows the latest 4 posts.
 
 ## Deployment
 
-Push to `main` branch triggers automatic GitHub Actions deployment (`.github/workflows/jekyll.yml`).
+Push to `main` triggers GitHub Actions (`.github/workflows/jekyll.yml`): builds with Ruby 3.2 and deploys to GitHub Pages. No manual build step needed.
+
+## Key Conventions
+
+- All image assets go in `assets/images/` organized by type (`people/`, `projects/`)
+- Image specs: profile photos 400x400px square JPG, project images 800x500px landscape JPG
+- URLs use trailing slashes (configured in `_config.yml` permalinks)
+- Plugins: `jekyll-feed` (RSS) and `jekyll-seo-tag` (SEO meta tags)
