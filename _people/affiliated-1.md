@@ -1,7 +1,7 @@
 ---
 name: Dr. Md Shahriar Karim
 slug: shahriar-karim
-role: Associate Professor & Graduate Coordinator
+role: Associate Professor
 category: affiliated_faculty
 order: 1
 email: shahriar.karim@northsouth.edu

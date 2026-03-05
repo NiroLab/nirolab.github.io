@@ -1,7 +1,7 @@
 ---
 name: Dr. Fariah Mahzabeen
 slug: fariah-mahzabeen
-role: Associate Professor & Undergraduate Coordinator (EEE/ETE)
+role: Associate Professor
 category: affiliated_faculty
 order: 4
 email: fariah.mahzabeen01@northsouth.edu
