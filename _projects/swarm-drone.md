@@ -1,6 +1,6 @@
 ---
-title: Coordinated Drone Swarms for Precision Agriculture, Fisheries, and Drone Show Applications
-description: A coordinated multi-drone system designed for precision agriculture, fisheries management, and drone show applications.
+title: Coordinated Drone Swarms for Precision Agriculture and Fisheries
+description: A coordinated multi-drone system designed for precision agriculture and fisheries management.
 status: Active
 featured: true
 order: 3
@@ -14,11 +14,11 @@ team:
   - Rodshi Jahin Prapty
 ---
 
-This project presents a coordinated multi-drone system designed for precision agriculture, fisheries management, and drone show applications. Using the Pixhawk flight controller, dual GPS modules, and ArduCopter firmware, each drone operates collaboratively to perform automated tasks such as field monitoring and resource distribution.
+This project presents a coordinated multi-drone system designed for precision agriculture and fisheries management. Using the Pixhawk flight controller, dual GPS modules, and ArduCopter firmware, each drone operates collaboratively to perform automated tasks such as field monitoring and resource distribution.
 
 Through telemetry links, a ground control station coordinates navigation, communication, and coordination. The system demonstrates how swarm coordination can minimize labor, improve efficiency, and boost sustainability in rural sectors.
 
-**Keywords:** ArduCopter, Pixhawk, Drone Swarm, Precision Farming, Automated Fishing, Drone Show
+**Keywords:** ArduCopter, Pixhawk, Drone Swarm, Precision Farming, Automated Fishing
 
 ## Key Features
 
@@ -27,9 +27,6 @@ Automated field monitoring, crop health assessment, and precise resource distrib
 
 ### Fisheries Management
 Automated feeding systems, surveillance operations, and efficient fishery monitoring to reduce manual labor.
-
-### Drone Light Shows
-Synchronized aerial entertainment with LED modules, offering an eco-friendly alternative to traditional fireworks.
 
 ### Advanced Communication
 Dual communication system using radio telemetry and Wi-Fi for reliable swarm coordination and control.
@@ -71,7 +68,7 @@ Extensive testing in CoppeliaSim verified trajectory tracking, formation stabili
 ## Impact & Applications
 
 ### Environmental Benefits
-The system promotes sustainability through precise resource distribution, reducing waste of fertilizers, pesticides, and water. Drone light shows eliminate the air pollution, chemical residue, and noise associated with traditional fireworks.
+The system promotes sustainability through precise resource distribution, reducing waste of fertilizers, pesticides, and water.
 
 ### Societal Impact
 By automating physically demanding and hazardous agricultural tasks, the system reduces worker exposure to dangerous conditions and chemicals.
