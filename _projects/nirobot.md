@@ -4,7 +4,7 @@ description: A contextually innovative, modular robotics platform making quality
 status: Active
 featured: true
 order: 1
-image: /assets/images/projects/nirobot.jpg
+image: /assets/images/projects/nirobot.gif
 duration: October 2024 - Present
 funding: University Research Grant
 team:
