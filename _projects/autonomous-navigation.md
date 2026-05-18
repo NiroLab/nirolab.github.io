@@ -5,6 +5,7 @@ status: Active
 featured: true
 order: 2
 image: /assets/images/projects/autonomous-indoor-delivery-robot.jpg
+video: VojtnyElt-A
 duration: 2024 - Present
 funding: University Research Grant
 team:

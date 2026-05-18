@@ -133,7 +133,19 @@ permalink: /presentation/
         <p class="project-meta-line"><strong>Team:</strong> {{ project.team | join: ", " }}</p>
         {% endif %}
       </div>
-      {% if project.image %}
+      {% if project.video %}
+      <div class="project-visual">
+        <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/{{ project.video }}"
+          title="{{ project.title }} demo video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      {% elsif project.image %}
       <div class="project-visual">
         <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
       </div>
