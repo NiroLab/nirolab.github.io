@@ -5,6 +5,7 @@ permalink: /presentation/
 ---
 
 {% assign featured_projects = site.projects | where: "featured", true | sort: "order" %}
+{% assign featured_count = featured_projects.size %}
 {% assign hexabot = site.projects | where_exp: "p", "p.path contains 'hexabot'" | first %}
 
 <div class="presentation-container" id="presentation">
@@ -141,9 +142,9 @@ permalink: /presentation/
   </section>
   {% endfor %}
 
-  <!-- Slide 9: Project Hexa -->
+  <!-- Slide: Project Hexa -->
   {% if hexabot %}
-  <section class="presentation-slide slide-project" data-slide="8">
+  <section class="presentation-slide slide-project" data-slide="{{ featured_count | plus: 5 }}">
     <div class="slide-content slide-content-split">
       <div class="project-text">
         <span class="slide-label">Research Project</span>
@@ -162,8 +163,8 @@ permalink: /presentation/
   </section>
   {% endif %}
 
-  <!-- Slide 10: BEAR Summit -->
-  <section class="presentation-slide slide-dark slide-bear" data-slide="9">
+  <!-- Slide: BEAR Summit -->
+  <section class="presentation-slide slide-dark slide-bear" data-slide="{{ featured_count | plus: 6 }}">
     <div class="slide-content">
       <span class="slide-label">Achievements</span>
       <h2>BEAR Summit 2025</h2>
@@ -199,8 +200,8 @@ permalink: /presentation/
     </div>
   </section>
 
-  <!-- Slide 11: Get Involved -->
-  <section class="presentation-slide slide-alt" data-slide="10">
+  <!-- Slide: Get Involved -->
+  <section class="presentation-slide slide-alt" data-slide="{{ featured_count | plus: 7 }}">
     <div class="slide-content slide-content-narrow">
       <h2>Get Involved</h2>
       <p class="slide-lead">We welcome collaborations, research opportunities, and partnerships.</p>
