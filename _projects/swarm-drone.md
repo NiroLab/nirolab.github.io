@@ -1,5 +1,5 @@
 ---
-title: Coordinated Drone Swarms for Precision Agriculture, Fisheries, and Drone Show Applications
+title: Coordinated Drone Swarms for Precision Agriculture and Fisheries
 description: A coordinated multi-drone system designed for precision agriculture, fisheries management, and drone show applications.
 status: Active
 featured: true
