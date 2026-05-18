@@ -48,4 +48,8 @@ Simulation is performed using **ROS2 and Gazebo**, enabling rapid testing and va
 - System optimization for long-term deployment and maintenance  
 - Industry-oriented pilot deployment and evaluation  
 
+## Demo Video
+
+{% include youtube.html id="VojtnyElt-A" %}
+
 ---
