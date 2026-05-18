@@ -4,7 +4,7 @@ description: A coordinated multi-drone system designed for precision agriculture
 status: Active
 featured: true
 order: 3
-image: /assets/images/projects/DRONE_GIF.gif
+image: /assets/images/projects/swarm-drone.jpg
 duration: 2025 - Present
 funding:
 team:
