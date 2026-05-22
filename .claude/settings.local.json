@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "mcp__playwright__browser_navigate",
-      "WebFetch(domain:ece.northsouth.edu)"
+      "WebFetch(domain:ece.northsouth.edu)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
