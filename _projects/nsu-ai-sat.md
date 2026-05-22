@@ -7,8 +7,7 @@ order: 8
 image: /assets/images/projects/nsu-ai-sat.png
 duration: 2024 - Present
 team:
-  - Dr. Shahnewaz Siddique
-  - NIRO Lab Team
+  - Dr. Shahnewaz Siddique and his students (around 20)
 ---
 
 ## Overview
