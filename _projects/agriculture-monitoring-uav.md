@@ -2,7 +2,7 @@
 title: Agriculture Monitoring UAV
 description: A fixed-wing unmanned aerial vehicle designed for precision agriculture and crop health monitoring across Bangladesh
 status: Active
-featured: false
+featured: true
 order: 9
 image: /assets/images/projects/agriculture-monitoring-uav.png
 duration: 2024 - Present

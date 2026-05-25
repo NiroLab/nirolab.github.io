@@ -2,7 +2,7 @@
 title: NSU AI SAT
 description: A 3U cubesat for onboard detection and tracking of Space Resident Objects (SROs) in LEO orbit
 status: Active
-featured: false
+featured: true
 order: 8
 image: /assets/images/projects/nsu-ai-sat.png
 duration: 2024 - Present
