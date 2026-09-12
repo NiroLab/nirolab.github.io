@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="NIRO Lab photo placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0A2A5E"/>
+      <stop offset="1" stop-color="#1B5FAA"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <rect width="400" height="400" fill="url(#grid)"/>
+  <!-- orbit-ring motif 10% white -->
+  <g transform="rotate(18 200 190)" fill="none" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="3">
+    <ellipse cx="200" cy="190" rx="150" ry="86"/>
+  </g>
+  <circle cx="200" cy="190" r="72" fill="none" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="3"/>
+  <circle cx="332" cy="148" r="7" fill="#F2A900" fill-opacity="0.85"/>
+  <!-- portrait glyph -->
+  <g fill="#FFFFFF" fill-opacity="0.14">
+    <circle cx="200" cy="168" r="40"/>
+    <path d="M128 290c0-42 32-70 72-70s72 28 72 70v10H128z"/>
+  </g>
+  <text x="200" y="368" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" letter-spacing="3" fill="#FFFFFF" fill-opacity="0.45">NIRO LAB · PHOTO PLACEHOLDER</text>
+</svg>

@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* NIRO Lab - NSU Blue System (design.md §2) */
+    --nsu-navy: #0A2A5E;
+    --nsu-ink: #061A3A;
+    --nsu-blue: #1B5FAA;
+    --nsu-sky: #3D8FE0;
+    --nsu-ice: #E9F2FC;
+    --nsu-mist: #F5F9FE;
+    --nsu-gold: #F2A900;
+    --nsu-text: #1C2E4A;
+    --nsu-slate: #5B6E8C;
+    --nsu-line: #D9E5F3;
+    --nsu-line-dark: #1E3A66;
+
+    /* shadcn tokens mapped onto the NSU palette */
+    --background: 210 100% 98.5%;
+    --foreground: 217 45% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 217 45% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 45% 20%;
+    --primary: 212 73% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 211 75% 96%;
+    --secondary-foreground: 216 71% 20%;
+    --muted: 211 75% 96%;
+    --muted-foreground: 217 22% 45%;
+    --accent: 211 75% 96%;
+    --accent-foreground: 216 71% 20%;
+    --destructive: 355 64% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 212 43% 90%;
+    --input: 212 43% 90%;
+    --ring: 206 73% 56%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: auto; /* Lenis owns smooth scrolling */
+  }
+  body {
+    @apply bg-nsu-mist font-sans text-nsu-text antialiased;
+    font-feature-settings: "ss01";
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-nsu-navy;
+    text-wrap: balance;
+  }
+  ::selection {
+    background: rgba(61, 143, 224, 0.25);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* ------------------------------------------------------------------
+   * Canonical type scale (design tokens)
+   *   Display : Sora 700, clamp(2.75rem, 6vw, 5rem)      - page H1
+   *   H2      : Sora 700, clamp(2rem, 3.6vw, 3rem)       - section titles
+   *   H3      : Sora 600, 1.375rem / 1.25                - card & block titles
+   *   Eyebrow : JetBrains Mono 500, 0.75rem uppercase +0.22em, "// " prefix
+   *   Body    : Inter 400, 1.0625rem / 1.7
+   *   Small   : Inter 400, 0.875rem (meta, card body)
+   *   Button  : Inter 600, 0.9375rem +0.01em (buttons & nav links)
+   * Color is applied by context (nsu-navy on light, white/sky on dark).
+   * ------------------------------------------------------------------ */
+  .type-display {
+    @apply font-display font-bold leading-[1.02] tracking-[-0.03em];
+    font-size: clamp(2.75rem, 6vw, 5rem);
+  }
+  .type-h2 {
+    @apply font-display font-bold leading-[1.1] tracking-[-0.02em];
+    font-size: clamp(2rem, 3.6vw, 3rem);
+  }
+  .type-h3 {
+    @apply font-display text-[1.375rem] font-semibold leading-[1.25] tracking-[-0.01em];
+  }
+  .type-eyebrow {
+    @apply font-mono text-xs font-medium uppercase tracking-[0.22em];
+  }
+  .type-body {
+    @apply font-sans text-[1.0625rem] font-normal leading-[1.7];
+  }
+  .type-small {
+    @apply font-sans text-sm font-normal;
+  }
+  .type-button {
+    @apply font-sans text-[0.9375rem] font-semibold tracking-[0.01em];
+  }
+}
+
+@layer utilities {
+  /* Blueprint grid motif - 48px cells + 240px major lines (design.md §1) */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(to right, rgba(27, 95, 170, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(27, 95, 170, 0.08) 1px, transparent 1px),
+      linear-gradient(to right, rgba(27, 95, 170, 0.14) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(27, 95, 170, 0.14) 1px, transparent 1px);
+    background-size:
+      48px 48px,
+      48px 48px,
+      240px 240px,
+      240px 240px;
+  }
+  .blueprint-grid-dark {
+    background-image:
+      linear-gradient(to right, rgba(61, 143, 224, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(61, 143, 224, 0.05) 1px, transparent 1px),
+      linear-gradient(to right, rgba(61, 143, 224, 0.09) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(61, 143, 224, 0.09) 1px, transparent 1px);
+    background-size:
+      48px 48px,
+      48px 48px,
+      240px 240px,
+      240px 240px;
+  }
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Achievement placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#061A3A"/>
+      <stop offset="1" stop-color="#0A2A5E"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect width="800" height="600" fill="url(#grid)"/>
+  <!-- laurel + medal line art -->
+  <g transform="translate(400 270)" fill="none" stroke="#F2A900" stroke-width="4" stroke-linecap="round">
+    <circle r="64"/>
+    <circle r="46" stroke-opacity="0.5"/>
+    <path d="M0-26 8-8l20 2-14 14 4 20-18-10-18 10 4-20-14-14 20-2z" fill="#F2A900" fill-opacity="0.9" stroke="none"/>
+    <path d="M-30-62-52-108M30-62 52-108" stroke-opacity="0.8"/>
+    <path d="M-52-108h-26l14 18zM52-108h26l-14 18z" fill="#F2A900" fill-opacity="0.8" stroke="none"/>
+  </g>
+  <g fill="none" stroke="#F2A900" stroke-opacity="0.7" stroke-width="3" stroke-linecap="round">
+    <path d="M255 320c-30-14-46-44-42-78M245 296c-24-2-40-18-44-42M545 320c30-14 46-44 42-78M555 296c24-2 40-18 44-42"/>
+  </g>
+  <text x="400" y="480" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="15" letter-spacing="6" fill="#F2A900" fill-opacity="0.75">ACHIEVEMENT PLACEHOLDER</text>
+</svg>

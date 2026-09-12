@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#3D8FE0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Aerial and underwater robotics">
+  <circle cx="12" cy="12" r="4"/><circle cx="36" cy="12" r="4"/>
+  <path d="M15 15l6 4M33 15l-6 4"/>
+  <rect x="18" y="17" width="12" height="6" rx="3"/>
+  <path d="M4 36c3-3 6-3 9 0s6 3 9 0 6-3 9 0 6 3 9 0 4-2 6 0M4 43c3-3 6-3 9 0s6 3 9 0 6-3 9 0 6 3 9 0 4-2 6 0"/>
+</svg>
