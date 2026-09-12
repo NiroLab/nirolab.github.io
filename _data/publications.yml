@@ -1,0 +1,9 @@
+# Publications - Add new entries at the top of each year
+# Format:
+# - title: "Paper Title"
+#   authors: "Author One, Author Two, Author Three"
+#   venue: "Conference/Journal Name, Year"
+#   year: 2025
+#   pdf: "link to pdf" (optional)
+#   doi: "link to doi" (optional)
+#   code: "link to code" (optional)

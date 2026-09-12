@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<article class="project-detail">
+  <div class="container">
+    <header class="project-header">
+      <h1>{{ page.title }}</h1>
+      {% if page.status %}
+      <span class="project-status status-{{ page.status | downcase }}">{{ page.status }}</span>
+      {% endif %}
+    </header>
+
+    {% if page.image %}
+    <div class="project-image-large">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    </div>
+    {% endif %}
+
+    <div class="project-meta">
+      {% if page.duration %}
+      <p><strong>Duration:</strong> {{ page.duration }}</p>
+      {% endif %}
+      {% if page.funding %}
+      <p><strong>Funding:</strong> {{ page.funding }}</p>
+      {% endif %}
+      {% if page.team %}
+      <p><strong>Team:</strong> {{ page.team | join: ", " }}</p>
+      {% endif %}
+    </div>
+
+    <div class="project-content">
+      {{ content }}
+    </div>
+
+    <a href="{{ '/projects/' | relative_url }}" class="back-link">&larr; Back to Projects</a>
+  </div>
+</article>
