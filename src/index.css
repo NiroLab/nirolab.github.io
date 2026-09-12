@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* NIRO Lab - technical academic robotics palette
+       (graphite-petrol darks / teal primary / signal cyan / amber honors) */
+    --nsu-navy: #10222C;
+    --nsu-ink: #0B141A;
+    --nsu-blue: #0E7C8C;
+    --nsu-sky: #2FB8CE;
+    --nsu-skylight: #8AD8E6;
+    --nsu-ice: #E7F1F4;
+    --nsu-mist: #F4F8F9;
+    --nsu-gold: #E8A33D;
+    --nsu-text: #17303A;
+    --nsu-slate: #4E6570;
+    --nsu-line: #D3E2E8;
+    --nsu-line-dark: #1E3A44;
+
+    /* shadcn tokens mapped onto the same palette */
+    --background: 192 29% 97%;
+    --foreground: 197 43% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 197 43% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 197 43% 16%;
+    --primary: 188 82% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 194 37% 93%;
+    --secondary-foreground: 201 47% 12%;
+    --muted: 194 37% 93%;
+    --muted-foreground: 199 18% 37%;
+    --accent: 194 37% 93%;
+    --accent-foreground: 201 47% 12%;
+    --destructive: 355 64% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 197 31% 87%;
+    --input: 197 31% 87%;
+    --ring: 188 63% 50%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: auto; /* Lenis owns smooth scrolling */
+  }
+  body {
+    @apply bg-nsu-mist font-sans text-nsu-text antialiased;
+    font-feature-settings: "ss01";
+  }
+  h1, h2 {
+    @apply font-display text-nsu-navy;
+    text-wrap: balance;
+  }
+  h3, h4 {
+    @apply font-mono text-nsu-navy;
+    text-wrap: balance;
+  }
+  ::selection {
+    background: rgba(47, 184, 206, 0.25);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* ------------------------------------------------------------------
+   * Canonical type scale (design tokens)
+   *   Display : Sora 700, clamp(2.75rem, 6vw, 5rem)      - page H1
+   *   H2      : Sora 700, clamp(2rem, 3.6vw, 3rem)       - section titles
+   *   H3      : JetBrains Mono 600, 1.375rem / 1.25       - card titles
+   *   Eyebrow : JetBrains Mono 500, 0.75rem uppercase +0.22em, "// " prefix
+   *   Body    : Inter 400, 1.0625rem / 1.7  (long-form only)
+   *   Small   : JetBrains Mono 400, 0.875rem (meta, card body)
+   *   Button  : JetBrains Mono 600, 0.9375rem +0.01em (buttons & nav)
+   * The UI default font is JetBrains Mono (body element); Inter is used
+   * only for long-form paragraphs via font-body. Sora is reserved for
+   * large Display/H1-H2 headings.
+   * Color is applied by context (nsu-navy on light, white/sky on dark).
+   * ------------------------------------------------------------------ */
+  .type-display {
+    @apply font-display font-bold leading-[1.02] tracking-[-0.03em];
+    font-size: clamp(2.75rem, 6vw, 5rem);
+  }
+  .type-h2 {
+    @apply font-display font-bold leading-[1.1] tracking-[-0.02em];
+    font-size: clamp(2rem, 3.6vw, 3rem);
+  }
+  .type-h3 {
+    @apply font-mono text-[1.375rem] font-semibold leading-[1.25] tracking-[-0.01em];
+  }
+  .type-eyebrow {
+    @apply font-mono text-xs font-medium uppercase tracking-[0.22em];
+  }
+  .type-body {
+    @apply font-body text-[1.0625rem] font-normal leading-[1.7];
+  }
+  .type-small {
+    @apply font-sans text-sm font-normal;
+  }
+  .type-button {
+    @apply font-sans text-[0.9375rem] font-semibold tracking-[0.01em];
+  }
+
+  /* Content images get a subtle 1px boundary + standard radius so images
+     of any size/aspect read as distinct surfaces. Logos and icons are
+     excluded (they never use these classes or ContentImage). */
+  .content-img {
+    @apply rounded-2xl border border-nsu-line;
+  }
+  .content-img-dark {
+    @apply rounded-2xl border border-nsu-line-dark;
+  }
+}
+
+@layer utilities {
+  /* Blueprint grid motif - 48px cells + 240px major lines (design.md §1) */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(to right, rgba(14, 124, 140, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(14, 124, 140, 0.08) 1px, transparent 1px),
+      linear-gradient(to right, rgba(14, 124, 140, 0.14) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(14, 124, 140, 0.14) 1px, transparent 1px);
+    background-size:
+      48px 48px,
+      48px 48px,
+      240px 240px,
+      240px 240px;
+  }
+  .blueprint-grid-dark {
+    background-image:
+      linear-gradient(to right, rgba(47, 184, 206, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(47, 184, 206, 0.05) 1px, transparent 1px),
+      linear-gradient(to right, rgba(47, 184, 206, 0.09) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(47, 184, 206, 0.09) 1px, transparent 1px);
+    background-size:
+      48px 48px,
+      48px 48px,
+      240px 240px,
+      240px 240px;
+  }
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}

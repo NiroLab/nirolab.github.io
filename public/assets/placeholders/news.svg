@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-label="News image placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E7F1F4"/>
+      <stop offset="1" stop-color="#F4F8F9"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#0E7C8C" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#grid)"/>
+  <!-- navy orbit ring -->
+  <g transform="rotate(18 600 320)" fill="none" stroke="#10222C" stroke-opacity="0.35" stroke-width="3">
+    <ellipse cx="600" cy="320" rx="240" ry="132"/>
+  </g>
+  <circle cx="816" cy="262" r="10" fill="#E8A33D"/>
+  <!-- abstract megaphone -->
+  <g fill="none" stroke="#0E7C8C" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M470 300v60l60 12 90 64v-196l-90 64z"/>
+    <path d="M530 300v60"/>
+    <path d="M560 372l16 66" stroke-width="8"/>
+    <path d="M672 300c26 8 26 54 0 62" stroke-opacity="0.6"/>
+    <path d="M706 282c44 14 44 88 0 102" stroke-opacity="0.35"/>
+  </g>
+  <!-- gold ribbon -->
+  <path d="M760 430h120l-22 26 22 26H760z" fill="#E8A33D" fill-opacity="0.85"/>
+  <text x="600" y="590" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="18" letter-spacing="7" fill="#0E7C8C" fill-opacity="0.7">NEWS IMAGE PLACEHOLDER</text>
+</svg>
