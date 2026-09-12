@@ -1,6 +1,6 @@
 <!--
 =====================================================================
-  NIRO LAB — PERSON PROFILE TEMPLATE
+  NIRO LAB - PERSON PROFILE TEMPLATE
 =====================================================================
 
   Use this template to add or update a member profile on the NIRO Lab
@@ -10,7 +10,7 @@
   --------------
   1. Copy everything BELOW this instructions block into a new file.
   2. Replace every placeholder with real information.
-  3. Delete any OPTIONAL field you don't want to use — do NOT leave
+  3. Delete any OPTIONAL field you don't want to use - do NOT leave
      placeholders or empty values in the file you submit.
   4. Delete this instructions block before submitting.
   5. Write the bio in Markdown below the frontmatter. Suggested
@@ -40,7 +40,7 @@
   scholar             Google Scholar profile URL.
   linkedin            LinkedIn profile URL.
   research_interests  Comma-separated list, in quotes.
-  image               Leave as /assets/people/<your-slug>.jpg — see
+  image               Leave as /assets/people/<your-slug>.jpg - see
                       IMAGE below.
 
   FILE NAMING
@@ -56,7 +56,7 @@
   - Submit the JPG together with this .md file (see README.md).
   - If you submit no photo, the site shows a designed placeholder.
 
-  FILLED EXAMPLE (for reference only — do not submit)
+  FILLED EXAMPLE (for reference only - do not submit)
   ---------------------------------------------------
   ---
   name: "Dr. Jane Doe"
@@ -64,7 +64,7 @@
   category: affiliated_faculty
   order: 2
   email: jane.doe@northsouth.edu
-  phone: "+88 02 55668200 Ext – 6000"
+  phone: "+88 02 55668200 Ext - 6000"
   office: "SAC 900"
   image: /assets/people/jane-doe.jpg
   website: https://ece.northsouth.edu/people/jane-doe/

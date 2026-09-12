@@ -20,7 +20,7 @@ export default function PageHero({
   eyebrow: string;
   title: string;
   sub: string;
-  /** live chips — pass an empty array to hide gracefully */
+  /** live chips - pass an empty array to hide gracefully */
   chips?: string[];
   className?: string;
 }) {
@@ -59,7 +59,7 @@ export default function PageHero({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-sky"
+            className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#7FB3EC]"
           >
             {"// "}
             {eyebrow}
@@ -69,23 +69,22 @@ export default function PageHero({
         {/* word-mask H1 */}
         <h1 className="max-w-4xl font-display text-[clamp(2.5rem,5.5vw,4.25rem)] font-bold leading-[1.04] tracking-[-0.03em] text-white">
           {words.map((word, i) => (
-            <span
-              key={i}
-              className="inline-block overflow-hidden pb-[0.08em] align-bottom"
-            >
-              <motion.span
-                className="inline-block"
-                initial={{ y: reduced ? "0%" : "110%" }}
-                animate={{ y: "0%" }}
-                transition={{
-                  duration: 0.9,
-                  delay: 0.35 + i * 0.06,
-                  ease: PRECISION_EASE,
-                }}
-              >
-                {word}
-                {i < words.length - 1 ? " " : ""}
-              </motion.span>
+            <span key={i}>
+              <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
+                <motion.span
+                  className="inline-block"
+                  initial={{ y: reduced ? "0%" : "110%" }}
+                  animate={{ y: "0%" }}
+                  transition={{
+                    duration: 0.9,
+                    delay: 0.35 + i * 0.06,
+                    ease: PRECISION_EASE,
+                  }}
+                >
+                  {word}
+                </motion.span>
+              </span>
+              {i < words.length - 1 ? " " : null}
             </span>
           ))}
         </h1>

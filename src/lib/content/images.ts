@@ -6,7 +6,7 @@
  * (the contributor dropped a real photo at that exact path) or 404s.
  * We therefore:
  *   1. Return the contributor's path when present (real file swaps in
- *      automatically — no code change needed), and
+ *      automatically - no code change needed), and
  *   2. Render through <ContentImage/>, which falls back to the typed
  *      placeholder via onError if the file is not there yet.
  * When no image field is set at all, the typed placeholder is used directly.

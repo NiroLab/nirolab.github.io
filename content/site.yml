@@ -1,11 +1,11 @@
-# NIRO Lab — global site configuration (file-based CMS)
+# NIRO Lab - global site configuration (file-based CMS)
 name: "NIRO Lab"
 fullName: "NSU Intelligent Robotics Lab"
 tagline: "Advancing robotics research through innovation and collaboration"
 established: "October 2024"
 email: "nirolaboratory@gmail.com"
 address: "NIRO Lab, North South University, Bashundhara, Dhaka-1229, Bangladesh"
-officeHours: "Sun–Thu, 9:00 AM – 5:00 PM"
+officeHours: "Sun-Thu, 9:00 AM - 5:00 PM"
 university: "North South University"
 city: "Dhaka, Bangladesh"
 

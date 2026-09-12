@@ -71,18 +71,15 @@ export default function NewsPost() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: PRECISION_EASE }}
           >
-            <div className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-sky">
+            <div className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#7FB3EC]">
               {"// 404 · STORY NOT FOUND"}
             </div>
             <h1 className="font-display text-4xl font-bold tracking-[-0.02em] text-white md:text-5xl">
               This story isn't in the archive.
             </h1>
             <p className="mx-auto mt-4 max-w-md text-slate-300">
-              The link may be outdated, or the post file may have been renamed in{" "}
-              <code className="rounded bg-nsu-line-dark/60 px-1.5 py-0.5 font-mono text-[0.8125rem] text-nsu-sky">
-                content/news/
-              </code>
-              .
+              The link may be outdated, or the story may have been moved.
+              Browse the latest news from the lab instead.
             </p>
             <Link
               to="/news"
@@ -109,7 +106,7 @@ export default function NewsPost() {
         aria-hidden
       />
 
-      {/* ------------------------------------- section 1 — article hero */}
+      {/* ------------------------------------- section 1 - article hero */}
       <section className="relative flex min-h-[65dvh] items-end overflow-hidden bg-nsu-ink">
         <motion.div
           initial={{ scale: reduced ? 1 : 1.08 }}
@@ -135,7 +132,7 @@ export default function NewsPost() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-6 font-mono text-[11px] uppercase tracking-[0.22em] text-nsu-sky"
+            className="mb-6 font-mono text-[11px] uppercase tracking-[0.22em] text-[#7FB3EC]"
           >
             <Link to="/news" className="hover:text-white">
               NEWS
@@ -178,23 +175,22 @@ export default function NewsPost() {
           {/* word-mask title */}
           <h1 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.02em] text-white">
             {words.map((word, i) => (
-              <span
-                key={i}
-                className="inline-block overflow-hidden pb-[0.08em] align-bottom"
-              >
-                <motion.span
-                  className="inline-block"
-                  initial={{ y: reduced ? "0%" : "110%" }}
-                  animate={{ y: "0%" }}
-                  transition={{
-                    duration: 0.8,
-                    delay: 0.4 + i * 0.045,
-                    ease: PRECISION_EASE,
-                  }}
-                >
-                  {word}
-                  {i < words.length - 1 ? " " : ""}
-                </motion.span>
+              <span key={i}>
+                <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
+                  <motion.span
+                    className="inline-block"
+                    initial={{ y: reduced ? "0%" : "110%" }}
+                    animate={{ y: "0%" }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.4 + i * 0.045,
+                      ease: PRECISION_EASE,
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                </span>
+                {i < words.length - 1 ? " " : null}
               </span>
             ))}
           </h1>
@@ -227,10 +223,10 @@ export default function NewsPost() {
         </div>
       </section>
 
-      {/* -------------------------------------- section 2 — body + share */}
+      {/* -------------------------------------- section 2 - body + share */}
       <section className="bg-nsu-mist py-16 md:py-20">
         <div ref={bodyRef} className="relative mx-auto max-w-3xl px-5 md:px-8">
-          {/* share rail — sticky right on desktop, row on mobile */}
+          {/* share rail - sticky right on desktop, row on mobile */}
           <div className="lg:absolute lg:-right-24 lg:top-0 lg:h-full">
             <ShareRail title={post.title} />
           </div>
@@ -254,7 +250,7 @@ export default function NewsPost() {
         </div>
       </section>
 
-      {/* ------------------------------ section 3 — related + prev/next */}
+      {/* ------------------------------ section 3 - related + prev/next */}
       {(related.length > 0 || newer || older) && (
         <section className="border-t border-nsu-line bg-white py-16 md:py-20">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -262,7 +258,7 @@ export default function NewsPost() {
               <Reveal className="mb-12">
                 <div className="mb-6 flex items-center gap-3">
                   <span className="h-px w-8 bg-nsu-blue" />
-                  <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                  <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
                     {"// RELATED STORIES"}
                   </span>
                 </div>
@@ -396,7 +392,7 @@ function NavCard({
       )}
     >
       <div className="blueprint-grid-dark absolute inset-0 opacity-40" aria-hidden />
-      <span className="relative mb-2 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-nsu-sky">
+      <span className="relative mb-2 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[#7FB3EC]">
         {newer ? (
           <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-x-1" />
         ) : null}

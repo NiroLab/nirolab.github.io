@@ -14,7 +14,7 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 const PRECISION_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 const STATUS_ORDER = ["All", "Active", "Completed", "Concept"] as const;
 
-/* ------------------------------------------------ section 1 — page hero */
+/* ------------------------------------------------ section 1 - page hero */
 function PageHero({
   total,
   active,
@@ -51,7 +51,7 @@ function PageHero({
             transition={{ duration: 0.5, ease: PRECISION_EASE, delay: 0.2 }}
             className="h-px w-8 origin-left bg-nsu-sky"
           />
-          <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-sky">
+          <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#7FB3EC]">
             {"// RESEARCH PROJECTS"}
           </span>
         </motion.div>
@@ -65,7 +65,7 @@ function PageHero({
           transition={{ duration: 0.7, delay: 0.6, ease: PRECISION_EASE }}
           className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300"
         >
-          From educational robots to CubeSats — active research across land,
+          From educational robots to CubeSats - active research across land,
           air, water, and orbit.
         </motion.p>
         <motion.div
@@ -139,7 +139,7 @@ export default function Projects() {
         areas={areas.length}
       />
 
-      {/* section 2 — featured carousel (dark continuation) */}
+      {/* section 2 - featured carousel (dark continuation) */}
       {featured.length > 0 && (
         <section
           className="relative overflow-hidden bg-nsu-ink pb-24 pt-4 md:pb-28"
@@ -152,7 +152,7 @@ export default function Projects() {
         </section>
       )}
 
-      {/* section 3 — filter + grid (light) */}
+      {/* section 3 - filter + grid (light) */}
       <section className="relative py-24 md:py-32" aria-label="All projects">
         <div className="blueprint-grid absolute inset-0 opacity-60" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-5 md:px-8">
@@ -187,8 +187,7 @@ export default function Projects() {
             ) : all.length === 0 ? (
               <EmptyState
                 title="No projects yet"
-                message="This section is powered by content files — drop a project folder into content/projects/ and it appears here automatically."
-                contributeAnchor="projects"
+                message="New projects will appear here as the lab's research grows."
               />
             ) : (
               <div className="flex flex-col items-center rounded-2xl border border-dashed border-nsu-line bg-white/60 px-8 py-16 text-center">
@@ -214,7 +213,7 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* section 4 — proposal CTA (light end) */}
+      {/* section 4 - proposal CTA (light end) */}
       <section className="pb-24 md:pb-32" aria-label="Project proposals">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <RevealGroup className="relative overflow-hidden rounded-3xl border border-nsu-line bg-nsu-ice px-8 py-14 md:px-14">
@@ -223,7 +222,7 @@ export default function Projects() {
               <RevealItem className="max-w-2xl">
                 <div className="mb-4 flex items-center gap-3">
                   <span className="h-px w-8 bg-nsu-blue" />
-                  <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                  <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
                     {"// PROPOSE A PROJECT"}
                   </span>
                 </div>
@@ -232,22 +231,8 @@ export default function Projects() {
                 </h2>
                 <p className="mt-4 leading-relaxed text-nsu-slate">
                   We welcome proposals from students, faculty collaborators,
-                  and industry partners — from semester-long course builds to
+                  and industry partners - from semester-long course builds to
                   multi-year research platforms.
-                </p>
-                <p className="mt-4 font-mono text-xs text-nsu-slate">
-                  Projects are added via{" "}
-                  <code className="rounded bg-white px-1.5 py-0.5 text-nsu-navy">
-                    content/projects/
-                  </code>{" "}
-                  — see the{" "}
-                  <Link
-                    to="/contribute"
-                    className="text-nsu-blue underline decoration-nsu-blue/30 underline-offset-4 hover:decoration-nsu-blue"
-                  >
-                    Contribute guide
-                  </Link>
-                  .
                 </p>
               </RevealItem>
               <RevealItem>

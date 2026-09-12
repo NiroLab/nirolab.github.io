@@ -17,7 +17,6 @@ import Reveal, { RevealGroup, RevealItem } from "@/components/Reveal";
 import Stat from "@/components/Stat";
 import Chip from "@/components/Chip";
 import FeaturedProjectsBand from "@/components/FeaturedProjectsBand";
-import CursorDot from "@/components/CursorDot";
 import ContentImage, { PersonImage } from "@/components/ContentImage";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
@@ -64,25 +63,27 @@ function MaskedWords({
   return (
     <h1 className="font-display text-[clamp(2.75rem,6vw,5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-white">
       {words.map((word, i) => (
-        <span key={i} className="inline-block overflow-hidden pb-[0.08em] align-bottom">
-          <motion.span
-            className={cn(
-              "inline-block",
-              i >= gradientFrom &&
-                i <= gradientTo &&
-                "bg-sky-gradient bg-clip-text text-transparent",
-            )}
-            initial={{ y: reduced ? "0%" : "110%" }}
-            animate={{ y: "0%" }}
-            transition={{
-              duration: 0.9,
-              delay: 0.5 + i * 0.06,
-              ease: PRECISION_EASE,
-            }}
-          >
-            {word}
-            {i < words.length - 1 ? " " : ""}
-          </motion.span>
+        <span key={i}>
+          <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
+            <motion.span
+              className={cn(
+                "inline-block",
+                i >= gradientFrom &&
+                  i <= gradientTo &&
+                  "bg-sky-gradient bg-clip-text text-transparent",
+              )}
+              initial={{ y: reduced ? "0%" : "110%" }}
+              animate={{ y: "0%" }}
+              transition={{
+                duration: 0.9,
+                delay: 0.5 + i * 0.06,
+                ease: PRECISION_EASE,
+              }}
+            >
+              {word}
+            </motion.span>
+          </span>
+          {i < words.length - 1 ? " " : null}
         </span>
       ))}
     </h1>
@@ -101,7 +102,7 @@ function Hero() {
   const y = useTransform(scrollYProgress, [0, 0.9], [0, -80]);
   const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0.2]);
 
-  // "robotics research" (words 1–2) get the sky gradient
+  // "robotics research" (words 1-2) get the sky gradient
   const words = site.tagline.split(" ");
   const gradientFrom = words.findIndex((w) => w.toLowerCase().startsWith("robotics"));
   const gradientTo = gradientFrom >= 0 ? gradientFrom + 1 : -1;
@@ -151,7 +152,7 @@ function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-sky"
+              className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#7FB3EC]"
             >
               {"// NSU INTELLIGENT ROBOTICS LAB"}
             </motion.span>
@@ -165,7 +166,7 @@ function Hero() {
             transition={{ duration: 0.7, delay: 1.15, ease: PRECISION_EASE }}
             className="mt-6 max-w-2xl text-[1.0625rem] leading-[1.7] text-slate-200"
           >
-            An innovation hub at {site.university}, Dhaka — turning ideas into
+            An innovation hub at {site.university}, Dhaka - turning ideas into
             intelligent machines since {site.established}.
           </motion.p>
 
@@ -231,7 +232,7 @@ function Hero() {
 
 /* ------------------------------------------------------------ section 2 */
 const MISSION =
-  "We make robotics research accessible, impactful, and future-focused — transforming theoretical concepts into tangible, real-world solutions.";
+  "We make robotics research accessible, impactful, and future-focused - transforming theoretical concepts into tangible, real-world solutions.";
 
 function MissionWord({
   word,
@@ -249,9 +250,12 @@ function MissionWord({
   const color = useTransform(progress, [start, end], ["#5B6E8C", "#1B5FAA"]);
   const opacity = useTransform(progress, [start, end], [0.35, 1]);
   return (
-    <motion.span style={{ color, opacity }} className="inline-block">
-      {word}{" "}
-    </motion.span>
+    <>
+      <motion.span style={{ color, opacity }} className="inline-block">
+        {word}
+      </motion.span>
+      {index < total - 1 ? " " : null}
+    </>
   );
 }
 
@@ -270,7 +274,7 @@ function Mission() {
       <Reveal className="mx-auto max-w-3xl px-5 text-center md:px-8">
         <div className="mb-8 flex items-center justify-center gap-3">
           <span className="h-px w-8 bg-nsu-blue" />
-          <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+          <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
             {"// OUR MISSION"}
           </span>
           <span className="h-px w-8 bg-nsu-blue" />
@@ -330,7 +334,7 @@ function CycleTeaser() {
           <Reveal>
             <div className="mb-4 flex items-center gap-3">
               <span className="h-px w-8 bg-nsu-blue" />
-              <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+              <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
                 {"// HOW WE BUILD"}
               </span>
             </div>
@@ -338,7 +342,7 @@ function CycleTeaser() {
               The Robotics Innovation Cycle
             </h2>
             <p className="mt-4 max-w-lg text-[1.0625rem] leading-[1.7] text-nsu-slate">
-              Every project at NIRO Lab travels the same disciplined loop —
+              Every project at NIRO Lab travels the same disciplined loop -
               from simulation to physical testing, and back again smarter.
             </p>
           </Reveal>
@@ -599,7 +603,7 @@ function LeadershipAndNews() {
         <Reveal className="lg:col-span-5">
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-nsu-blue" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+            <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
               {"// LEADERSHIP"}
             </span>
           </div>
@@ -623,7 +627,7 @@ function LeadershipAndNews() {
         <Reveal className="lg:col-span-7" delay={0.15}>
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-nsu-blue" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+            <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
               {"// LATEST"}
             </span>
           </div>
@@ -692,14 +696,6 @@ function ClosingCTA() {
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </RevealItem>
-                <RevealItem y={16}>
-                  <Link
-                    to="/contribute"
-                    className="inline-flex items-center gap-2 rounded-full border border-nsu-sky/60 px-7 py-3.5 text-[0.9375rem] font-semibold tracking-[0.01em] text-nsu-sky transition-colors hover:bg-nsu-sky/10 hover:text-white active:scale-[0.97]"
-                  >
-                    Contribute content
-                  </Link>
-                </RevealItem>
               </RevealGroup>
             </div>
           </motion.div>
@@ -714,7 +710,6 @@ export default function Home() {
   const { featured } = useProjects();
   return (
     <>
-      <CursorDot />
       <Hero />
       <Mission />
       <StatsBand />

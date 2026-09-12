@@ -1,8 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Link } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  ArrowRight,
   ArrowUpDown,
   Command,
   Download,
@@ -25,12 +23,12 @@ type SortMode = "newest" | "oldest" | "title";
 const SORT_LABEL: Record<SortMode, string> = {
   newest: "Newest",
   oldest: "Oldest",
-  title: "Title A–Z",
+  title: "Title A-Z",
 };
 
 /* ------------------------------------------------ sample (empty state) */
 /** Rendered in the designed empty state as a labeled EXAMPLE of what one
- *  filled `content/publications/*.md` entry will look like. */
+ *  publication entry will look like. */
 const SAMPLE_PUB: Publication = {
   slug: "example-publication",
   filePath: "/content/publications/example-publication.md",
@@ -44,7 +42,7 @@ const SAMPLE_PUB: Publication = {
   pdf: undefined,
   code: undefined,
   abstract:
-    "A sample entry rendered from the publication template — replace it by dropping a real markdown file into content/publications/.",
+    "An illustrative example of how a publication from the lab will appear here once our first papers are published.",
   body: "",
   html: "",
   bibtex: null,
@@ -184,17 +182,17 @@ export default function Publications() {
 
   return (
     <>
-      {/* ------------------------------------------- section 1 — hero */}
+      {/* ------------------------------------------- section 1 - hero */}
       <PageHero
         eyebrow="PUBLICATIONS"
         title="Research in print."
-        sub="Peer-reviewed and presented work from NIRO Lab — robotics, AI, and intelligent systems."
+        sub="Peer-reviewed and presented work from NIRO Lab - robotics, AI, and intelligent systems."
         chips={heroChips}
       />
 
       {all.length > 0 ? (
         <>
-          {/* -------------------------------- section 2 — toolbar */}
+          {/* -------------------------------- section 2 - toolbar */}
           <motion.div
             initial={{ opacity: 0, y: reduced ? 0 : -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -282,7 +280,7 @@ export default function Publications() {
             </div>
           </motion.div>
 
-          {/* -------------------------------- section 3 — list */}
+          {/* -------------------------------- section 3 - list */}
           <section className="bg-nsu-mist py-16 md:py-20">
             <div className="mx-auto max-w-4xl px-5 md:px-8">
               {filtered.length === 0 ? (
@@ -317,7 +315,7 @@ export default function Publications() {
                       >
                         {/* sticky year header w/ ghost numeral */}
                         <div className="relative mb-2 flex items-end justify-between lg:sticky lg:top-[132px] lg:z-10 lg:bg-nsu-mist/90 lg:py-2 lg:backdrop-blur-sm">
-                          <h2 className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                          <h2 className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
                             {"// "}
                             {groupYear}
                             <span className="ml-3 text-nsu-slate">
@@ -351,7 +349,7 @@ export default function Publications() {
           </section>
         </>
       ) : (
-        /* ------------------------------ section 4 — empty state */
+        /* ------------------------------ section 4 - empty state */
         <section className="bg-nsu-mist py-20 md:py-28">
           <div className="mx-auto max-w-4xl px-5 md:px-8">
             <Reveal>
@@ -361,30 +359,10 @@ export default function Publications() {
                   Our first publications are on their way.
                 </h2>
                 <p className="mb-8 max-w-lg text-[0.9375rem] leading-relaxed text-nsu-slate">
-                  This section is powered by structured files in{" "}
-                  <code className="rounded bg-nsu-ice px-1.5 py-0.5 font-mono text-[0.8125rem] text-nsu-navy">
-                    content/publications/
-                  </code>
-                  . Drop in a completed publication template and it appears here
-                  automatically — no code changes needed.
+                  The lab is young and our first papers are in the pipeline.
+                  Peer-reviewed and presented work will be listed here as it is
+                  published.
                 </p>
-                <div className="flex flex-wrap items-center justify-center gap-4">
-                  <Link
-                    to="/contribute#publications"
-                    className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-nsu-navy to-nsu-blue px-7 py-3.5 text-[0.9375rem] font-semibold tracking-[0.01em] text-white ring-1 ring-nsu-sky/40 transition-transform active:scale-[0.97]"
-                  >
-                    How to submit a publication
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                  <a
-                    href="/templates/publication-template.md"
-                    download
-                    className="inline-flex items-center gap-2 rounded-full border border-nsu-blue/40 px-7 py-3.5 text-[0.9375rem] font-semibold tracking-[0.01em] text-nsu-blue transition-colors hover:bg-nsu-ice active:scale-[0.97]"
-                  >
-                    <Download className="h-4 w-4" />
-                    Download the template
-                  </a>
-                </div>
               </div>
             </Reveal>
 
@@ -394,7 +372,7 @@ export default function Publications() {
                 <div className="mb-3 flex items-center gap-3">
                   <span className="h-px flex-1 bg-nsu-line" />
                   <span className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-nsu-slate">
-                    Example — what one entry will look like
+                    Example - what one entry will look like
                   </span>
                   <span className="h-px flex-1 bg-nsu-line" />
                 </div>
@@ -407,7 +385,7 @@ export default function Publications() {
         </section>
       )}
 
-      {/* ---------------------------- section 5 — collaboration note */}
+      {/* ---------------------------- section 5 - collaboration note */}
       <section className="border-t border-nsu-line bg-nsu-ice/60 py-12">
         <Reveal className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 md:px-8">
           <p className="text-[0.9375rem] text-nsu-text">

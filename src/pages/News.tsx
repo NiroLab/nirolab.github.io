@@ -102,7 +102,7 @@ export default function News() {
 
   return (
     <>
-      {/* ------------------------------------------- section 1 — hero */}
+      {/* ------------------------------------------- section 1 - hero */}
       <PageHero
         eyebrow="NEWS & EVENTS"
         title="What's happening at NIRO."
@@ -115,8 +115,7 @@ export default function News() {
           <div className="mx-auto max-w-3xl px-5 md:px-8">
             <EmptyState
               title="No stories yet"
-              message="News posts are markdown files in content/news/ named YYYY-MM-DD-slug.md — drop one in and it appears here automatically, newest first."
-              contributeAnchor="news"
+              message="News and announcements from the lab will appear here."
             />
           </div>
         </section>
@@ -140,7 +139,7 @@ export default function News() {
         </section>
       ) : (
         <>
-          {/* --------------------- section 2 — pinned / latest feature */}
+          {/* --------------------- section 2 - pinned / latest feature */}
           {featured && (
             <section className="bg-nsu-mist pt-16 md:pt-24">
               <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -149,7 +148,7 @@ export default function News() {
                     to={`/news/${featured.slug}`}
                     className="group grid overflow-hidden rounded-3xl border border-nsu-line bg-white transition-shadow duration-500 hover:shadow-[0_1px_2px_rgba(10,42,94,0.06),0_8px_24px_-8px_rgba(10,42,94,0.12)] lg:grid-cols-12"
                   >
-                    {/* image — clip reveal */}
+                    {/* image - clip reveal */}
                     <div className="relative overflow-hidden lg:col-span-7">
                       <motion.div
                         initial={{ clipPath: reduced ? undefined : "inset(0 12% 0 0)" }}
@@ -218,7 +217,7 @@ export default function News() {
             </section>
           )}
 
-          {/* ------------------------------ section 3 — timeline feed */}
+          {/* ------------------------------ section 3 - timeline feed */}
           {feed.length > 0 && (
             <section className="bg-nsu-mist py-16 md:py-24">
               <div ref={feedRef} className="relative mx-auto max-w-7xl px-5 md:px-8">
@@ -289,13 +288,13 @@ export default function News() {
         </>
       )}
 
-      {/* ------------------------ section 4 — archive + tags footer */}
+      {/* ------------------------ section 4 - archive + tags footer */}
       {news.length > 0 && (
         <section className="border-t border-nsu-line bg-white py-14">
           <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
             <div className="flex flex-wrap items-start justify-between gap-8">
               <div className="max-w-2xl">
-                <div className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                <div className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
                   {"// FILTER BY TAG"}
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -334,7 +333,7 @@ export default function News() {
               </div>
 
               <div>
-                <div className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                <div className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
                   {"// ARCHIVE"}
                 </div>
                 <label className="relative inline-flex items-center">
@@ -355,17 +354,6 @@ export default function News() {
                 </label>
               </div>
             </div>
-
-            <p className="mt-10 font-mono text-[11px] leading-relaxed text-nsu-slate">
-              {"// News posts are markdown files in content/news/ — see "}
-              <Link
-                to="/contribute#news"
-                className="text-nsu-blue underline decoration-nsu-blue/30 underline-offset-4 hover:decoration-nsu-blue"
-              >
-                Contribute
-              </Link>
-              .
-            </p>
           </Reveal>
         </section>
       )}

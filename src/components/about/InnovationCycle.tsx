@@ -11,7 +11,7 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 /**
- * The Robotics Innovation Cycle (about.md §3) — the site's centerpiece
+ * The Robotics Innovation Cycle (about.md §3) - the site's centerpiece
  * scroll story. GSAP owns this component (isolated here, per react-dev.md
  * library-isolation rules).
  *
@@ -20,7 +20,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP);
  * draw solid sky, and a gold progress dot travelling the loop. On the final
  * stage the ring flashes, the ITERATE label pulses, and the ring docks at
  * 70% scale before unpinning.
- * Mobile / reduced motion: no pin — a sticky mini-ring header plus a
+ * Mobile / reduced motion: no pin - a sticky mini-ring header plus a
  * vertical list of the six stages with default reveals.
  */
 
@@ -57,7 +57,7 @@ const STAGE_DETAILS: {
   },
   {
     description:
-      "Real-world testing validates performance under true conditions. Every insight feeds straight back into the cycle — the loop begins again, smarter.",
+      "Real-world testing validates performance under true conditions. Every insight feeds straight back into the cycle - the loop begins again, smarter.",
     next: "Modelling & Simulation",
   },
 ];
@@ -233,7 +233,7 @@ function CyclePinned() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div className="flex items-center gap-3">
             <span className="h-px w-8 bg-nsu-sky" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-sky">
+            <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#7FB3EC]">
               {"// THE ROBOTICS INNOVATION CYCLE"}
             </span>
           </div>
@@ -243,7 +243,7 @@ function CyclePinned() {
         </div>
 
         <div className="mt-8 grid items-center gap-12 md:mt-12 md:grid-cols-5">
-          {/* left 40% — current stage panel */}
+          {/* left 40% - current stage panel */}
           <div className="relative min-h-[300px] md:col-span-2 md:min-h-[340px]">
             {INNOVATION_CYCLE.map((stage, i) => (
               <div
@@ -279,7 +279,7 @@ function CyclePinned() {
             ))}
           </div>
 
-          {/* right 60% — circular cycle diagram */}
+          {/* right 60% - circular cycle diagram */}
           <div className="flex justify-center md:col-span-3">
             <div
               ref={ringRef}
@@ -416,7 +416,7 @@ function CycleStatic() {
         <Reveal>
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-nsu-sky" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-sky">
+            <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#7FB3EC]">
               {"// THE ROBOTICS INNOVATION CYCLE"}
             </span>
           </div>
@@ -424,7 +424,7 @@ function CycleStatic() {
             Six stages. One loop.
           </h2>
           <p className="mt-4 max-w-xl text-[1.0625rem] leading-[1.7] text-slate-300">
-            Every project at NIRO Lab travels the same disciplined cycle —
+            Every project at NIRO Lab travels the same disciplined cycle -
             from simulation to physical testing, and back again smarter.
           </p>
         </Reveal>

@@ -133,7 +133,7 @@ export default function PersonCard({ person, index, onOpen }: CardProps) {
 }
 
 /**
- * Alumni variant (people.md §3): compact horizontal row — 56px circular
+ * Alumni variant (people.md §3): compact horizontal row - 56px circular
  * portrait + name + current position / role + Alumni tag.
  */
 export function AlumniRow({ person, index, onOpen }: CardProps) {

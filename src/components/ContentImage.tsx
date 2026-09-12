@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 /**
  * CMS image with automatic typed-placeholder fallback (design.md §7.4).
  * If the contributor's file at `src` is missing, the typed placeholder
- * from /assets/placeholders/ is rendered instead — the layout never breaks.
+ * from /assets/placeholders/ is rendered instead - the layout never breaks.
  */
 export default function ContentImage({
   src,

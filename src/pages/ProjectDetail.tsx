@@ -79,7 +79,7 @@ function useTocAndHtml(project: Project): { toc: TocItem[]; html: string } {
   }, [project]);
 }
 
-/* -------------------------------------------- section 1 — detail hero */
+/* -------------------------------------------- section 1 - detail hero */
 
 function HeroFactsCard({ project }: { project: Project }) {
   const matchedByName = new Map(project.teamMembers.map((p) => [p.name, p]));
@@ -219,7 +219,7 @@ function DetailHero({ project }: { project: Project }) {
       className="relative flex min-h-[70vh] items-end overflow-hidden bg-nsu-ink"
       aria-label="Project hero"
     >
-      {/* full-bleed image — slow zoom-out 1.08 → 1 over 1.4s */}
+      {/* full-bleed image - slow zoom-out 1.08 → 1 over 1.4s */}
       <motion.div
         className="absolute inset-0"
         initial={{ scale: reduced ? 1 : 1.08 }}
@@ -263,7 +263,7 @@ function DetailHero({ project }: { project: Project }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mb-4 font-mono text-xs uppercase tracking-[0.22em] text-nsu-sky"
+              className="mb-4 font-mono text-xs uppercase tracking-[0.22em] text-[#7FB3EC]"
             >
               PROJECTS <span className="text-slate-500">/</span>{" "}
               {project.slug.toUpperCase()}
@@ -317,7 +317,7 @@ function DetailHero({ project }: { project: Project }) {
   );
 }
 
-/* ----------------------------------- section 2 — body with sticky TOC */
+/* ----------------------------------- section 2 - body with sticky TOC */
 
 function BodyWithToc({ project }: { project: Project }) {
   const { toc, html } = useTocAndHtml(project);
@@ -419,8 +419,7 @@ function BodyWithToc({ project }: { project: Project }) {
           ) : (
             <EmptyState
               title="No write-up yet"
-              message="This project's markdown body is empty — add ## Overview / ## Objectives sections to the project file and they render here automatically."
-              contributeAnchor="projects"
+              message="A detailed write-up for this project will be published here soon."
             />
           )}
         </Reveal>
@@ -429,7 +428,7 @@ function BodyWithToc({ project }: { project: Project }) {
   );
 }
 
-/* ------------------------------------------- section 3 — team strip */
+/* ------------------------------------------- section 3 - team strip */
 
 function TeamStrip({ project }: { project: Project }) {
   if (project.team.length === 0) return null;
@@ -442,7 +441,7 @@ function TeamStrip({ project }: { project: Project }) {
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <div className="mb-10 flex items-center gap-3">
           <span className="h-px w-8 bg-nsu-blue" />
-          <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+          <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
             {"// PROJECT TEAM"}
           </span>
         </div>
@@ -503,7 +502,7 @@ function TeamStrip({ project }: { project: Project }) {
   );
 }
 
-/* ------------------------------ section 4 — related achievements */
+/* ------------------------------ section 4 - related achievements */
 
 function RelatedAchievements({ project }: { project: Project }) {
   const achievements = useAchievements();
@@ -586,7 +585,7 @@ function RelatedAchievements({ project }: { project: Project }) {
   );
 }
 
-/* ------------------------------------ section 5 — prev / next (navy) */
+/* ------------------------------------ section 5 - prev / next (navy) */
 
 function PrevNextNav({ project }: { project: Project }) {
   const { all } = useProjects();
@@ -678,19 +677,16 @@ function MissingProject({ slug }: { slug: string }) {
     <section className="relative overflow-hidden bg-hero-gradient py-32 md:py-40">
       <div className="blueprint-grid-dark absolute inset-0" aria-hidden />
       <div className="relative mx-auto max-w-3xl px-5 text-center md:px-8">
-        <p className="font-mono text-xs uppercase tracking-[0.22em] text-nsu-sky">
+        <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#7FB3EC]">
           {"// PROJECTS / "}
           {slug.toUpperCase()}
         </p>
         <h1 className="mt-4 font-display text-4xl font-bold tracking-[-0.02em] text-white md:text-5xl">
-          This project file hasn't been added yet
+          Project not found
         </h1>
         <p className="mx-auto mt-5 max-w-xl leading-relaxed text-slate-300">
-          There's no entry for{" "}
-          <code className="rounded bg-nsu-line-dark/60 px-1.5 py-0.5 font-mono text-sm text-nsu-sky">
-            content/projects/{slug}/{slug}.md
-          </code>{" "}
-          — it may have been renamed, or the content hasn't been migrated.
+          We couldn't find a project matching this link - it may have been
+          renamed or moved. Browse the full list of current projects instead.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link
@@ -699,12 +695,6 @@ function MissingProject({ slug }: { slug: string }) {
           >
             <ArrowLeft className="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1" />
             All projects
-          </Link>
-          <Link
-            to="/contribute#projects"
-            className="inline-flex items-center gap-2 rounded-full border border-nsu-sky/60 px-6 py-3 text-sm font-semibold text-nsu-sky transition-colors hover:bg-nsu-sky/10 hover:text-white"
-          >
-            How to add it
           </Link>
         </div>
       </div>

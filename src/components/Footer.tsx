@@ -13,7 +13,7 @@ import {
 import { useSite } from "@/lib/content";
 
 /** Footer (design.md §8.2): deep ink, node-and-wire motif, NIRO watermark,
- * 4 columns, CTA band above (except /contribute), back-to-top pill. */
+ * 4 columns, CTA band above (except /contact), back-to-top pill. */
 export default function Footer() {
   const site = useSite();
   const location = useLocation();
@@ -36,7 +36,7 @@ export default function Footer() {
 
   return (
     <>
-      {location.pathname !== "/contribute" && location.pathname !== "/contact" && (
+      {location.pathname !== "/contact" && (
         <div className="mx-auto max-w-7xl px-5 pb-4 md:px-8">
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-nsu-ink via-nsu-navy to-nsu-blue px-8 py-14 md:px-14">
             <div className="blueprint-grid-dark absolute inset-0" aria-hidden />
@@ -64,10 +64,10 @@ export default function Footer() {
                 </a>
               </div>
               <Link
-                to="/contribute"
-                className="group inline-flex items-center gap-2 rounded-full border border-nsu-sky/60 px-6 py-3 text-sm font-semibold text-nsu-sky transition-colors hover:bg-nsu-sky/10 hover:text-white"
+                to="/contact"
+                className="group inline-flex items-center gap-2 rounded-full border border-white/50 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
               >
-                See how to contribute
+                Get in touch
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
@@ -113,10 +113,10 @@ export default function Footer() {
                 <img src="/assets/brand/nsu-mark.svg" alt="" className="h-10 w-10" />
               </div>
               <p className="mt-5 text-sm leading-relaxed">
-                {site.fullName} — an innovation hub turning ideas into
+                {site.fullName} - an innovation hub turning ideas into
                 intelligent machines.
               </p>
-              <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.22em] text-nsu-sky">
+              <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.22em] text-[#7FB3EC]">
                 {site.university}
               </p>
               <div className="mt-5 flex gap-2">
@@ -137,7 +137,7 @@ export default function Footer() {
 
             {/* explore */}
             <nav aria-label="Explore">
-              <h4 className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-sky">
+              <h4 className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#7FB3EC]">
                 {"// EXPLORE"}
               </h4>
               <ul className="space-y-2.5 text-sm">
@@ -151,30 +151,30 @@ export default function Footer() {
               </ul>
             </nav>
 
-            {/* content system */}
-            <nav aria-label="Content system">
-              <h4 className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-sky">
-                {"// CONTENT SYSTEM"}
+            {/* research */}
+            <nav aria-label="Research">
+              <h4 className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#7FB3EC]">
+                {"// RESEARCH"}
               </h4>
               <ul className="space-y-2.5 text-sm">
                 <li>
-                  <Link to="/contribute" className="transition-colors hover:text-white">
-                    Contribute guide
+                  <Link to="/about" className="transition-colors hover:text-white">
+                    About the lab
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contribute#templates" className="transition-colors hover:text-white">
-                    Templates
+                  <Link to="/projects" className="transition-colors hover:text-white">
+                    Projects
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contribute#folders" className="transition-colors hover:text-white">
-                    Folder map
+                  <Link to="/publications" className="transition-colors hover:text-white">
+                    Publications
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contribute#images" className="transition-colors hover:text-white">
-                    Image specs
+                  <Link to="/news" className="transition-colors hover:text-white">
+                    News
                   </Link>
                 </li>
               </ul>
@@ -182,7 +182,7 @@ export default function Footer() {
 
             {/* contact */}
             <div>
-              <h4 className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-sky">
+              <h4 className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#7FB3EC]">
                 {"// CONTACT"}
               </h4>
               <address className="space-y-3 text-sm not-italic leading-relaxed">
@@ -201,10 +201,10 @@ export default function Footer() {
 
           <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-nsu-line-dark pt-6 text-xs text-slate-400">
             <span>
-              © {new Date().getFullYear()} {site.name} — {site.university}
+              © {new Date().getFullYear()} {site.name} - {site.university}
             </span>
             <span className="font-mono tracking-wide">
-              Built with a file-based CMS · content lives in /content
+              {site.university} · {site.city}
             </span>
           </div>
         </div>

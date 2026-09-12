@@ -2,7 +2,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router";
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import {
-  ArrowRight,
   Check,
   Copy,
   GraduationCap,
@@ -84,26 +83,28 @@ function Hero({ counts }: { counts: Record<PersonCategory, number> }) {
             transition={{ duration: 0.5, ease: PRECISION_EASE }}
             className="h-px w-8 origin-left bg-nsu-sky"
           />
-          <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-sky">
+          <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#7FB3EC]">
             {"// THE PEOPLE"}
           </span>
         </motion.div>
 
         <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em] text-white">
           {titleWords.map((word, i) => (
-            <span key={word} className="inline-block overflow-hidden pb-[0.08em] align-bottom">
-              <motion.span
-                className={cn(
-                  "inline-block",
-                  word === "minds" && "bg-sky-gradient bg-clip-text text-transparent",
-                )}
-                initial={{ y: reduced ? "0%" : "110%" }}
-                animate={{ y: "0%" }}
-                transition={{ duration: 0.9, delay: 0.2 + i * 0.06, ease: PRECISION_EASE }}
-              >
-                {word}
-                {i < titleWords.length - 1 ? " " : ""}
-              </motion.span>
+            <span key={word}>
+              <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
+                <motion.span
+                  className={cn(
+                    "inline-block",
+                    word === "minds" && "bg-sky-gradient bg-clip-text text-transparent",
+                  )}
+                  initial={{ y: reduced ? "0%" : "110%" }}
+                  animate={{ y: "0%" }}
+                  transition={{ duration: 0.9, delay: 0.2 + i * 0.06, ease: PRECISION_EASE }}
+                >
+                  {word}
+                </motion.span>
+              </span>
+              {i < titleWords.length - 1 ? " " : null}
             </span>
           ))}
         </h1>
@@ -118,7 +119,7 @@ function Hero({ counts }: { counts: Record<PersonCategory, number> }) {
           North South University.
         </motion.p>
 
-        {/* live count chips — auto-derived from the CMS */}
+        {/* live count chips - auto-derived from the member directory */}
         <div className="mt-8 flex flex-wrap gap-2.5">
           {CATEGORY_ORDER.map((cat, i) => (
             <motion.span
@@ -128,7 +129,7 @@ function Hero({ counts }: { counts: Record<PersonCategory, number> }) {
               transition={{ duration: 0.35, delay: 0.7 + i * 0.06, ease: PRECISION_EASE }}
               className="inline-flex items-center gap-2 rounded-full border border-nsu-sky/30 bg-white/5 px-4 py-1.5 font-mono text-[11px] tracking-[0.14em] text-slate-200"
             >
-              <span className="font-semibold tabular-nums text-nsu-sky">{counts[cat]}</span>
+              <span className="font-semibold tabular-nums text-[#7FB3EC]">{counts[cat]}</span>
               {CATEGORY_META[cat].hero}
             </motion.span>
           ))}
@@ -208,7 +209,7 @@ function FilterBar({
           })}
         </div>
 
-        {/* search — filters name / role / interest, expands on focus */}
+        {/* search - filters name / role / interest, expands on focus */}
         <div className="relative ml-auto">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-nsu-slate" />
           <input
@@ -252,7 +253,7 @@ function CategorySection({
   return (
     <section aria-label={CATEGORY_META[category].label} className="mb-14 last:mb-0">
       <div className="mb-6 flex items-center gap-4">
-        <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+        <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
           {"// "}
           {CATEGORY_META[category].label}
         </span>
@@ -335,7 +336,7 @@ function JoinCta({ email }: { email: string }) {
             Want to research with us?
           </h3>
           <p className="mt-3 max-w-md text-[0.9375rem] leading-relaxed text-nsu-slate">
-            NIRO Lab welcomes motivated students at every level — no prior
+            NIRO Lab welcomes motivated students at every level - no prior
             robotics experience required, just curiosity and commitment.{" "}
             <Link to="/contact" className="font-medium text-nsu-blue underline decoration-nsu-blue/30 underline-offset-4 hover:decoration-nsu-blue">
               Get in touch
@@ -400,7 +401,7 @@ export default function People() {
     [groups],
   );
 
-  // current filtered list — also the Prev/Next cycle list for the modal
+  // current filtered list - also the Prev/Next cycle list for the modal
   const visible = useMemo(() => {
     const searched = people.filter((p) => matchesQuery(p, debouncedQuery.trim()));
     return filter === "all" ? searched : searched.filter((p) => p.category === filter);
@@ -460,8 +461,7 @@ export default function People() {
           {people.length === 0 ? (
             <EmptyState
               title="No members yet"
-              message="This directory is powered by content files — drop a markdown file into content/people/ and the member appears here automatically."
-              contributeAnchor="people"
+              message="Our member directory will appear here as the lab grows."
             />
           ) : visible.length === 0 ? (
             <div className="flex flex-col items-center rounded-2xl border border-dashed border-nsu-line bg-white/60 px-8 py-16 text-center">
@@ -525,29 +525,6 @@ export default function People() {
             </AnimatePresence>
           )}
 
-          {/* CMS note — teaches the system without cluttering */}
-          {people.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="mt-16 flex flex-wrap items-center justify-center gap-3 text-center"
-            >
-              <p className="font-mono text-xs leading-relaxed text-nsu-slate">
-                This directory updates automatically from{" "}
-                <code className="rounded bg-nsu-ice px-1.5 py-0.5 text-nsu-navy">content/people/</code>
-                {" "}— members: submit your profile via the Contribute guide
-              </p>
-              <Link
-                to="/contribute#people"
-                className="group inline-flex items-center gap-1.5 rounded-full border border-nsu-blue/40 px-4 py-1.5 font-mono text-[11px] font-medium text-nsu-blue transition-colors hover:bg-nsu-ice"
-              >
-                Contribute guide
-                <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </motion.div>
-          )}
         </div>
       </div>
 

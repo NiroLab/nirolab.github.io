@@ -8,7 +8,7 @@ import ContentHealthBadge from "./ContentHealthBadge";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 /**
- * Layout: sticky dark-glass nav (in normal flow — no page offsets needed),
+ * Layout: sticky dark-glass nav (in normal flow - no page offsets needed),
  * scroll-progress hairline, <Outlet/> content slot, footer.
  * Owns Lenis smooth scrolling (disabled for reduced motion) and
  * scroll-to-top on route change.
@@ -23,7 +23,7 @@ export default function Layout() {
     restDelta: 0.001,
   });
 
-  // Lenis smooth scroll (lerp 0.09, wheelMultiplier 0.95 — design.md §6)
+  // Lenis smooth scroll (lerp 0.09, wheelMultiplier 0.95 - design.md §6)
   useEffect(() => {
     if (reduced) return;
     const lenis = new Lenis({ lerp: 0.09, wheelMultiplier: 0.95 });

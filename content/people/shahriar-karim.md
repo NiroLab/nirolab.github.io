@@ -4,7 +4,7 @@ role: "Associate Professor"
 category: affiliated_faculty
 order: 1
 email: shahriar.karim@northsouth.edu
-phone: "+88 02 55668200 Ext – 6373"
+phone: "+88 02 55668200 Ext - 6373"
 office: "SAC 1045B"
 image: /assets/people/shahriar-karim.jpg
 website: https://ece.northsouth.edu/~shahriar.karim/

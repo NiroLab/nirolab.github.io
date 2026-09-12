@@ -1,6 +1,6 @@
 <!--
 =====================================================================
-  NIRO LAB — NEWS / ANNOUNCEMENT TEMPLATE
+  NIRO LAB - NEWS / ANNOUNCEMENT TEMPLATE
 =====================================================================
 
   Use this template to submit a news post: awards, events, workshops,
@@ -10,11 +10,11 @@
   --------------
   1. Copy everything BELOW this instructions block into a new file.
   2. Replace every placeholder with real information.
-  3. Delete any OPTIONAL field you don't want to use — do NOT leave
+  3. Delete any OPTIONAL field you don't want to use - do NOT leave
      placeholders or empty values in the file you submit.
   4. Delete this instructions block before submitting.
   5. Write the story in Markdown below the frontmatter. Do NOT repeat
-     the title as a top-level "# Heading" — the site renders it for
+     the title as a top-level "# Heading" - the site renders it for
      you. Use ## for section headings inside the story.
 
   REQUIRED FIELDS
@@ -25,12 +25,12 @@
   OPTIONAL FIELDS (delete if unused)
   ----------------------------------
   summary  1-2 sentence teaser shown on cards and previews.
-  image    Leave as /assets/news/<post-slug>.jpg — see IMAGE below.
+  image    Leave as /assets/news/<post-slug>.jpg - see IMAGE below.
   tags     Short lowercase labels, e.g. ["competition", "award"].
            Common tags: competition, award, workshop, outreach,
            education, event, summit, showcase, media.
   pinned   true or false. Pinned posts stay at the top of the news
-           page — reserve for major announcements (lab directors
+           page - reserve for major announcements (lab directors
            decide). (defaults to false)
 
   FILE NAMING (the date is part of the name)
@@ -50,7 +50,7 @@
   - If you submit no cover image, the site shows a designed
     placeholder.
 
-  FILLED EXAMPLE (for reference only — do not submit)
+  FILLED EXAMPLE (for reference only - do not submit)
   ---------------------------------------------------
   ---
   title: "NIRO Lab wins Championship Award at BEAR Summit 2025"
@@ -86,8 +86,8 @@ tags: []
 pinned: false
 ---
 
-Write the full story here. Start with the key facts — who, what, when,
-where — then add context, quotes, and photos.
+Write the full story here. Start with the key facts - who, what, when,
+where - then add context, quotes, and photos.
 
 ## A section heading (optional)
 

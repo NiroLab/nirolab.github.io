@@ -93,7 +93,7 @@ export default function PubItem({
   memberSurnames,
 }: {
   pub: Publication;
-  /** lowercase surnames of NIRO members — matched authors render bold */
+  /** lowercase surnames of NIRO members - matched authors render bold */
   memberSurnames: Set<string>;
 }) {
   const [abstractOpen, setAbstractOpen] = useState(false);

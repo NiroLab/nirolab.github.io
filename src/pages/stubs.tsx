@@ -1,13 +1,13 @@
 import { useParams } from "react-router";
 
-/** Temporary placeholder page — later page agents replace these stubs. */
+/** Temporary placeholder page - later page agents replace these stubs. */
 export default function Stub({ name }: { name: string }) {
   const params = useParams();
   return (
     <div className="mx-auto max-w-7xl px-5 py-32 md:px-8">
       <div className="mb-4 flex items-center gap-3">
         <span className="h-px w-8 bg-nsu-blue" />
-        <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+        <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
           {"// COMING SOON"}
         </span>
       </div>

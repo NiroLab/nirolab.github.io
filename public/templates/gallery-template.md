@@ -1,16 +1,16 @@
 <!--
 =====================================================================
-  NIRO LAB — GALLERY PHOTO TEMPLATE
+  NIRO LAB - GALLERY PHOTO TEMPLATE
 =====================================================================
 
   Use this template to submit a photo for the website gallery. One
-  .md file per photo — submit several files for a photo set.
+  .md file per photo - submit several files for a photo set.
 
   HOW TO FILL IN
   --------------
   1. Copy everything BELOW this instructions block into a new file.
   2. Replace every placeholder with real information.
-  3. Delete any OPTIONAL field you don't want to use — do NOT leave
+  3. Delete any OPTIONAL field you don't want to use - do NOT leave
      placeholders or empty values in the file you submit.
   4. Delete this instructions block before submitting.
   5. The Markdown body below the frontmatter is a short caption
@@ -20,7 +20,7 @@
   ---------------
   title  Short caption title for the photo.
   date   Date the photo was taken, in EXACT format:  YYYY-MM-DD
-  image  Path to the photo — see IMAGE below. This field is REQUIRED:
+  image  Path to the photo - see IMAGE below. This field is REQUIRED:
          a gallery entry without a photo cannot be published.
 
   OPTIONAL FIELDS (delete if unused)
@@ -28,7 +28,7 @@
   category  EXACTLY one of:  lab | events | research | team
             (defaults to lab)
   alt       Alt text describing the photo for screen readers and SEO.
-            Please fill this in — it makes the site accessible.
+            Please fill this in - it makes the site accessible.
   credit    Photo credit, e.g. "NIRO Lab media team" or your name.
 
   FILE NAMING
@@ -43,7 +43,7 @@
     /assets/gallery/<photo-slug>.jpg so the two match.
   - Submit the JPG together with this .md file (see README.md).
 
-  FILLED EXAMPLE (for reference only — do not submit)
+  FILLED EXAMPLE (for reference only - do not submit)
   ---------------------------------------------------
   ---
   title: "NIRO Lab team at BEAR Summit 2025"

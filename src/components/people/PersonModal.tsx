@@ -166,7 +166,7 @@ export default function PersonModal({
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
-        aria-label={`${person.name} — profile`}
+        aria-label={`${person.name} - profile`}
         initial={{ opacity: 0, y: 24, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 16, scale: 0.98, transition: { duration: 0.25, ease: [0.65, 0, 0.35, 1] } }}
@@ -255,8 +255,7 @@ export default function PersonModal({
               <Markdown html={person.html} className="text-[0.9375rem] sm:text-base" />
             ) : (
               <p className="text-sm italic text-nsu-slate">
-                This profile has no extended bio yet — add markdown to the
-                person's content file and it renders here automatically.
+                This profile has no extended bio yet.
               </p>
             )}
           </motion.div>
@@ -268,7 +267,7 @@ export default function PersonModal({
             >
               {facts.length > 0 && (
                 <div>
-                  <h3 className="mb-3 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                  <h3 className="mb-3 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-nsu-blue">
                     {"// FACTS"}
                   </h3>
                   <ul className="space-y-3">
@@ -290,7 +289,7 @@ export default function PersonModal({
               )}
               {interests.length > 0 && (
                 <div>
-                  <h3 className="mb-3 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                  <h3 className="mb-3 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-nsu-blue">
                     {"// RESEARCH INTERESTS"}
                   </h3>
                   <div className="flex flex-wrap gap-1.5">
@@ -316,7 +315,7 @@ export default function PersonModal({
               Prev
             </button>
             <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-nsu-slate">
-              {index >= 0 ? index + 1 : "–"} / {total}
+              {index >= 0 ? index + 1 : "-"} / {total}
             </span>
             <button
               type="button"

@@ -36,7 +36,7 @@ export default function Reveal({
   );
 }
 
-/** Stagger container — children wrapped in <RevealItem/> animate 0.1s apart. */
+/** Stagger container - children wrapped in <RevealItem/> animate 0.1s apart. */
 export function RevealGroup({
   children,
   className,

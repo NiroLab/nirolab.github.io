@@ -58,7 +58,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25 }}
-            className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-sky"
+            className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#7FB3EC]"
           >
             {"// CONTACT"}
           </motion.span>
@@ -66,23 +66,22 @@ function Hero() {
 
         <h1 className="font-display text-[clamp(2.75rem,6vw,5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-white">
           {words.map((word, i) => (
-            <span
-              key={i}
-              className="inline-block overflow-hidden pb-[0.08em] align-bottom"
-            >
-              <motion.span
-                className="inline-block"
-                initial={{ y: reduced ? "0%" : "110%" }}
-                animate={{ y: "0%" }}
-                transition={{
-                  duration: 0.9,
-                  delay: 0.3 + i * 0.06,
-                  ease: PRECISION_EASE,
-                }}
-              >
-                {word}
-                {i < words.length - 1 ? " " : ""}
-              </motion.span>
+            <span key={i}>
+              <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
+                <motion.span
+                  className="inline-block"
+                  initial={{ y: reduced ? "0%" : "110%" }}
+                  animate={{ y: "0%" }}
+                  transition={{
+                    duration: 0.9,
+                    delay: 0.3 + i * 0.06,
+                    ease: PRECISION_EASE,
+                  }}
+                >
+                  {word}
+                </motion.span>
+              </span>
+              {i < words.length - 1 ? " " : null}
             </span>
           ))}
         </h1>
@@ -108,7 +107,7 @@ function CopyEmailChip({ email }: { email: string }) {
     try {
       await navigator.clipboard.writeText(email);
     } catch {
-      // clipboard unavailable (non-secure context) — select fallback
+      // clipboard unavailable (non-secure context) - select fallback
       const ta = document.createElement("textarea");
       ta.value = email;
       document.body.appendChild(ta);
@@ -338,7 +337,7 @@ function ContactForm() {
     if (Object.keys(next).length > 0) return;
 
     setStatus("sending");
-    // Static hosting: no backend — the form composes a prefilled mailto as
+    // Static hosting: no backend - the form composes a prefilled mailto as
     // graceful degradation, then shows the success state.
     timerRef.current = window.setTimeout(() => {
       const subject = `[${topic}] Message from ${name.trim()}`;
@@ -366,14 +365,14 @@ function ContactForm() {
           <Check className="h-8 w-8 text-nsu-success" />
         </span>
         <h2 className="mt-6 font-display text-2xl font-semibold text-nsu-navy">
-          Message sent — we'll be in touch.
+          Message sent - we'll be in touch.
         </h2>
         <p className="mt-3 max-w-sm text-sm leading-[1.7] text-nsu-slate">
           Your email client should have opened with a pre-filled message to{" "}
           <span className="font-mono text-[13px] text-nsu-blue">
             {site.email}
           </span>{" "}
-          — just hit send there. (The site is statically hosted, so email is
+          - just hit send there. (The site is statically hosted, so email is
           our transport.)
         </p>
         <button
@@ -493,7 +492,7 @@ function ContactForm() {
         )}
       </div>
 
-      {/* honeypot — invisible to humans, irresistible to bots */}
+      {/* honeypot - invisible to humans, irresistible to bots */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
         <label htmlFor="contact-company">Company</label>
         <input
@@ -525,7 +524,7 @@ function ContactForm() {
           )}
         </button>
         <span className="text-xs leading-relaxed text-nsu-slate">
-          Static site — messages are delivered via your own email client.
+          Static site - messages are delivered via your own email client.
         </span>
       </div>
     </form>
@@ -571,7 +570,7 @@ function MapSection() {
           <div className="relative overflow-hidden rounded-3xl border border-nsu-line">
             <img
               src="/assets/placeholders/map.svg"
-              alt="Map placeholder showing North South University, Bashundhara, Dhaka"
+              alt="Map showing North South University, Bashundhara, Dhaka"
               className="aspect-[16/7] w-full object-cover"
               loading="lazy"
             />
@@ -645,7 +644,7 @@ function Pathways() {
       icon: GraduationCap,
       title: "For Students",
       pitch:
-        "Join NIRO as a student researcher — work on real robots, compete nationally, and learn the full innovation cycle hands-on.",
+        "Join NIRO as a student researcher - work on real robots, compete nationally, and learn the full innovation cycle hands-on.",
       cta: "See open paths",
       href: "/people",
       external: false,
@@ -681,7 +680,7 @@ function Pathways() {
         <div className="mb-12">
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-nsu-sky" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-sky">
+            <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#7FB3EC]">
               {"// COLLABORATE"}
             </span>
           </div>
@@ -705,7 +704,7 @@ function Pathways() {
                 {external ? (
                   <a
                     href={href}
-                    className="group/btn mt-7 inline-flex items-center gap-2 self-start rounded-full border border-nsu-sky/60 px-6 py-2.5 text-sm font-semibold text-nsu-sky transition-colors hover:bg-nsu-sky/10 hover:text-white"
+                    className="group/btn mt-7 inline-flex items-center gap-2 self-start rounded-full border border-nsu-sky/60 px-6 py-2.5 text-sm font-semibold text-[#7FB3EC] transition-colors hover:bg-nsu-sky/10 hover:text-white"
                   >
                     {cta}
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -713,7 +712,7 @@ function Pathways() {
                 ) : (
                   <Link
                     to={href}
-                    className="group/btn mt-7 inline-flex items-center gap-2 self-start rounded-full border border-nsu-sky/60 px-6 py-2.5 text-sm font-semibold text-nsu-sky transition-colors hover:bg-nsu-sky/10 hover:text-white"
+                    className="group/btn mt-7 inline-flex items-center gap-2 self-start rounded-full border border-nsu-sky/60 px-6 py-2.5 text-sm font-semibold text-[#7FB3EC] transition-colors hover:bg-nsu-sky/10 hover:text-white"
                   >
                     {cta}
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />

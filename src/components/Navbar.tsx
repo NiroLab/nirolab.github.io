@@ -6,7 +6,7 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
-import { Menu, Plus, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useSite } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
@@ -49,7 +49,7 @@ export default function Navbar() {
               <span className="block font-display text-lg font-bold text-white">
                 {site.name}
               </span>
-              <span className="block font-mono text-[10px] uppercase tracking-[0.22em] text-nsu-sky">
+              <span className="block font-mono text-[10px] uppercase tracking-[0.22em] text-[#7FB3EC]">
                 NSU · Robotics
               </span>
             </span>
@@ -64,8 +64,8 @@ export default function Navbar() {
                 end={item.path === "/"}
                 className={({ isActive }) =>
                   cn(
-                    "group relative pt-3 text-[0.9375rem] font-semibold tracking-[0.01em] transition-colors",
-                    isActive ? "text-white" : "text-slate-300 hover:text-white",
+                    "group relative pt-3 text-sm font-semibold tracking-[0.01em] transition-colors",
+                    isActive ? "text-white" : "text-slate-100/90 hover:text-white",
                   )
                 }
               >
@@ -88,13 +88,6 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Link
-              to="/contribute"
-              className="hidden items-center gap-1.5 rounded-full border border-nsu-sky/60 px-4 py-2 text-sm font-semibold text-nsu-sky transition-colors hover:bg-nsu-sky/10 hover:text-white sm:inline-flex"
-            >
-              <Plus className="h-4 w-4" />
-              Contribute
-            </Link>
             <button
               onClick={() => setOpen(true)}
               aria-label="Open menu"
@@ -128,7 +121,7 @@ export default function Navbar() {
               className="absolute right-0 top-0 flex h-full w-full max-w-sm flex-col bg-nsu-navy px-8 py-6"
             >
               <div className="mb-10 flex items-center justify-between">
-                <span className="font-mono text-xs uppercase tracking-[0.22em] text-nsu-sky">
+                <span className="font-mono text-xs uppercase tracking-[0.22em] text-[#7FB3EC]">
                   {"// MENU"}
                 </span>
                 <motion.button
@@ -172,23 +165,6 @@ export default function Navbar() {
                       </motion.li>
                     );
                   })}
-                  <motion.li
-                    initial={{ opacity: 0, x: 24 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      delay: 0.08 + site.nav.length * 0.05,
-                      duration: 0.4,
-                    }}
-                  >
-                    <Link
-                      to="/contribute"
-                      onClick={() => setOpen(false)}
-                      className="mt-4 inline-flex items-center gap-2 rounded-full border border-nsu-sky/60 px-5 py-2.5 text-sm font-semibold text-nsu-sky"
-                    >
-                      <Plus className="h-4 w-4" />
-                      Submit content
-                    </Link>
-                  </motion.li>
                 </ul>
               </nav>
               <div className="border-t border-nsu-line-dark pt-6 font-mono text-xs leading-relaxed text-slate-300">

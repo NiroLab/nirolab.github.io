@@ -4,7 +4,7 @@ import { z } from "zod";
  * The content contract for the NIRO Lab file-based CMS (design.md §7.2).
  * Every markdown file under /content is validated against one of these
  * schemas at build/dev time. Invalid files are skipped with a descriptive
- * warning — they never crash the site.
+ * warning - they never crash the site.
  */
 
 // ---------------------------------------------------------------- Person

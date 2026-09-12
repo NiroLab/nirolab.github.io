@@ -1,7 +1,7 @@
 /**
  * Fixed lab knowledge: the 6-stage Robotics Innovation Cycle and the 8
  * research areas. These are part of the lab's identity (site chrome), not
- * CMS content — icons live at /assets/icons/cycle-N.svg and area-N.svg.
+ * CMS content - icons live at /assets/icons/cycle-N.svg and area-N.svg.
  */
 
 export interface CycleStage {
@@ -54,7 +54,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
   {
     index: 5,
     name: "Aerial & underwater robotics",
-    gloss: "Platforms for the air and below the surface — from drones to AUVs.",
+    gloss: "Platforms for the air and below the surface - from drones to AUVs.",
     icon: "/assets/icons/area-5.svg",
   },
   {
@@ -66,7 +66,7 @@ export const RESEARCH_AREAS: ResearchArea[] = [
   {
     index: 7,
     name: "Uncertainty quantification",
-    gloss: "Knowing what the robot doesn't know — principled confidence in action.",
+    gloss: "Knowing what the robot doesn't know - principled confidence in action.",
     icon: "/assets/icons/area-7.svg",
   },
   {

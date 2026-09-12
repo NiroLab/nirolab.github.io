@@ -20,7 +20,7 @@ links:
 
 Manual delivery of documents and small items inside large office environments such as universities, banks, hospitals, and corporate offices is time-consuming, costly, and prone to confidentiality risks. With the rapid growth of organized office infrastructures in Bangladesh, there is a clear demand for automated, secure, and efficient internal logistics solutions.
 
-This project focuses on the design and development of an **Autonomous Indoor Delivery Robot** capable of navigating complex indoor environments and delivering documents or packages with minimal human intervention. The system integrates autonomous navigation, perception, hardware–software co-design, and a web-based control interface to ensure reliable operation in real-world office settings.
+This project focuses on the design and development of an **Autonomous Indoor Delivery Robot** capable of navigating complex indoor environments and delivering documents or packages with minimal human intervention. The system integrates autonomous navigation, perception, hardware-software co-design, and a web-based control interface to ensure reliable operation in real-world office settings.
 
 Building on a validated proof-of-concept prototype, the project is now transitioning toward a **full-scale, product-ready system**, emphasizing robustness, scalability, security, and deployability for industry applications.
 

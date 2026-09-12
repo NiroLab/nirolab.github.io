@@ -27,20 +27,17 @@ function OrbitRing({ className }: { className?: string }) {
 }
 
 /**
- * Designed empty state (design.md §8.3): orbit-ring + message + link to the
- * relevant Contribute anchor. Publications & Gallery rely on this.
+ * Generic empty state (design.md §8.3): orbit-ring + "nothing here yet"
+ * message + optional contact link. Publications & Gallery rely on this.
  */
 export default function EmptyState({
-  title = "No entries yet",
-  message = "This section is powered by content files — drop a markdown file into the matching content folder and it appears here automatically.",
-  contributeAnchor,
+  title = "Nothing here yet.",
+  message = "New entries will appear here as the lab grows.",
   dark = false,
   className,
 }: {
   title?: string;
   message?: string;
-  /** e.g. "publications" → /contribute#publications */
-  contributeAnchor?: string;
   dark?: boolean;
   className?: string;
 }) {
@@ -70,10 +67,10 @@ export default function EmptyState({
         {message}
       </p>
       <Link
-        to={contributeAnchor ? `/contribute#${contributeAnchor}` : "/contribute"}
+        to="/contact"
         className="group inline-flex items-center gap-2 rounded-full border border-nsu-blue/40 px-5 py-2.5 text-sm font-semibold text-nsu-blue transition-colors hover:bg-nsu-ice"
       >
-        How to add content
+        Get in touch
         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
       </Link>
     </div>

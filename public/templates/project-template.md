@@ -1,6 +1,6 @@
 <!--
 =====================================================================
-  NIRO LAB — PROJECT TEMPLATE
+  NIRO LAB - PROJECT TEMPLATE
 =====================================================================
 
   Use this template to add a research project to the NIRO Lab website.
@@ -9,7 +9,7 @@
   --------------
   1. Copy everything BELOW this instructions block into a new file.
   2. Replace every placeholder with real information.
-  3. Delete any OPTIONAL field you don't want to use — do NOT leave
+  3. Delete any OPTIONAL field you don't want to use - do NOT leave
      placeholders or empty values in the file you submit.
   4. Delete this instructions block before submitting.
   5. Structure the body with these Markdown sections (in this order,
@@ -21,7 +21,7 @@
   ---------------
   title        Full project title.
   description  One-sentence summary shown on project cards.
-               MAXIMUM 200 characters — keep it tight.
+               MAXIMUM 200 characters - keep it tight.
 
   OPTIONAL FIELDS (delete if unused)
   ----------------------------------
@@ -49,7 +49,7 @@
   links     Optional URLs: github, demo (e.g. a YouTube video), paper.
             Delete the whole links block if you have none.
 
-  FILE NAMING (important — projects live in their own folder)
+  FILE NAMING (important - projects live in their own folder)
   -----------------------------------------------------------
   The site expects:  <project-slug>/<project-slug>.md
   Example:           swarm-drone/swarm-drone.md
@@ -62,7 +62,7 @@
   - Submit the JPG together with this .md file (see README.md).
   - If you submit no image, the site shows a designed placeholder.
 
-  FILLED EXAMPLE (for reference only — do not submit)
+  FILLED EXAMPLE (for reference only - do not submit)
   ---------------------------------------------------
   ---
   title: "Multi-Agent Pursuit-Evasion Game"

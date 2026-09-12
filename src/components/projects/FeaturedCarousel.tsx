@@ -95,7 +95,7 @@ export default function FeaturedCarousel({ projects }: { projects: Project[] }) 
       className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-nsu-line-dark bg-nsu-ink outline-none focus-visible:ring-2 focus-visible:ring-nsu-sky sm:aspect-[16/8] lg:aspect-[16/7]"
     >
       <Crosshairs dark />
-      {/* image layer — cross-fade + parallax drift */}
+      {/* image layer - cross-fade + parallax drift */}
       <AnimatePresence initial={false}>
         <motion.div
           key={project.slug}
@@ -123,7 +123,7 @@ export default function FeaturedCarousel({ projects }: { projects: Project[] }) 
         className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-nsu-ink via-nsu-ink/40 to-transparent"
       />
 
-      {/* content panel — bottom-left */}
+      {/* content panel - bottom-left */}
       <AnimatePresence initial={false} mode="wait">
         <motion.div
           key={project.slug}
@@ -211,7 +211,7 @@ export default function FeaturedCarousel({ projects }: { projects: Project[] }) 
         </motion.div>
       </AnimatePresence>
 
-      {/* controls — right-bottom */}
+      {/* controls - right-bottom */}
       {count > 1 && (
         <div className="absolute bottom-6 right-6 z-10 flex items-center gap-3 sm:bottom-10 sm:right-10">
           <span className="font-mono text-xs tracking-[0.22em] text-nsu-sky tabular-nums">

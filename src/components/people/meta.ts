@@ -1,7 +1,7 @@
 import type { Person } from "@/lib/content";
 import type { PersonCategory } from "@/types/content";
 
-/** Ordered category metadata for the People directory (people.md §2–§3). */
+/** Ordered category metadata for the People directory (people.md §2-§3). */
 export const CATEGORY_ORDER: PersonCategory[] = [
   "founding_faculty",
   "affiliated_faculty",
@@ -42,7 +42,7 @@ export function directorBadge(role: string): string | null {
 
 /**
  * Optional alumni current position. The zod contract does not (yet) expose a
- * `current_position` field, but content files may carry one — read it
+ * `current_position` field, but content files may carry one - read it
  * defensively and fall back to the role text.
  */
 export function currentPositionOf(person: Person): string | null {

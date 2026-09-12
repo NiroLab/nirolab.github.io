@@ -10,7 +10,6 @@ import News from "@/pages/News";
 import NewsPost from "@/pages/NewsPost";
 import Gallery from "@/pages/Gallery";
 import Contact from "@/pages/Contact";
-import Contribute from "@/pages/Contribute";
 import NotFound from "@/pages/NotFound";
 
 export default function App() {
@@ -27,7 +26,7 @@ export default function App() {
         <Route path="news/:slug" element={<NewsPost />} />
         <Route path="gallery" element={<Gallery />} />
         <Route path="contact" element={<Contact />} />
-        <Route path="contribute" element={<Contribute />} />
+        
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

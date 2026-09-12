@@ -4,7 +4,7 @@ role: "Associate Professor"
 category: affiliated_faculty
 order: 4
 email: fariah.mahzabeen01@northsouth.edu
-phone: "+88 02 55668200 Ext – 6192"
+phone: "+88 02 55668200 Ext - 6192"
 office: "SAC 11105"
 image: /assets/people/fariah-mahzabeen.jpg
 website: https://ece.northsouth.edu/people/dr-fariah-mahzabeen/

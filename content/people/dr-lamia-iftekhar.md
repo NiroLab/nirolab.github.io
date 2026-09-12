@@ -4,7 +4,7 @@ role: "Professor & Lab Co-Director"
 category: founding_faculty
 order: 2
 email: lamia.iftekhar@northsouth.edu
-phone: "+88 02 55668200 Ext – 6371"
+phone: "+88 02 55668200 Ext - 6371"
 office: "SAC 925"
 image: /assets/people/dr-lamia-iftekhar.jpg
 website: http://lamiaiftekhar.com

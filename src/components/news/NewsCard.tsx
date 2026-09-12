@@ -26,7 +26,7 @@ export function isAwardPost(post: NewsPost): boolean {
 }
 
 /**
- * NewsCard — row variant (news.md §A.3): 120×80 thumb, mono date, 2-line
+ * NewsCard - row variant (news.md §A.3): 120×80 thumb, mono date, 2-line
  * Sora title, 1-line slate summary, tag chip, sliding arrow. Award posts
  * get a small gold medal glyph.
  */

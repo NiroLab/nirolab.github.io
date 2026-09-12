@@ -1,6 +1,6 @@
 <!--
 =====================================================================
-  NIRO LAB — PUBLICATION TEMPLATE
+  NIRO LAB - PUBLICATION TEMPLATE
 =====================================================================
 
   Use this template to add a publication to the NIRO Lab website.
@@ -9,7 +9,7 @@
   --------------
   1. Copy everything BELOW this instructions block into a new file.
   2. Replace every placeholder with real information.
-  3. Delete any OPTIONAL field you don't want to use — do NOT leave
+  3. Delete any OPTIONAL field you don't want to use - do NOT leave
      placeholders or empty values in the file you submit.
   4. Delete this instructions block before submitting.
   5. The Markdown body below the frontmatter is free-form: use it for
@@ -21,7 +21,7 @@
   authors  At least one author, in "Family name, Initials." format,
            one per line (or inline: ["Doe, J.", "Smith, A."]).
   venue    Where it was published: journal or conference name.
-           Do NOT use "—" or leave it blank. If the work is
+           Do NOT use "-" or leave it blank. If the work is
            unpublished, use:  Preprint / Institutional archive
   year     4-digit publication year, e.g. 2025.
 
@@ -58,9 +58,9 @@
 
   IMAGE
   -----
-  Publications have no image — nothing to prepare.
+  Publications have no image - nothing to prepare.
 
-  FILLED EXAMPLE (for reference only — do not submit)
+  FILLED EXAMPLE (for reference only - do not submit)
   ---------------------------------------------------
   ---
   title: "Alpha-N: Shortest Path Finder Automated Delivery Robot with Obstacle Detection and Avoiding System"
@@ -96,5 +96,5 @@ code:
 abstract: ""
 ---
 
-An extended summary or key contributions of the work (optional — you
+An extended summary or key contributions of the work (optional - you
 may delete this body if the abstract above says it all).

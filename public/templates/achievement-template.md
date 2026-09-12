@@ -1,6 +1,6 @@
 <!--
 =====================================================================
-  NIRO LAB — ACHIEVEMENT / AWARD TEMPLATE
+  NIRO LAB - ACHIEVEMENT / AWARD TEMPLATE
 =====================================================================
 
   Use this template to record a lab achievement: competition results,
@@ -11,7 +11,7 @@
   --------------
   1. Copy everything BELOW this instructions block into a new file.
   2. Replace every placeholder with real information.
-  3. Delete any OPTIONAL field you don't want to use — do NOT leave
+  3. Delete any OPTIONAL field you don't want to use - do NOT leave
      placeholders or empty values in the file you submit.
   4. Delete this instructions block before submitting.
   5. The Markdown body below the frontmatter is a short write-up of
@@ -19,7 +19,7 @@
 
   REQUIRED FIELDS
   ---------------
-  title  Name of the achievement, e.g. "Championship Award — BEAR Summit 2025".
+  title  Name of the achievement, e.g. "Championship Award - BEAR Summit 2025".
   date   Date of the award, in EXACT format:  YYYY-MM-DD
   rank   The result, e.g. "Champion", "1st Place", "Top 3", "Finalist".
 
@@ -27,7 +27,7 @@
   ----------------------------------
   event    Name of the competition/event, e.g. "BEAR Summit 2025".
   project  Slug of the related project on the Projects page, so the
-           site can link it — e.g. nirobot, nsu-ai-sat,
+           site can link it - e.g. nirobot, nsu-ai-sat,
            autonomous-navigation. Ask the lab if unsure.
   image    Leave as /assets/achievements/<achievement-slug>.jpg.
   summary  One sentence shown on the honors card.
@@ -44,10 +44,10 @@
   - Submit the JPG together with this .md file (see README.md).
   - If you submit no image, the site shows a designed placeholder.
 
-  FILLED EXAMPLE (for reference only — do not submit)
+  FILLED EXAMPLE (for reference only - do not submit)
   ---------------------------------------------------
   ---
-  title: "Top 3 — NIRO EDU BOT"
+  title: "Top 3 - NIRO EDU BOT"
   date: 2025-07-10
   rank: "Top 3"
   event: "BEAR Summit 2025"

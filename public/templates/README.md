@@ -1,9 +1,9 @@
-# NIRO Lab Website — Contributor Template Kit
+# NIRO Lab Website - Contributor Template Kit
 
 Everything you need to submit content for the NIRO Lab website
 (NSU Intelligent Robotics Lab, North South University). No web
 experience required: you fill in a plain-text file, attach an image,
-and email it to us — the web team publishes it.
+and email it to us - the web team publishes it.
 
 ## Templates included
 
@@ -19,7 +19,7 @@ and email it to us — the web team publishes it.
 ## How to fill in a template
 
 1. **Download** the template you need (links above).
-2. **Open it in any text editor** — Notepad, TextEdit, VS Code, etc.
+2. **Open it in any text editor** - Notepad, TextEdit, VS Code, etc.
 3. **Read the INSTRUCTIONS block** at the top (inside `<!-- ... -->`).
    It explains every field, which fields are required, allowed values
    (e.g. category and status keywords), and the file naming rules.
@@ -27,7 +27,7 @@ and email it to us — the web team publishes it.
    example is included at the bottom of the instructions block for
    reference.
 5. **Delete the instructions block** and any optional fields you did
-   not use — never leave placeholders or empty fields in the file.
+   not use - never leave placeholders or empty fields in the file.
 6. **Save with the exact file name** given in the template
    (naming conventions below).
 
@@ -56,7 +56,7 @@ words joined by hyphens (no spaces, no capitals, no titles like "Dr.").
 | Achievement | 1200 × 675 (landscape) | JPG | `<slug>.jpg` |
 
 - The image file name **must match** the `image:` field in your `.md`
-  file — the templates are pre-filled with the correct pattern.
+  file - the templates are pre-filled with the correct pattern.
 - If you skip an optional image, the site shows a designed
   placeholder automatically.
 - Extra photos inside a news story or project page are welcome; use
@@ -64,7 +64,7 @@ words joined by hyphens (no spaces, no capitals, no titles like "Dr.").
 
 ## Where files go (for the web team)
 
-Submissions are placed into the site like this — you don't need to do
+Submissions are placed into the site like this - you don't need to do
 this yourself, but it explains the naming rules:
 
 ```
@@ -103,5 +103,5 @@ follow the template instructions exactly.
 
 ## Questions?
 
-Email **nirolaboratory@gmail.com** — the web team is happy to help
+Email **nirolaboratory@gmail.com** - the web team is happy to help
 you fill in a template or prepare images.

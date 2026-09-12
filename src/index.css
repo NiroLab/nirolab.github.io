@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* NIRO Lab — NSU Blue System (design.md §2) */
+    /* NIRO Lab - NSU Blue System (design.md §2) */
     --nsu-navy: #0A2A5E;
     --nsu-ink: #061A3A;
     --nsu-blue: #1B5FAA;
@@ -80,7 +80,7 @@
 }
 
 @layer utilities {
-  /* Blueprint grid motif — 48px cells + 240px major lines (design.md §1) */
+  /* Blueprint grid motif - 48px cells + 240px major lines (design.md §1) */
   .blueprint-grid {
     background-image:
       linear-gradient(to right, rgba(27, 95, 170, 0.08) 1px, transparent 1px),

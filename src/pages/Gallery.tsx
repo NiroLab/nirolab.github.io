@@ -5,7 +5,6 @@ import {
   ArrowRight,
   ChevronLeft,
   ChevronRight,
-  Download,
   Expand,
   Images,
   LayoutGrid,
@@ -114,7 +113,7 @@ export default function Gallery() {
 
   return (
     <>
-      {/* ------------------------------------------- section 1 — hero */}
+      {/* ------------------------------------------- section 1 - hero */}
       <PageHero
         eyebrow="GALLERY"
         title="Inside the lab."
@@ -124,7 +123,7 @@ export default function Gallery() {
 
       {items.length > 0 ? (
         <>
-          {/* ---------------------- section 2 — category filter bar */}
+          {/* ---------------------- section 2 - category filter bar */}
           <div className="sticky top-[60px] z-30 border-b border-nsu-line bg-nsu-mist/85 backdrop-blur-md">
             <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 px-5 py-3.5 md:px-8">
               <FilterPill
@@ -178,7 +177,7 @@ export default function Gallery() {
             </div>
           </div>
 
-          {/* --------------------------- section 3 — masonry wall */}
+          {/* --------------------------- section 3 - masonry wall */}
           <section className="bg-nsu-mist py-14 md:py-20">
             <div className="mx-auto max-w-7xl px-5 md:px-8">
               {filtered.length === 0 ? (
@@ -212,7 +211,7 @@ export default function Gallery() {
           </section>
         </>
       ) : (
-        /* ------------------------------ section 5 — empty state */
+        /* ------------------------------ section 5 - empty state */
         <section className="bg-nsu-mist py-20 md:py-28">
           <div className="mx-auto max-w-5xl px-5 md:px-8">
             <Reveal>
@@ -222,86 +221,31 @@ export default function Gallery() {
                   The lab album is just getting started.
                 </h2>
                 <p className="mb-8 max-w-lg text-[0.9375rem] leading-relaxed text-nsu-slate">
-                  This wall is powered by files in{" "}
-                  <code className="rounded bg-nsu-ice px-1.5 py-0.5 font-mono text-[0.8125rem] text-nsu-navy">
-                    content/gallery/
-                  </code>{" "}
-                  with images in{" "}
-                  <code className="rounded bg-nsu-ice px-1.5 py-0.5 font-mono text-[0.8125rem] text-nsu-navy">
-                    /assets/gallery/
-                  </code>
-                  . Add one markdown entry per photo and it appears here
-                  automatically — no code changes needed.
+                  Photos from workshops, demos, and builds will appear here as
+                  the lab grows. Check back soon - or get in touch if you have
+                  photos from a NIRO event to share.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4">
                   <Link
-                    to="/contribute#gallery"
+                    to="/contact"
                     className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-nsu-navy to-nsu-blue px-7 py-3.5 text-[0.9375rem] font-semibold tracking-[0.01em] text-white ring-1 ring-nsu-sky/40 transition-transform active:scale-[0.97]"
                   >
-                    How to submit photos
+                    Contact the lab
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
-                  <a
-                    href="/templates/gallery-template.md"
-                    download
-                    className="inline-flex items-center gap-2 rounded-full border border-nsu-blue/40 px-7 py-3.5 text-[0.9375rem] font-semibold tracking-[0.01em] text-nsu-blue transition-colors hover:bg-nsu-ice active:scale-[0.97]"
-                  >
-                    <Download className="h-4 w-4" />
-                    Download the template
-                  </a>
                 </div>
               </div>
             </Reveal>
-
-            {/* preview strip — 6 designed placeholder tiles */}
-            <div className="mt-10">
-              <div className="mb-3 flex items-center gap-3">
-                <span className="h-px flex-1 bg-nsu-line" />
-                <span className="font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-nsu-slate">
-                  Preview — what the wall will look like
-                </span>
-                <span className="h-px flex-1 bg-nsu-line" />
-              </div>
-              <div className="columns-2 gap-4 sm:columns-3">
-                {[0, 1, 2, 3, 4, 5].map((i) => (
-                  <Reveal key={i} delay={0.15 + i * 0.08} y={24} className="mb-4 break-inside-avoid">
-                    <Link
-                      to="/contribute#gallery"
-                      aria-label="Submit a photo via the Contribute guide"
-                      className={cn(
-                        "group relative block overflow-hidden rounded-xl border border-dashed border-nsu-line opacity-60 transition-all duration-300 hover:border-nsu-blue/50 hover:opacity-100",
-                        ASPECTS[i % ASPECTS.length],
-                      )}
-                    >
-                      <img
-                        src="/assets/placeholders/gallery.svg"
-                        alt=""
-                        className="absolute inset-0 h-full w-full object-cover"
-                      />
-                      <span className="absolute left-3 top-3 rounded-md bg-nsu-ink/70 px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.22em] text-nsu-sky">
-                        Preview
-                      </span>
-                    </Link>
-                  </Reveal>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
       )}
 
-      {/* ----------------------------- section 6 — submission note */}
+      {/* ----------------------------- section 6 - share photos note */}
       <section className="border-t border-nsu-line bg-nsu-ice/60 py-12">
         <Reveal className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 md:px-8">
           <p className="max-w-2xl text-[0.9375rem] text-nsu-text">
-            NIRO members: your photos belong here — submit via the{" "}
-            <Link
-              to="/contribute#gallery"
-              className="font-semibold text-nsu-blue underline decoration-nsu-blue/30 underline-offset-4 hover:decoration-nsu-blue"
-            >
-              Contribute guide
-            </Link>
-            . Image spec: 1200×900 JPG, named to match your entry file.
+            Have photos from a NIRO workshop, demo, or build? We'd love to
+            feature them in the lab album - send them our way.
           </p>
           <a
             href={`mailto:${site.email}`}
@@ -313,7 +257,7 @@ export default function Gallery() {
         </Reveal>
       </section>
 
-      {/* ----------------------------------- section 4 — lightbox */}
+      {/* ----------------------------------- section 4 - lightbox */}
       <Lightbox
         items={filtered}
         index={activeIndex}
@@ -530,7 +474,7 @@ function Lightbox({
             </>
           )}
 
-          {/* image — scales from the clicked tile via layoutId */}
+          {/* image - scales from the clicked tile via layoutId */}
           <div className="relative flex flex-1 items-center justify-center px-12 pb-4 pt-16 md:px-24">
             <motion.figure
               layoutId={`gallery-${active.slug}`}

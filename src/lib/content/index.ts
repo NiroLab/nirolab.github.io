@@ -1,14 +1,14 @@
 /**
- * NIRO Lab file-based CMS — data pipeline (design.md §7.3).
+ * NIRO Lab file-based CMS - data pipeline (design.md §7.3).
  *
  * Discovery:  import.meta.glob over /content at build/dev time.
  *             Dropping a markdown file into the right folder is the ONLY
- *             step needed to publish new content — zero code edits.
+ *             step needed to publish new content - zero code edits.
  * Parsing:    gray-matter frontmatter + shared markdown pipeline.
  * Validation: zod schemas from src/types/content.ts. Invalid files are
  *             skipped with descriptive warnings (console + dev badge).
  *
- * STABLE API consumed by page agents — do not rename:
+ * STABLE API consumed by page agents - do not rename:
  *   useSite() · usePeople() · usePerson(slug) · useProjects() ·
  *   useProject(slug) · usePublications() · useNews() · useNewsPost(slug) ·
  *   useGallery() · useAchievements()
@@ -311,7 +311,7 @@ function loadSite(): SiteConfig {
   const raw = Object.values(siteYmlModules)[0];
   const file = Object.keys(siteYmlModules)[0] ?? "/content/site.yml";
   if (!raw) {
-    warn(file, ["content/site.yml not found — using built-in defaults"]);
+    warn(file, ["content/site.yml not found - using built-in defaults"]);
     return siteConfigSchema.parse({
       name: "NIRO Lab",
       fullName: "NSU Intelligent Robotics Lab",
@@ -412,7 +412,7 @@ export function useProject(slug: string): Project | undefined {
 
 export interface PublicationsResult {
   all: Publication[];
-  /** distinct years, newest first — filter facets */
+  /** distinct years, newest first - filter facets */
   years: number[];
   /** distinct research areas */
   areas: string[];
@@ -439,7 +439,7 @@ export function useGallery(): GalleryItem[] {
   return gallery;
 }
 
-/** Achievements sorted newest first — powers the Home honors strip. */
+/** Achievements sorted newest first - powers the Home honors strip. */
 export function useAchievements(): Achievement[] {
   return achievements;
 }

@@ -7,7 +7,8 @@ const PRECISION_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 /**
  * Kinetic heading (design.md §5): each word rises out of an overflow-hidden
  * mask (yPercent 110 → 0, 0.06s stagger). Reduced motion → static text.
- * Page-local to Projects / ProjectDetail.
+ * Inter-word spaces render OUTSIDE the masked inline-block spans so they
+ * don't collapse. Page-local to Projects / ProjectDetail.
  */
 export default function WordMask({
   text,
@@ -28,24 +29,22 @@ export default function WordMask({
   return (
     <Tag className={className} aria-label={text}>
       {words.map((word, i) => (
-        <span
-          key={`${word}-${i}`}
-          aria-hidden
-          className="inline-block overflow-hidden pb-[0.08em] align-bottom"
-        >
-          <motion.span
-            className={cn("inline-block will-change-transform")}
-            initial={{ y: reduced ? "0%" : "110%" }}
-            animate={{ y: "0%" }}
-            transition={{
-              duration: 0.9,
-              delay: delay + i * stagger,
-              ease: PRECISION_EASE,
-            }}
-          >
-            {word}
-            {i < words.length - 1 ? " " : ""}
-          </motion.span>
+        <span key={`${word}-${i}`} aria-hidden>
+          <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
+            <motion.span
+              className={cn("inline-block will-change-transform")}
+              initial={{ y: reduced ? "0%" : "110%" }}
+              animate={{ y: "0%" }}
+              transition={{
+                duration: 0.9,
+                delay: delay + i * stagger,
+                ease: PRECISION_EASE,
+              }}
+            >
+              {word}
+            </motion.span>
+          </span>
+          {i < words.length - 1 ? " " : null}
         </span>
       ))}
     </Tag>

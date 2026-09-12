@@ -1,5 +1,5 @@
 ---
-title: "Top 3 — NIRO EDU BOT"
+title: "Top 3 - NIRO EDU BOT"
 date: 2025-07-10
 rank: "Top 3"
 event: "BEAR Summit 2025"

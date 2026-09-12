@@ -4,8 +4,8 @@ import * as THREE from "three";
 
 /**
  * Hero particle field (design.md §5): ~600 drifting nodes connected by
- * hairlines when within threshold — the robot-swarm topology motif.
- * Nodes gently repel the cursor (separate displacement + lerp decay —
+ * hairlines when within threshold - the robot-swarm topology motif.
+ * Nodes gently repel the cursor (separate displacement + lerp decay -
  * base positions are never modified). DPR-capped, paused offscreen.
  */
 

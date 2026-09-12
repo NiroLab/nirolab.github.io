@@ -149,7 +149,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 }
 
 /**
- * Motion wrapper used by the filterable grid — `layout` reflow (0.4s) with
+ * Motion wrapper used by the filterable grid - `layout` reflow (0.4s) with
  * exit fade on filter changes (projects.md §A.3 animation).
  */
 export function ProjectCardMotion({

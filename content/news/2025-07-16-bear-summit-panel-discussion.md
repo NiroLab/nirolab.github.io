@@ -25,7 +25,7 @@ The afternoon session featured a distinguished panel discussion titled **"Roboti
 
 ## Emphasis on Capacity Building
 
-During the discussion, Dr. Siddique emphasized the critical importance of **capacity building across the entire innovation cycle** — from conceptualization and simulation to design, fabrication, software development, and testing. This holistic approach, which mirrors NIRO Lab's own methodology, is essential for Bangladesh to develop a self-sustaining robotics ecosystem capable of contributing to the global Industry 4.0 and 5.0 revolution.
+During the discussion, Dr. Siddique emphasized the critical importance of **capacity building across the entire innovation cycle** - from conceptualization and simulation to design, fabrication, software development, and testing. This holistic approach, which mirrors NIRO Lab's own methodology, is essential for Bangladesh to develop a self-sustaining robotics ecosystem capable of contributing to the global Industry 4.0 and 5.0 revolution.
 
 The panel explored how robotics can enhance resilience in various sectors, transform labor markets, and drive industrial innovation in Bangladesh. The discussions highlighted the need for collaboration between academia, industry, and government to accelerate the nation's technological advancement.
 

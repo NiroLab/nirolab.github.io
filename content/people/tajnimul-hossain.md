@@ -16,4 +16,4 @@ His primary research direction involves formation control, trajectory planning, 
 
 ## Current Interests
 
-He is developing control-aware learning frameworks, where stability principles from control theory—such as feedback control and Lyapunov-based methods—are embedded into learning-based robotic systems. This approach seeks to bridge the gap between theoretical guarantees and real-world deployment of autonomous multi-robot systems.
+He is developing control-aware learning frameworks, where stability principles from control theory-such as feedback control and Lyapunov-based methods-are embedded into learning-based robotic systems. This approach seeks to bridge the gap between theoretical guarantees and real-world deployment of autonomous multi-robot systems.

@@ -50,8 +50,8 @@ export default function SectionHeader({
           />
           <span
             className={cn(
-              "font-mono text-xs font-medium uppercase tracking-[0.22em]",
-              dark ? "text-nsu-sky" : "text-nsu-blue",
+              "font-mono text-xs font-semibold uppercase tracking-[0.22em]",
+              dark ? "text-[#7FB3EC]" : "text-nsu-blue",
             )}
           >
             {"// "}

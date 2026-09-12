@@ -4,7 +4,7 @@ role: "Associate Professor"
 category: affiliated_faculty
 order: 2
 email: riasat.khan@northsouth.edu
-phone: "+88 02 55668200 Ext – 6382"
+phone: "+88 02 55668200 Ext - 6382"
 office: "SAC 920"
 image: /assets/people/riasat-khan.jpg
 website: https://ece.northsouth.edu/people/riasat-khan/

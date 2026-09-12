@@ -34,19 +34,18 @@ function MaskedWords({ text, delay = 0.3 }: { text: string; delay?: number }) {
   return (
     <h1 className="font-display text-[clamp(2.75rem,6vw,5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-white">
       {words.map((word, i) => (
-        <span
-          key={i}
-          className="inline-block overflow-hidden pb-[0.08em] align-bottom"
-        >
-          <motion.span
-            className="inline-block"
-            initial={{ y: reduced ? "0%" : "110%" }}
-            animate={{ y: "0%" }}
-            transition={{ duration: 0.9, delay: delay + i * 0.06, ease: PRECISION_EASE }}
-          >
-            {word}
-            {i < words.length - 1 ? " " : ""}
-          </motion.span>
+        <span key={i}>
+          <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
+            <motion.span
+              className="inline-block"
+              initial={{ y: reduced ? "0%" : "110%" }}
+              animate={{ y: "0%" }}
+              transition={{ duration: 0.9, delay: delay + i * 0.06, ease: PRECISION_EASE }}
+            >
+              {word}
+            </motion.span>
+          </span>
+          {i < words.length - 1 ? " " : null}
         </span>
       ))}
     </h1>
@@ -88,7 +87,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25 }}
-            className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-sky"
+            className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-[#7FB3EC]"
           >
             {"// ABOUT THE LAB"}
           </motion.span>
@@ -175,7 +174,7 @@ function Story() {
         <Reveal>
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-nsu-blue" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+            <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
               {"// OUR STORY"}
             </span>
           </div>
@@ -186,7 +185,7 @@ function Story() {
             Officially established in October 2024 at North South University,
             the NSU Intelligent Robotics Lab (NIRO) serves as an innovation hub
             where creativity meets cutting-edge research. Our mission is to
-            make robotics research accessible, impactful, and future-focused —
+            make robotics research accessible, impactful, and future-focused -
             transforming theoretical concepts into tangible, real-world
             solutions.
           </p>
@@ -208,7 +207,7 @@ function Story() {
 const VISION_BEFORE = "To be the cornerstone of a";
 const VISION_PHRASE = "self-sustaining robotics ecosystem";
 const VISION_AFTER =
-  "in Bangladesh — bridging academic research and industrial application, and positioning NSU as a central hub where “impossible” ideas are rebuilt into intelligent solutions.";
+  "in Bangladesh - bridging academic research and industrial application, and positioning NSU as a central hub where “impossible” ideas are rebuilt into intelligent solutions.";
 const VISION_WORDS = `${VISION_BEFORE} ${VISION_PHRASE} ${VISION_AFTER}`.split(" ");
 const PHRASE_SET = new Set(
   VISION_PHRASE.split(" ").map((w) => w.toLowerCase()),
@@ -231,16 +230,19 @@ function VisionWord({
   const opacity = useTransform(progress, [start, end], [0.3, 1]);
   const inPhrase = PHRASE_SET.has(word.toLowerCase().replace(/[^a-z-]/g, ""));
   return (
-    <motion.span
-      style={{ color, opacity }}
-      className={cn(
-        "inline-block",
-        inPhrase &&
-          "bg-[linear-gradient(#F2A900,#F2A900)] bg-[length:100%_2px] bg-left-bottom bg-no-repeat pb-0.5",
-      )}
-    >
-      {word}{" "}
-    </motion.span>
+    <>
+      <motion.span
+        style={{ color, opacity }}
+        className={cn(
+          "inline-block",
+          inPhrase &&
+            "bg-[linear-gradient(#F2A900,#F2A900)] bg-[length:100%_2px] bg-left-bottom bg-no-repeat pb-0.5",
+        )}
+      >
+        {word}
+      </motion.span>
+      {index < total - 1 ? " " : null}
+    </>
   );
 }
 
@@ -275,7 +277,7 @@ function Vision() {
       <Reveal className="mx-auto max-w-4xl px-5 text-center md:px-8">
         <div className="mb-8 flex items-center justify-center gap-3">
           <span className="h-px w-8 bg-nsu-blue" />
-          <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+          <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-nsu-blue">
             {"// OUR VISION"}
           </span>
           <span className="h-px w-8 bg-nsu-blue" />
@@ -352,7 +354,7 @@ const PILLARS = [
   },
   {
     title: "Collaboration",
-    body: "Foster partnerships with industry, government, and academic institutions — locally and internationally.",
+    body: "Foster partnerships with industry, government, and academic institutions - locally and internationally.",
   },
   {
     title: "Innovation",
@@ -399,7 +401,7 @@ function MissionPillars() {
                 aria-hidden
                 className="absolute left-0 top-0 h-0.5 w-full origin-left scale-x-0 bg-nsu-blue transition-transform ease-precision [transition-duration:350ms] group-hover:scale-x-100"
               />
-              <span className="font-mono text-xs font-medium tracking-[0.22em] text-nsu-sky">
+              <span className="font-mono text-xs font-semibold tracking-[0.22em] text-nsu-blue">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-4 font-display text-[1.375rem] font-semibold leading-[1.25] tracking-[-0.01em] text-nsu-navy">
@@ -418,13 +420,13 @@ function MissionPillars() {
 
 /* ------------------------------------------------------------ section 6 */
 const AREA_DETAILS: string[] = [
-  "Learning-based perception, planning, and control for physical machines. We develop robots that improve with data — from vision pipelines to learned control policies deployed on real hardware.",
+  "Learning-based perception, planning, and control for physical machines. We develop robots that improve with data - from vision pipelines to learned control policies deployed on real hardware.",
   "Swarm coordination and distributed autonomy across robot teams. Our work spans formation control, task allocation, and communication-aware planning for fleets that must act as one.",
-  "On-device inference for robots and satellites with tight power budgets. We optimize neural models and pipelines so intelligence runs where the sensors are — not in a distant data center.",
+  "On-device inference for robots and satellites with tight power budgets. We optimize neural models and pipelines so intelligence runs where the sensors are - not in a distant data center.",
   "Robots that sense their environment and act without supervision. Research covers situational awareness, semantic mapping, and safe decision-making in dynamic, human-shared spaces.",
-  "Platforms for the air and below the surface — from drones to underwater vehicles. We build guidance, navigation, and control systems for machines operating far from easy communication.",
+  "Platforms for the air and below the surface - from drones to underwater vehicles. We build guidance, navigation, and control systems for machines operating far from easy communication.",
   "Policies that adjust to changing goals, teammates, and terrain. Our robots replan on the fly, blending classical control with learning to stay robust when conditions shift.",
-  "Knowing what the robot doesn't know — principled confidence in action. We study probabilistic inference and calibration so autonomous systems can fail gracefully and ask for help.",
+  "Knowing what the robot doesn't know - principled confidence in action. We study probabilistic inference and calibration so autonomous systems can fail gracefully and ask for help.",
   "Connected infrastructure linking robots, sensors, and trusted data. Research integrates IoT telemetry, edge-cloud orchestration, and blockchain-backed integrity into robotic systems.",
 ];
 
@@ -456,7 +458,7 @@ function ResearchAreas() {
                     aria-expanded={isOpen}
                     className="group flex w-full items-center gap-4 py-5 text-left sm:gap-6"
                   >
-                    <span className="w-8 shrink-0 font-mono text-xs tracking-[0.22em] text-nsu-sky/80">
+                    <span className="w-8 shrink-0 font-mono text-xs tracking-[0.22em] text-[#7FB3EC]">
                       {String(area.index).padStart(2, "0")}
                     </span>
                     <motion.img
@@ -500,12 +502,12 @@ function ResearchAreas() {
                               ))
                             ) : (
                               <span className="text-sm text-slate-400">
-                                Projects coming soon —{" "}
+                                Projects coming soon -{" "}
                                 <Link
-                                  to="/contribute"
+                                  to="/contact"
                                   className="text-nsu-sky underline-offset-4 hover:underline"
                                 >
-                                  help us document them
+                                  get in touch to learn more
                                 </Link>
                                 .
                               </span>
@@ -587,7 +589,7 @@ function LeaderCard({ person, index }: { person: Person; index: number }) {
                 href={href}
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
                 rel="noreferrer"
-                aria-label={`${person.name} — ${label}`}
+                aria-label={`${person.name} - ${label}`}
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-nsu-line text-nsu-blue transition-colors hover:border-nsu-blue hover:bg-nsu-ice"
               >
                 <Icon className="h-4 w-4" />
