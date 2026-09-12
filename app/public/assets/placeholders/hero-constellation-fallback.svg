@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img" aria-label="Hero constellation fallback">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#061A3A"/>
+      <stop offset="1" stop-color="#0A2A5E"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.7" cy="0.2" r="0.8">
+      <stop offset="0" stop-color="#3D8FE0" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#3D8FE0" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#1B5FAA" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+  <!-- swarm constellation: hairlines -->
+  <g stroke="#3D8FE0" stroke-opacity="0.28" stroke-width="1">
+    <path d="M180 240 340 380M340 380 520 300M520 300 700 420M340 380 460 560M460 560 640 660M640 660 700 420M700 420 900 360M900 360 1080 480M1080 480 1260 380M1260 380 1420 500M1420 500 1600 420M1600 420 1750 540M1080 480 1160 660M1160 660 1350 720M1350 720 1420 500M240 700 460 560M240 700 380 860M380 860 620 880M620 880 640 660M620 880 840 960M840 960 1050 860M1050 860 1160 660M1050 860 1280 940M1280 940 1500 860M1500 860 1350 720M1500 860 1700 920M900 360 980 180M980 180 1180 140M1180 140 1260 380M1180 140 1380 220M1380 220 1600 420M240 700 180 240M520 300 620 120M620 120 820 200M820 200 900 360M820 200 980 180"/>
+  </g>
+  <!-- nodes -->
+  <g fill="#3D8FE0">
+    <circle cx="180" cy="240" r="4"/><circle cx="340" cy="380" r="5"/><circle cx="520" cy="300" r="4"/><circle cx="700" cy="420" r="5"/><circle cx="460" cy="560" r="4"/><circle cx="640" cy="660" r="5"/><circle cx="900" cy="360" r="5"/><circle cx="1080" cy="480" r="4"/><circle cx="1260" cy="380" r="5"/><circle cx="1420" cy="500" r="4"/><circle cx="1600" cy="420" r="5"/><circle cx="1750" cy="540" r="4"/><circle cx="1160" cy="660" r="4"/><circle cx="1350" cy="720" r="5"/><circle cx="240" cy="700" r="4"/><circle cx="380" cy="860" r="5"/><circle cx="620" cy="880" r="4"/><circle cx="840" cy="960" r="4"/><circle cx="1050" cy="860" r="5"/><circle cx="1280" cy="940" r="4"/><circle cx="1500" cy="860" r="4"/><circle cx="1700" cy="920" r="4"/><circle cx="980" cy="180" r="4"/><circle cx="1180" cy="140" r="5"/><circle cx="1380" cy="220" r="4"/><circle cx="620" cy="120" r="4"/><circle cx="820" cy="200" r="5"/>
+  </g>
+  <g fill="#7FB7F0">
+    <circle cx="280" cy="480" r="2.5"/><circle cx="560" cy="500" r="2.5"/><circle cx="780" cy="540" r="2.5"/><circle cx="980" cy="620" r="2.5"/><circle cx="1200" cy="560" r="2.5"/><circle cx="1460" cy="640" r="2.5"/><circle cx="500" cy="740" r="2.5"/><circle cx="760" cy="760" r="2.5"/><circle cx="1120" cy="800" r="2.5"/><circle cx="1560" cy="700" r="2.5"/><circle cx="420" cy="180" r="2.5"/><circle cx="720" cy="120" r="2.5"/><circle cx="1080" cy="260" r="2.5"/><circle cx="1520" cy="300" r="2.5"/><circle cx="1800" cy="700" r="2.5"/><circle cx="120" cy="560" r="2.5"/>
+  </g>
+  <circle cx="1420" cy="500" r="6" fill="#F2A900"/>
+  <circle cx="820" cy="200" r="6" fill="#F2A900" fill-opacity="0.8"/>
+</svg>

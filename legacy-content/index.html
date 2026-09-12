@@ -1,0 +1,208 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero-cards">
+  <div class="hero-cards-slider">
+    <!-- First slide: Innovation Cycle Graphic -->
+    <div class="hero-card hero-card-graphic">
+      <div class="hero-graphic-container">
+        <div class="hero-graphic-text">
+          <h2>NIRO Lab</h2>
+          <p class="hero-tagline">NSU Intelligent Robotics Lab</p>
+          <p class="hero-description">Transforming ideas into intelligent robotic solutions through our systematic innovation cycle</p>
+        </div>
+        <!-- <div class="hero-graphic-image">
+          <img src="{{ '/assets/Robot Innovation Cycle.png' | relative_url }}" alt="NIRO Lab Innovation Cycle">
+        </div> -->
+      </div>
+    </div>
+    {% for slide in site.data.hero_slides %}
+    <div class="hero-card" style="background-image: url('{{ slide.image | relative_url }}');{% if slide.bg_size %} background-size: {{ slide.bg_size }};{% endif %}{% if slide.bg_position %} background-position: {{ slide.bg_position }};{% endif %}">
+      <div class="hero-card-overlay"></div>
+      <div class="hero-card-content">
+        <h2>{{ slide.title }}</h2>
+        <p>{{ slide.subtitle }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="hero-cards-nav">
+    <button class="hero-nav-btn prev" aria-label="Previous">&lsaquo;</button>
+    <div class="hero-dots"></div>
+    <button class="hero-nav-btn next" aria-label="Next">&rsaquo;</button>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="intro-section">
+      <h2>About NIRO Lab</h2>
+      <p>
+        Officially established in October 2024 at North South University, the NSU Intelligent Robotics Lab (NIRO) serves as an innovation hub where creativity meets cutting-edge research. Our mission is to make robotics research accessible, impactful, and future-focused, transforming theoretical concepts into tangible, real-world solutions.
+      </p>
+      <p style="margin-top: var(--spacing-md);">
+        Supported by expert faculty and passionate students, the lab is equipped with advanced facilities for every stage of development. Through a structured cycle of conceptualization, simulation, design, fabrication, assembly, software integration and testing, NIRO Lab delivers innovative real-world solutions while shaping a self-sustaining robotics ecosystem.
+      </p>
+      <p style="margin-top: var(--spacing-lg);">
+        <a href="{{ '/about/' | relative_url }}" class="btn btn-primary">Learn more about us</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-title">
+      <h2>Featured Projects</h2>
+    </div>
+
+    <div class="projects-grid">
+      {% assign featured_projects = site.projects | where: "featured", true | limit: 3 %}
+      {% for project in featured_projects %}
+      <div class="card">
+        {% if project.image %}
+        <div class="card-image">
+          <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+        </div>
+        {% endif %}
+        <div class="card-content">
+          <h3 class="card-title">
+            <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+          </h3>
+          <p class="card-text">{{ project.description | truncate: 120 }}</p>
+          {% if project.status %}
+          <span class="project-status status-{{ project.status | downcase }}">{{ project.status }}</span>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+
+      {% if featured_projects.size == 0 %}
+      {% assign all_projects = site.projects | limit: 3 %}
+      {% for project in all_projects %}
+      <div class="card">
+        {% if project.image %}
+        <div class="card-image">
+          <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+        </div>
+        {% endif %}
+        <div class="card-content">
+          <h3 class="card-title">
+            <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+          </h3>
+          <p class="card-text">{{ project.description | truncate: 120 }}</p>
+          {% if project.status %}
+          <span class="project-status status-{{ project.status | downcase }}">{{ project.status }}</span>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+      {% endif %}
+    </div>
+
+    <p style="text-align: center; margin-top: var(--spacing-xl);">
+      <a href="{{ '/projects/' | relative_url }}" class="btn btn-outline">View all projects</a>
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Recent News</h2>
+    </div>
+
+    <div class="news-list news-list-compact">
+      {% assign recent_posts = site.posts | limit: 4 %}
+      {% for post in recent_posts %}
+      <div class="news-item">
+        <div class="news-date">
+          <span class="day">{{ post.date | date: "%d" }}</span>
+          <span class="month">{{ post.date | date: "%b" }}</span>
+        </div>
+        <div class="news-content">
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+        </div>
+      </div>
+      {% endfor %}
+
+      {% if site.posts.size == 0 %}
+      <p style="text-align: center; color: var(--color-text-light);">No news posted yet. Check back soon!</p>
+      {% endif %}
+    </div>
+
+    <p style="text-align: center; margin-top: var(--spacing-xl);">
+      <a href="{{ '/news/' | relative_url }}" class="btn btn-outline">View all news</a>
+    </p>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.querySelector('.hero-cards-slider');
+  const cards = document.querySelectorAll('.hero-card');
+  const prevBtn = document.querySelector('.hero-nav-btn.prev');
+  const nextBtn = document.querySelector('.hero-nav-btn.next');
+  const dotsContainer = document.querySelector('.hero-dots');
+
+  if (cards.length === 0) return;
+
+  let currentIndex = 0;
+  const totalSlides = cards.length;
+
+  // Create dots
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.classList.add('hero-dot');
+    if (i === 0) dot.classList.add('active');
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll('.hero-dot');
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIndex);
+    });
+  }
+
+  function goToSlide(index) {
+    currentIndex = index;
+    updateSlider();
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlider();
+  }
+
+  prevBtn.addEventListener('click', prevSlide);
+  nextBtn.addEventListener('click', nextSlide);
+
+  // Auto-advance every 5 seconds
+  let autoPlay = setInterval(nextSlide, 5000);
+
+  // Pause on hover
+  slider.addEventListener('mouseenter', () => clearInterval(autoPlay));
+  slider.addEventListener('mouseleave', () => {
+    autoPlay = setInterval(nextSlide, 5000);
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') prevSlide();
+    if (e.key === 'ArrowRight') nextSlide();
+  });
+});
+</script>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#3D8FE0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="AI-driven robotics">
+  <circle cx="24" cy="24" r="5"/>
+  <circle cx="10" cy="12" r="3.5"/><circle cx="38" cy="12" r="3.5"/><circle cx="10" cy="36" r="3.5"/><circle cx="38" cy="36" r="3.5"/>
+  <path d="M21 20.5 13 14.5M27 20.5l8-6M21 27.5l-8 6M27 27.5l8 6"/>
+</svg>

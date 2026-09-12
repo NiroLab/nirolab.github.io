@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Campus map placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E9F2FC"/>
+      <stop offset="1" stop-color="#F5F9FE"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <!-- road grid -->
+  <g stroke="#0A2A5E" stroke-opacity="0.18" stroke-width="3" fill="none">
+    <path d="M0 220h1600M0 460h1600M0 700h1600M300 0v900M720 0v900M1150 0v900"/>
+  </g>
+  <g stroke="#0A2A5E" stroke-opacity="0.1" stroke-width="1.5" fill="none">
+    <path d="M0 120h1600M0 340h1600M0 580h1600M0 810h1600M150 0v900M500 0v900M930 0v900M1380 0v900"/>
+  </g>
+  <!-- contour rings -->
+  <g fill="none" stroke="#1B5FAA" stroke-opacity="0.25" stroke-width="2">
+    <circle cx="830" cy="430" r="90"/>
+    <circle cx="830" cy="430" r="170" stroke-dasharray="8 10"/>
+    <circle cx="830" cy="430" r="260" stroke-opacity="0.15"/>
+  </g>
+  <!-- blocks -->
+  <g fill="#1B5FAA" fill-opacity="0.08" stroke="#1B5FAA" stroke-opacity="0.2" stroke-width="1.5">
+    <rect x="340" y="250" width="140" height="90" rx="6"/>
+    <rect x="960" y="520" width="150" height="110" rx="6"/>
+    <rect x="530" y="600" width="120" height="70" rx="6"/>
+    <rect x="1180" y="260" width="130" height="100" rx="6"/>
+  </g>
+  <!-- gold location pin -->
+  <g transform="translate(830 380)">
+    <path d="M0 90C-52 30-72 2-72-32a72 72 0 1 1 144 0C72 2 52 30 0 90z" fill="#F2A900"/>
+    <circle cy="-32" r="28" fill="#0A2A5E"/>
+  </g>
+  <text x="830" y="560" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="20" letter-spacing="3" fill="#0A2A5E" fill-opacity="0.75">North South University, Bashundhara</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="Gallery placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0A2A5E"/>
+      <stop offset="1" stop-color="#061A3A"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0v48" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#grid)"/>
+  <!-- aperture / hexagon -->
+  <g transform="translate(600 420)" fill="none" stroke="#3D8FE0" stroke-width="4" stroke-linejoin="round">
+    <polygon points="0,-150 130,-75 130,75 0,150 -130,75 -130,-75"/>
+    <g stroke-opacity="0.55">
+      <path d="M0-150 0-40M130-75 36-20M130 75 36 20M0 150 0 40M-130 75-36 20M-130-75-36-20"/>
+    </g>
+    <circle r="38" stroke-width="3"/>
+  </g>
+  <circle cx="700" cy="330" r="7" fill="#F2A900"/>
+  <text x="600" y="760" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="18" letter-spacing="7" fill="#3D8FE0" fill-opacity="0.7">GALLERY PLACEHOLDER</text>
+</svg>
