@@ -4,7 +4,7 @@ description: "A six-legged autonomous hexapod platform designed for rough terrai
 status: Active
 featured: false
 order: 4
-image: /assets/projects/hexabot-hero.jpg
+image: /pictures/projects/hexabot.gif
 duration: "February 2025 - Present"
 funding: "University Research Grant"
 areas: ["AI-driven robotics", "Autonomous & context-aware systems"]

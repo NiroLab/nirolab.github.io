@@ -31,7 +31,7 @@
             home page. Leave false unless the lab directors ask
             otherwise. (defaults to false)
   order     Integer. Controls position in the project list (1 = first).
-  image     Leave as /assets/projects/<project-slug>-hero.jpg.
+  image     Leave as /pictures/projects/<project-slug>-hero.jpg.
   duration  e.g. "October 2024 - Present" (keep the quotes).
   funding   e.g. "University Research Grant".
   areas     Research areas covered, chosen from EXACTLY these names:
@@ -39,7 +39,7 @@
               - Multi-Robot Systems
               - Edge AI computing
               - Autonomous & context-aware systems
-              - Aerial & underwater robotics
+              - Aerial robotics
               - Adaptive decision-making
               - Uncertainty quantification
               - IoT, Edge, Cloud & Blockchain
@@ -70,7 +70,7 @@
   status: Active
   featured: false
   order: 5
-  image: /assets/projects/pursuit-evasion-hero.jpg
+  image: /pictures/projects/pursuit-evasion-hero.jpg
   duration: "October 2025 - Present"
   funding: "University Research Grant"
   areas: ["Multi-Robot Systems", "Adaptive decision-making"]
@@ -101,7 +101,7 @@
   SUBMISSION
   ----------
   Email your completed .md file and your 1600x900 hero JPG (zipped) to:
-      nirolaboratory@gmail.com
+      niro.laboratory@gmail.com
   Subject:  NIRO Website - [Your Name] - Project
   Example:  NIRO Website - Jane Doe - Project
 =====================================================================
@@ -113,7 +113,7 @@ description: ""
 status: Active
 featured: false
 order:
-image: /assets/projects/project-slug-hero.jpg
+image: /pictures/projects/project-slug-hero.jpg
 duration: ""
 funding: ""
 areas: []

@@ -4,7 +4,7 @@ description: "A contextually innovative, modular robotics platform making qualit
 status: Active
 featured: true
 order: 1
-image: /assets/projects/nirobot-hero.jpg
+image: /pictures/projects/nirobot.jpg
 duration: "October 2024 - Present"
 funding: "University Research Grant"
 areas: ["AI-driven robotics", "Autonomous & context-aware systems"]

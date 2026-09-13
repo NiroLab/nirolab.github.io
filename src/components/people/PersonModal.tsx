@@ -185,7 +185,7 @@ export default function PersonModal({
         {/* header band (navy gradient) */}
         <div className="relative shrink-0 overflow-hidden bg-gradient-to-br from-nsu-ink via-nsu-navy to-nsu-blue p-6 sm:p-8">
           <div className="blueprint-grid-dark absolute inset-0 opacity-60" aria-hidden />
-          <div className="relative flex flex-col gap-6 pr-10 sm:flex-row sm:items-center sm:pr-12">
+          <div className="relative flex flex-col gap-4 pr-10 sm:flex-row sm:items-center sm:pr-12">
             <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-xl sm:h-40 sm:w-40">
               <PersonImage
                 src={person.imageSrc}
@@ -254,7 +254,7 @@ export default function PersonModal({
           initial="hidden"
           animate="show"
           data-lenis-prevent
-          className="grid min-h-0 flex-1 gap-8 overflow-y-auto overscroll-contain p-6 sm:p-8 md:grid-cols-[1fr_220px]"
+          className="grid min-h-0 flex-1 gap-5 overflow-y-auto overscroll-contain p-6 sm:p-8 md:grid-cols-[1fr_220px]"
         >
           <motion.div variants={bodyItem} className="min-w-0">
             {person.body ? (
@@ -273,7 +273,7 @@ export default function PersonModal({
             >
               {facts.length > 0 && (
                 <div>
-                  <h3 className="mb-3 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                  <h3 className="mb-3 type-eyebrow text-nsu-blue">
                     {"// FACTS"}
                   </h3>
                   <ul className="space-y-3">
@@ -281,7 +281,7 @@ export default function PersonModal({
                       <li key={label} className="flex items-start gap-2.5 text-sm">
                         <Icon className="mt-0.5 h-4 w-4 shrink-0 text-nsu-blue" />
                         <span className="min-w-0">
-                          <span className="block font-mono text-[10px] uppercase tracking-[0.18em] text-nsu-slate">
+                          <span className="block font-mono text-[11px] uppercase tracking-[0.18em] text-nsu-slate">
                             {label}
                           </span>
                           <span className="block text-nsu-text [overflow-wrap:anywhere]">
@@ -295,7 +295,7 @@ export default function PersonModal({
               )}
               {interests.length > 0 && (
                 <div>
-                  <h3 className="mb-3 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                  <h3 className="mb-3 type-eyebrow text-nsu-blue">
                     {"// RESEARCH INTERESTS"}
                   </h3>
                   <div className="flex flex-wrap gap-1.5">

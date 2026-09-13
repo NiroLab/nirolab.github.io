@@ -50,7 +50,7 @@ words joined by hyphens (no spaces, no capitals, no titles like "Dr.").
 | Content type | Dimensions (pixels) | Format | File name |
 |--------------|--------------------:|--------|-----------|
 | Person (profile photo) | 400 × 400 (square) | JPG | `<slug>.jpg` |
-| Project (hero image) | 1600 × 900 (landscape) | JPG | `<project-slug>-hero.jpg` |
+| Project (hero image) | 1600 × 900 (landscape) | JPG / PNG / GIF | `<project-slug>.jpg` (or `.gif` for animation) |
 | News (cover image) | 1200 × 675 (landscape) | JPG | `<slug>.jpg` |
 | Gallery (photo) | 1200 × 900 (landscape) | JPG | `<slug>.jpg` |
 | Achievement | 1200 × 675 (landscape) | JPG | `<slug>.jpg` |
@@ -68,12 +68,13 @@ Submissions are placed into the site like this - you don't need to do
 this yourself, but it explains the naming rules:
 
 ```
-content/people/<slug>.md                     +  public/assets/people/<slug>.jpg
-content/projects/<slug>/<slug>.md            +  public/assets/projects/<slug>-hero.jpg
+content/people/<slug>.md                     +  public/pictures/people/members/<slug>.jpg
+                                                   (faculty: public/pictures/people/faculty/<slug>.jpg)
+content/projects/<slug>/<slug>.md            +  public/pictures/projects/<slug>.jpg
 content/publications/<year>-<slug>.md|.bib
-content/news/<YYYY-MM-DD>-<slug>.md          +  public/assets/news/<slug>.jpg
-content/gallery/<YYYY-MM-DD>-<slug>.md       +  public/assets/gallery/<slug>.jpg
-content/achievements/<YYYY>-<slug>.md        +  public/assets/achievements/<slug>.jpg
+content/news/<YYYY-MM-DD>-<slug>.md          +  public/pictures/news/<slug>.jpg
+content/gallery/<YYYY-MM-DD>-<slug>.md       +  public/pictures/gallery/<slug>.jpg
+content/achievements/<YYYY>-<slug>.md        +  public/pictures/achievements/<slug>.jpg
 ```
 
 Every file is validated automatically at build time; a file with a
@@ -85,7 +86,7 @@ follow the template instructions exactly.
 1. **Create a ZIP file** containing:
    - your completed `.md` file(s), and
    - your image file(s), prepared to the specs above.
-2. **Email it to:** nirolaboratory@gmail.com
+2. **Email it to:** niro.laboratory@gmail.com
 3. **Subject line format:**
 
    ```
@@ -103,5 +104,5 @@ follow the template instructions exactly.
 
 ## Questions?
 
-Email **nirolaboratory@gmail.com** - the web team is happy to help
+Email **niro.laboratory@gmail.com** - the web team is happy to help
 you fill in a template or prepare images.

@@ -6,7 +6,7 @@ order: 2
 email: riasat.khan@northsouth.edu
 phone: "+88 02 55668200 Ext - 6382"
 office: "SAC 920"
-image: /assets/people/riasat-khan.jpg
+image: /pictures/people/faculty/riasat-khan.jpg
 website: https://ece.northsouth.edu/people/riasat-khan/
 research_interests: "Data Science, Artificial Intelligence, Smart Systems, IoT, Embedded Systems"
 ---

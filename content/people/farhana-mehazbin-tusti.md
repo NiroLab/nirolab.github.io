@@ -4,7 +4,7 @@ role: "Student Researcher"
 category: student
 order: 8
 email: farhana.tusti@northsouth.edu
-image: /assets/people/farhana-mehazbin-tusti.jpg
+image: /pictures/people/members/farhana-mehazbin-tusti.jpg
 research_interests: "Autonomous Systems, Task and Motion Planning, Robotics Simulation, Computer Vision, Machine Learning"
 ---
 

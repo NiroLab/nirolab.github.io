@@ -40,7 +40,7 @@
   -----
   - Landscape photo: EXACTLY 1200 x 900 pixels, JPG format.
   - Name the file <photo-slug>.jpg and keep the `image` field as
-    /assets/gallery/<photo-slug>.jpg so the two match.
+    /pictures/gallery/<photo-slug>.jpg so the two match.
   - Submit the JPG together with this .md file (see README.md).
 
   FILLED EXAMPLE (for reference only - do not submit)
@@ -49,7 +49,7 @@
   title: "NIRO Lab team at BEAR Summit 2025"
   date: 2025-07-16
   category: team
-  image: /assets/gallery/bear-summit-2025-team.jpg
+  image: /pictures/gallery/bear-summit-2025-team.jpg
   alt: "The NIRO Lab team at their showcase booth during BEAR Summit 2025 in Dhaka"
   credit: "NIRO Lab media team"
   ---
@@ -60,7 +60,7 @@
   SUBMISSION
   ----------
   Email your completed .md file(s) and 1200x900 JPG(s) (zipped) to:
-      nirolaboratory@gmail.com
+      niro.laboratory@gmail.com
   Subject:  NIRO Website - [Your Name] - Gallery
   Example:  NIRO Website - Jane Doe - Gallery
 =====================================================================
@@ -70,7 +70,7 @@
 title: ""
 date: YYYY-MM-DD
 category: lab
-image: /assets/gallery/photo-slug.jpg
+image: /pictures/gallery/photo-slug.jpg
 alt: ""
 credit: ""
 ---

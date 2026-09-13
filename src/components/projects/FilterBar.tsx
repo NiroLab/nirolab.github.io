@@ -59,7 +59,7 @@ export default function FilterBar({
               aria-selected={active}
               onClick={() => onStatus(facet.value)}
               className={cn(
-                "relative rounded-full px-4 py-2 font-mono text-[11px] font-medium uppercase tracking-[0.14em] transition-colors duration-200",
+                "relative rounded-full px-4 py-2 font-mono text-[11px] font-medium uppercase tracking-[0.18em] transition-colors duration-200",
                 active ? "text-white" : "text-nsu-slate hover:text-nsu-navy",
               )}
             >
@@ -74,7 +74,7 @@ export default function FilterBar({
                 {facet.label}
                 <span
                   className={cn(
-                    "inline-flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[9px] tabular-nums",
+                    "inline-flex h-4 min-w-4 items-center justify-center rounded-full px-1 text-[11px] tabular-nums",
                     active
                       ? "bg-white/20 text-white"
                       : "bg-nsu-ice text-nsu-blue",
@@ -93,7 +93,7 @@ export default function FilterBar({
         <Select value={area} onValueChange={onArea}>
           <SelectTrigger
             aria-label="Filter by research area"
-            className="h-10 w-full rounded-full border-nsu-line bg-white font-mono text-[11px] uppercase tracking-[0.12em] text-nsu-slate sm:w-[240px]"
+            className="h-10 w-full rounded-full border-nsu-line bg-white font-mono text-[11px] uppercase tracking-[0.18em] text-nsu-slate sm:w-[240px]"
           >
             <SelectValue placeholder="All research areas" />
           </SelectTrigger>

@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router";
+import { Link } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowUp,
-  ArrowRight,
   Github,
   Linkedin,
   Facebook,
@@ -16,7 +15,6 @@ import { useSite } from "@/lib/content";
  * NIRO lockup, 4 columns, CTA band above (except /contact), back-to-top pill. */
 export default function Footer() {
   const site = useSite();
-  const location = useLocation();
   const [showTop, setShowTop] = useState(false);
 
   useEffect(() => {
@@ -36,45 +34,6 @@ export default function Footer() {
 
   return (
     <>
-      {location.pathname !== "/contact" && (
-        <div className="mx-auto max-w-7xl px-5 pb-4 md:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-nsu-ink via-nsu-navy to-nsu-blue px-8 py-14 md:px-14">
-            <div className="blueprint-grid-dark absolute inset-0" aria-hidden />
-            <svg
-              viewBox="0 0 300 300"
-              className="absolute -right-16 -top-16 h-64 w-64 opacity-30"
-              fill="none"
-              aria-hidden
-            >
-              <g transform="rotate(18 150 150)">
-                <ellipse cx="150" cy="150" rx="130" ry="72" stroke="var(--nsu-sky)" strokeWidth="1.5" />
-              </g>
-              <circle cx="272" cy="118" r="6" fill="var(--nsu-gold)" />
-            </svg>
-            <div className="relative flex flex-wrap items-center justify-between gap-8">
-              <div>
-                <h3 className="font-display text-2xl font-bold text-white md:text-3xl">
-                  Want to collaborate with NIRO Lab?
-                </h3>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="mt-3 inline-block text-lg font-semibold text-white underline decoration-nsu-gold decoration-2 underline-offset-8 hover:text-nsu-ice"
-                >
-                  {site.email}
-                </a>
-              </div>
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full border border-white/50 px-6 py-3 text-[0.9375rem] font-semibold text-white transition-colors hover:bg-white/10"
-              >
-                Get in touch
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
-
       <footer className="relative overflow-hidden bg-nsu-ink text-slate-300">
         {/* node-and-wire motif */}
         <svg
@@ -105,7 +64,7 @@ export default function Footer() {
                 alt={site.fullName}
                 className="h-11 w-auto"
               />
-              <p className="mt-5 text-sm leading-relaxed">
+              <p className="mt-5 font-sans text-[0.9375rem] leading-[1.7]">
                 An innovation hub turning ideas into intelligent machines.
               </p>
               <div className="mt-5 flex gap-2">
@@ -126,10 +85,10 @@ export default function Footer() {
 
             {/* explore */}
             <nav aria-label="Explore">
-              <h4 className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-skylight">
+              <h4 className="mb-4 type-eyebrow text-nsu-skylight">
                 {"// EXPLORE"}
               </h4>
-              <ul className="space-y-2.5 text-sm">
+              <ul className="space-y-2.5 font-sans text-[0.875rem]">
                 {site.nav.map((item) => (
                   <li key={item.path}>
                     <Link to={item.path} className="transition-colors hover:text-white">
@@ -142,10 +101,10 @@ export default function Footer() {
 
             {/* contact */}
             <div>
-              <h4 className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-skylight">
+              <h4 className="mb-4 type-eyebrow text-nsu-skylight">
                 {"// CONTACT"}
               </h4>
-              <address className="space-y-3 text-sm not-italic leading-relaxed">
+              <address className="space-y-3 font-sans text-[0.875rem] not-italic">
                 <p>{site.address}</p>
                 <p>
                   <a href={`mailto:${site.email}`} className="text-nsu-sky hover:text-white">
@@ -161,9 +120,9 @@ export default function Footer() {
 
           <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-nsu-line-dark pt-6 text-xs text-slate-400">
             <span>
-              © {new Date().getFullYear()} {site.name} - {site.university}
+              © {new Date().getFullYear()} {site.name}
             </span>
-            <span className="font-mono tracking-wide">
+            <span className="font-mono">
               {site.university} · {site.city}
             </span>
           </div>

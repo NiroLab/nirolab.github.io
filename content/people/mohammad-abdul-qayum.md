@@ -5,7 +5,8 @@ category: affiliated_faculty
 order: 3
 email: mohammad.qayum@northsouth.edu
 office: "SAC 1044A"
-image: /assets/people/mohammad-abdul-qayum.jpg
+phone: "+88 02 55668200 Ext - 6186"
+image: /pictures/people/faculty/mohammad-abdul-qayum.jpg
 website: https://ece.northsouth.edu/people/dr-mohammad-abdul-qayum/
 research_interests: "High Performance Computing, IoT, Robotics, Blockchain, Embedded Systems"
 ---

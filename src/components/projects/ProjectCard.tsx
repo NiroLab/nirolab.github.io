@@ -43,7 +43,7 @@ export function AvatarDot({
   size?: "sm" | "md";
   className?: string;
 }) {
-  const px = size === "sm" ? "h-7 w-7 text-[9px]" : "h-8 w-8 text-[10px]";
+  const px = size === "sm" ? "h-7 w-7 text-[11px]" : "h-8 w-8 text-[11px]";
   return (
     <span
       title={name}
@@ -78,7 +78,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           src={project.imageSrc}
           type="project"
           alt={project.title}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+          className="h-full w-full border-0 object-cover transition-transform duration-500 group-hover:scale-[1.04]"
         />
         {/* sheen sweep */}
         <span
@@ -95,14 +95,14 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       {/* body */}
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-mono text-[1.375rem] font-semibold leading-[1.25] tracking-[-0.01em] text-nsu-navy transition-colors group-hover:text-nsu-blue">
+        <h3 className="type-h3 text-nsu-navy transition-colors group-hover:text-nsu-blue">
           {project.title}
         </h3>
-        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-nsu-slate">
+        <p className="mt-2 line-clamp-2 type-body-mono text-nsu-slate">
           {project.description}
         </p>
         {project.duration && (
-          <p className="mt-3 flex items-center gap-1.5 font-mono text-[11px] tracking-wide text-nsu-slate">
+          <p className="mt-3 flex items-center gap-1.5 font-mono text-[11px] tracking-[0.18em] text-nsu-slate">
             <CalendarClock className="h-3.5 w-3.5 text-nsu-blue" aria-hidden />
             {project.duration}
           </p>
@@ -129,7 +129,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                 />
               ))}
               {project.teamMembers.length > 4 && (
-                <span className="-ml-2 flex h-7 w-7 items-center justify-center rounded-full border-2 border-white bg-nsu-ice font-mono text-[9px] font-semibold text-nsu-blue">
+                <span className="-ml-2 flex h-7 w-7 items-center justify-center rounded-full border-2 border-white bg-nsu-ice font-mono text-[11px] font-semibold text-nsu-blue">
                   +{project.teamMembers.length - 4}
                 </span>
               )}

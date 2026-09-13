@@ -39,7 +39,7 @@ export default function News() {
     [news],
   );
 
-  /* filter: pinned-first, date-desc order is preserved from useNews() */
+  /* filter: strict date-desc order is preserved from useNews() */
   const filtered = useMemo(
     () =>
       news.filter((p) => {
@@ -74,7 +74,7 @@ export default function News() {
   });
   const spineScale = useSpring(scrollYProgress, { stiffness: 90, damping: 25 });
 
-  /* newest by date (news[0] may be an older pinned post) */
+  /* newest by date (news is strictly date-descending) */
   const latest = useMemo(
     () =>
       news.length === 0
@@ -111,7 +111,7 @@ export default function News() {
       />
 
       {news.length === 0 ? (
-        <section className="bg-nsu-mist py-20 md:py-28">
+        <section className="bg-nsu-mist py-14 md:py-28">
           <div className="mx-auto max-w-3xl px-5 md:px-8">
             <EmptyState
               title="No stories yet"
@@ -120,7 +120,7 @@ export default function News() {
           </div>
         </section>
       ) : filtered.length === 0 ? (
-        <section className="bg-nsu-mist py-20">
+        <section className="bg-nsu-mist py-14">
           <div className="mx-auto flex max-w-xl flex-col items-center px-5 text-center md:px-8">
             <p className="mb-6 text-nsu-slate">
               No stories match the selected tag and year.
@@ -164,7 +164,7 @@ export default function News() {
                           className="aspect-[16/10] h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                         />
                       </motion.div>
-                      <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-md bg-nsu-gold px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-wide text-nsu-ink shadow-sm">
+                      <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-md bg-nsu-gold px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-nsu-ink shadow-sm">
                         {featured.pinned ? "Pinned" : "Latest"}
                       </span>
                       {isAwardPost(featured) && (
@@ -176,7 +176,7 @@ export default function News() {
                     <div className="flex flex-col justify-center p-7 md:p-10 lg:col-span-5">
                       <RevealGroup>
                         <RevealItem y={16}>
-                          <div className="flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-wide text-nsu-slate">
+                          <div className="flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-nsu-slate">
                             <time dateTime={featured.date.toISOString()}>
                               {formatNewsDate(featured.date)}
                             </time>
@@ -186,7 +186,7 @@ export default function News() {
                           </div>
                         </RevealItem>
                         <RevealItem y={20}>
-                          <h2 className="mt-4 font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-bold leading-[1.15] tracking-[-0.02em] text-nsu-navy transition-colors group-hover:text-nsu-blue">
+                          <h2 className="mt-4 type-h3 text-nsu-navy transition-colors group-hover:text-nsu-blue">
                             {featured.title}
                           </h2>
                         </RevealItem>
@@ -199,7 +199,7 @@ export default function News() {
                         )}
                         <RevealItem y={20}>
                           <div className="mt-6 flex items-center justify-between gap-4">
-                            <span className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wide text-nsu-slate">
+                            <span className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-nsu-slate">
                               <Clock className="h-3.5 w-3.5" />
                               {featured.readingTime} min read
                             </span>
@@ -248,7 +248,7 @@ export default function News() {
                       </motion.span>
 
                       {/* month header floats left */}
-                      <div className="mb-4 pl-8 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-slate md:mb-0 md:pl-0 md:pt-1 md:text-right">
+                      <div className="mb-4 pl-8 type-eyebrow text-nsu-slate md:mb-0 md:pl-0 md:pt-1 md:text-right">
                         {month}
                       </div>
 
@@ -292,9 +292,9 @@ export default function News() {
       {news.length > 0 && (
         <section className="border-t border-nsu-line bg-white py-14">
           <Reveal className="mx-auto max-w-7xl px-5 md:px-8">
-            <div className="flex flex-wrap items-start justify-between gap-8">
+            <div className="flex flex-wrap items-start justify-between gap-5">
               <div className="max-w-2xl">
-                <div className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                <div className="mb-4 type-eyebrow text-nsu-blue">
                   {"// FILTER BY TAG"}
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -333,7 +333,7 @@ export default function News() {
               </div>
 
               <div>
-                <div className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                <div className="mb-4 type-eyebrow text-nsu-blue">
                   {"// ARCHIVE"}
                 </div>
                 <label className="relative inline-flex items-center">

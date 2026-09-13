@@ -4,7 +4,7 @@ role: "Research Assistant"
 category: ra
 order: 3
 email: musfiq.ahmed01@northsouth.edu
-image: /assets/people/musfiq-ahmed.jpg
+image: /pictures/people/members/musfiq-ahmed.jpg
 research_interests: "Learning-Based Control, Multi-Agent Systems, Deep Reinforcement Learning"
 ---
 

@@ -4,7 +4,7 @@ role: "Research Assistant"
 category: ra
 order: 2
 email: shoaib6174@gmail.com
-image: /assets/people/mohammad-shoaib.jpg
+image: /pictures/people/members/mohammad-shoaib.jpg
 website: https://shoaib6174.github.io
 linkedin: https://linkedin.com/in/shoaib6174
 research_interests: "Multi-modal Models, Computer Vision, Reinforcement Learning, Robotic Manipulation"

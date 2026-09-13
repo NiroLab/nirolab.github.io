@@ -70,7 +70,7 @@ function Hero({ counts }: { counts: Record<PersonCategory, number> }) {
         <circle cx="272" cy="116" r="5" fill="var(--nsu-gold)" />
       </svg>
 
-      <div className="relative mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+      <div className="relative mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-24">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -83,12 +83,12 @@ function Hero({ counts }: { counts: Record<PersonCategory, number> }) {
             transition={{ duration: 0.5, ease: PRECISION_EASE }}
             className="h-px w-8 origin-left bg-nsu-sky"
           />
-          <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-skylight">
+          <span className="type-eyebrow text-nsu-skylight">
             {"// THE PEOPLE"}
           </span>
         </motion.div>
 
-        <h1 className="font-display text-[clamp(2.75rem,6vw,5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-white">
+        <h1 className="type-display text-white">
           {titleWords.map((word, i) => (
             <span key={word}>
               <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
@@ -113,7 +113,7 @@ function Hero({ counts }: { counts: Record<PersonCategory, number> }) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.55, ease: PRECISION_EASE }}
-          className="mt-5 max-w-2xl text-[1.0625rem] leading-[1.7] text-slate-300"
+          className="mt-5 max-w-2xl type-body-mono text-slate-300"
         >
           Faculty, researchers, and students building intelligent machines at
           North South University.
@@ -127,7 +127,7 @@ function Hero({ counts }: { counts: Record<PersonCategory, number> }) {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.35, delay: 0.7 + i * 0.06, ease: PRECISION_EASE }}
-              className="inline-flex items-center gap-2 rounded-full border border-nsu-sky/30 bg-white/5 px-4 py-1.5 font-mono text-[11px] tracking-[0.14em] text-slate-200"
+              className="inline-flex items-center gap-2 rounded-full border border-nsu-sky/30 bg-white/5 px-4 py-1.5 font-mono text-[11px] tracking-[0.18em] text-slate-200"
             >
               <span className="font-semibold tabular-nums text-nsu-skylight">{counts[cat]}</span>
               {CATEGORY_META[cat].hero}
@@ -197,7 +197,7 @@ function FilterBar({
                   {pill.label}
                   <span
                     className={cn(
-                      "rounded-md px-1.5 py-0.5 font-mono text-[10px] tabular-nums leading-none",
+                      "rounded-md px-1.5 py-0.5 font-mono text-[11px] tabular-nums leading-none",
                       active ? "bg-white/15 text-nsu-sky" : "bg-nsu-ice text-nsu-blue",
                     )}
                   >
@@ -253,7 +253,7 @@ function CategorySection({
   return (
     <section aria-label={CATEGORY_META[category].label} className="mb-14 last:mb-0">
       <div className="mb-6 flex items-center gap-4">
-        <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+        <span className="type-eyebrow text-nsu-blue">
           {"// "}
           {CATEGORY_META[category].label}
         </span>
@@ -263,15 +263,15 @@ function CategorySection({
         <span className="h-px flex-1 bg-nsu-line" aria-hidden />
       </div>
       {isAlumni ? (
-        <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
+        <div className="grid auto-rows-fr grid-cols-1 gap-3 lg:grid-cols-2">
           {people.map((person, i) => (
             <AlumniRow key={person.slug} person={person} index={startIndex + i} onOpen={onOpen} />
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid auto-rows-fr grid-cols-1 gap-4 lg:grid-cols-2">
           {people.map((person, i) => (
-            <PersonCard key={person.slug} person={person} index={startIndex + i} onOpen={onOpen} />
+            <PersonCard key={person.slug} person={person} index={startIndex + i} />
           ))}
         </div>
       )}
@@ -323,13 +323,13 @@ function JoinCta({ email }: { email: string }) {
   };
 
   return (
-    <section className="mx-auto max-w-7xl px-5 pb-24 md:px-8 md:pb-32" aria-label="Join the lab">
+    <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8 md:pb-32" aria-label="Join the lab">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8, ease: PRECISION_EASE }}
-        className="grid gap-10 rounded-3xl border border-nsu-line bg-nsu-ice p-8 md:grid-cols-2 md:p-12"
+        className="grid gap-10 rounded-3xl border border-nsu-line bg-nsu-ice p-5 md:grid-cols-2 md:p-12"
       >
         <div>
           <h3 className="font-mono text-[1.375rem] font-semibold leading-[1.25] tracking-[-0.01em] text-nsu-navy">
@@ -373,7 +373,7 @@ function JoinCta({ email }: { email: string }) {
             <div key={title} className="rounded-2xl border border-nsu-line bg-white p-5">
               <Icon className="h-5 w-5 text-nsu-blue" />
               <div className="mt-3 font-mono text-sm font-semibold text-nsu-navy">{title}</div>
-              <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-nsu-slate">{pitch}</p>
+              <p className="mt-1.5 text-[0.9375rem] leading-relaxed text-nsu-slate">{pitch}</p>
             </div>
           ))}
         </div>
@@ -503,16 +503,16 @@ export default function People() {
               ) : (
                 <div key={`flat-${filter}-${debouncedQuery.trim()}`}>
                   {visible.some((p) => p.category !== "alumni") && (
-                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    <div className="grid auto-rows-fr grid-cols-1 gap-4 lg:grid-cols-2">
                       {visible
                         .filter((p) => p.category !== "alumni")
                         .map((person, i) => (
-                          <PersonCard key={person.slug} person={person} index={i} onOpen={openPerson} />
+                          <PersonCard key={person.slug} person={person} index={i} />
                         ))}
                     </div>
                   )}
                   {visible.some((p) => p.category === "alumni") && (
-                    <div className="mt-6 grid grid-cols-1 gap-3 lg:grid-cols-2">
+                    <div className="mt-6 grid auto-rows-fr grid-cols-1 gap-3 lg:grid-cols-2">
                       {visible
                         .filter((p) => p.category === "alumni")
                         .map((person, i) => (

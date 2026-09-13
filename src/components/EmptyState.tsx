@@ -52,7 +52,7 @@ export default function EmptyState({
       <OrbitRing className="mb-6 opacity-80" />
       <h3
         className={cn(
-          "mb-2 font-mono text-xl font-semibold",
+          "mb-2 type-h3",
           dark ? "text-white" : "text-nsu-navy",
         )}
       >
@@ -60,7 +60,7 @@ export default function EmptyState({
       </h3>
       <p
         className={cn(
-          "mb-6 max-w-md text-sm leading-relaxed",
+          "mb-6 max-w-md type-body-mono",
           dark ? "text-slate-300" : "text-nsu-slate",
         )}
       >
@@ -68,7 +68,7 @@ export default function EmptyState({
       </p>
       <Link
         to="/contact"
-        className="group inline-flex items-center gap-2 rounded-full border border-nsu-blue/40 px-5 py-2.5 text-sm font-semibold text-nsu-blue transition-colors hover:bg-nsu-ice"
+        className="group inline-flex items-center gap-2 rounded-full border border-nsu-blue/40 px-5 py-2.5 type-button text-nsu-blue transition-colors hover:bg-nsu-ice"
       >
         Get in touch
         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

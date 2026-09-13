@@ -46,7 +46,7 @@ function Hero() {
         <circle cx="250" cy="30" r="6" fill="var(--nsu-gold)" />
       </svg>
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 py-24 md:px-8">
+      <div className="relative mx-auto w-full max-w-7xl px-5 py-16 md:px-8">
         <div className="mb-6 flex items-center gap-3">
           <motion.span
             initial={{ scaleX: 0 }}
@@ -58,13 +58,13 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25 }}
-            className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-skylight"
+            className="type-eyebrow text-nsu-skylight"
           >
             {"// CONTACT"}
           </motion.span>
         </div>
 
-        <h1 className="font-display text-[clamp(2.75rem,6vw,5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-white">
+        <h1 className="type-display text-white">
           {words.map((word, i) => (
             <span key={i}>
               <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
@@ -90,7 +90,7 @@ function Hero() {
           initial={{ opacity: 0, y: reduced ? 0 : 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.95, ease: PRECISION_EASE }}
-          className="mt-6 max-w-2xl text-[1.0625rem] leading-[1.7] text-slate-200"
+          className="mt-6 max-w-2xl type-body-mono text-slate-200"
         >
           We welcome inquiries about collaborations, graduate research
           opportunities, partnerships, and student involvement.
@@ -122,7 +122,7 @@ function CopyEmailChip({ email }: { email: string }) {
     <span className="relative inline-block">
       <button
         onClick={copy}
-        className="group inline-flex items-center gap-2 rounded-md bg-white px-3 py-2 font-mono text-[13px] text-nsu-blue ring-1 ring-nsu-line transition-colors hover:ring-nsu-blue"
+        className="group inline-flex items-center gap-2 rounded-md bg-white px-3 py-2 font-mono text-[11px] text-nsu-blue ring-1 ring-nsu-line transition-colors hover:ring-nsu-blue"
         aria-label={`Copy email address ${email}`}
       >
         {email}
@@ -171,11 +171,11 @@ function InfoCards() {
       body: (
         <>
           <p className="text-sm leading-[1.7] text-nsu-text">
-            NIRO Lab
+            225 Building (Ground Floor)
             <br />
             North South University
             <br />
-            Bashundhara, Dhaka-1229, Bangladesh
+            Bashundhara R/A, Dhaka-1229, Bangladesh
           </p>
           <p className="mt-3 font-mono text-xs leading-relaxed text-nsu-slate">
             Dept. of Electrical &amp; Computer Engineering
@@ -189,7 +189,7 @@ function InfoCards() {
       body: (
         <>
           <CopyEmailChip email={site.email} />
-          <p className="mt-3 text-sm leading-[1.6] text-nsu-slate">
+          <p className="mt-3 type-body-mono text-nsu-slate">
             We typically respond within a few days.
           </p>
         </>
@@ -208,7 +208,7 @@ function InfoCards() {
               {leaders || "Meet the lab's founding faculty"}
             </span>
           </Link>
-          <p className="mt-3 text-sm leading-[1.6] text-nsu-slate">
+          <p className="mt-3 type-body-mono text-nsu-slate">
             For supervision and research inquiries, reach the directors via the
             People page.
           </p>
@@ -369,7 +369,7 @@ function ContactForm() {
         </h2>
         <p className="mt-3 max-w-sm text-sm leading-[1.7] text-nsu-slate">
           Your email client should have opened with a pre-filled message to{" "}
-          <span className="font-mono text-[13px] text-nsu-blue">
+          <span className="font-mono text-[11px] text-nsu-blue">
             {site.email}
           </span>{" "}
           - just hit send there. (The site is statically hosted, so email is
@@ -406,7 +406,7 @@ function ContactForm() {
       <h2 className="font-display text-2xl font-semibold text-nsu-navy">
         Send us a message
       </h2>
-      <p className="mt-2 text-sm leading-[1.6] text-nsu-slate">
+      <p className="mt-2 type-body-mono text-nsu-slate">
         Fill this in and your email client will open with everything
         pre-addressed to the lab.
       </p>
@@ -533,7 +533,7 @@ function ContactForm() {
 
 function ContactSplit() {
   return (
-    <section className="bg-nsu-mist py-24 md:py-32" aria-label="Get in touch">
+    <section className="bg-nsu-mist py-16 md:py-32" aria-label="Get in touch">
       <div className="mx-auto grid max-w-7xl gap-10 px-5 md:px-8 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <InfoCards />
@@ -551,10 +551,10 @@ function MapSection() {
   const site = useSite();
   const reduced = useReducedMotion();
   const mapsUrl =
-    "https://www.google.com/maps/search/?api=1&query=North+South+University+Bashundhara+Dhaka";
+    "https://maps.app.goo.gl/dLCaEwLvGd3W5z5a7";
 
   return (
-    <section className="bg-nsu-mist pb-24 md:pb-32" aria-label="Map">
+    <section className="bg-nsu-mist pb-16 md:pb-32" aria-label="Map">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <motion.div
           initial={{
@@ -570,7 +570,7 @@ function MapSection() {
           <div className="relative overflow-hidden rounded-3xl border border-nsu-line">
             <img
               src="/assets/placeholders/map.svg"
-              alt="Map showing North South University, Bashundhara, Dhaka"
+              alt="Map showing NIRO Lab, 225 Building, North South University, Bashundhara R/A, Dhaka"
               className="aspect-[16/7] w-full object-cover"
               loading="lazy"
             />
@@ -585,7 +585,7 @@ function MapSection() {
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-nsu-blue" />
                 <div>
-                  <p className="text-sm font-medium leading-[1.6] text-nsu-navy">
+                  <p className="type-body-mono font-medium text-nsu-navy">
                     {site.address}
                   </p>
                   <a
@@ -671,27 +671,37 @@ function Pathways() {
 
   return (
     <section
-      className="relative overflow-hidden bg-nsu-navy py-24 md:py-32"
+      className="relative overflow-hidden bg-nsu-navy py-16 md:py-32"
       aria-label="Collaboration pathways"
     >
       <div className="blueprint-grid-dark absolute inset-0" aria-hidden />
       <NodeWireBackdrop />
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
-        <div className="mb-12">
+        <div className="mb-8">
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-nsu-sky" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-skylight">
+            <span className="type-eyebrow text-nsu-skylight">
               {"// COLLABORATE"}
             </span>
           </div>
-          <h2 className="font-display text-[clamp(2rem,3.6vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white">
+          <h2 className="type-h2 text-white">
             Pathways into the lab
           </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-[1.7] text-slate-300">
+            Want to collaborate with NIRO Lab? Write to us directly at{" "}
+            <a
+              href={`mailto:${site.email}`}
+              className="font-semibold text-white underline decoration-nsu-gold decoration-2 underline-offset-4 transition-colors hover:text-nsu-ice"
+            >
+              {site.email}
+            </a>{" "}
+            or choose one of the pathways below.
+          </p>
         </div>
-        <RevealGroup className="grid gap-6 md:grid-cols-3" stagger={0.12}>
+        <RevealGroup className="grid gap-4 md:grid-cols-3" stagger={0.12}>
           {pathways.map(({ icon: Icon, title, pitch, cta, href, external }) => (
             <RevealItem key={title} y={40}>
-              <div className="group flex h-full flex-col rounded-2xl border border-nsu-line-dark bg-white/5 p-8 backdrop-blur-sm transition-colors duration-300 hover:border-nsu-sky">
+              <div className="group flex h-full flex-col rounded-2xl border border-nsu-line-dark bg-white/5 p-5 backdrop-blur-sm transition-colors duration-300 hover:border-nsu-sky">
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-nsu-line-dark bg-nsu-ink/60 transition-transform duration-300 group-hover:-translate-y-1">
                   <Icon className="h-6 w-6 text-nsu-sky" />
                 </span>

@@ -4,7 +4,7 @@ role: "Student Researcher"
 category: student
 order: 10
 email: tajnimul.hossain@northsouth.edu
-image: /assets/people/tajnimul-hossain.jpg
+image: /pictures/people/members/tajnimul-hossain.jpg
 research_interests: "Robotics, Multi-Drone Systems, Control Systems, Machine Learning"
 ---
 

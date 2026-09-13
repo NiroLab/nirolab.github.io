@@ -4,7 +4,7 @@ role: "Student Researcher"
 category: student
 order: 11
 email: tasbeer.ahmed.201@gmail.com
-image: /assets/people/tasbeer-ahmed.jpg
+image: /pictures/people/members/tasbeer-ahmed.jpg
 research_interests: "Mobile Robotics, Human-Robot Interaction, Swarm Robotics"
 ---
 

@@ -4,7 +4,7 @@ role: "Research Assistant"
 category: ra
 order: 5
 email: mohammed.mofiz161@gmail.com
-image: /assets/people/mohammed-mofiz-uddin.jpg
+image: /pictures/people/members/mohammed-mofiz-uddin.jpg
 linkedin: https://www.linkedin.com/in/mofizuddin/
 research_interests: "Human-Robot Interaction, Human-Computer Interaction, Intelligent Systems, Autonomous Systems, Embedded Assistive Technology"
 ---

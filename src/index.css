@@ -1,3 +1,40 @@
+/* Urbanist (self-hosted) - long-form body font */
+@font-face {
+  font-family: "Urbanist";
+  src: url("/fonts/urbanist-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Urbanist";
+  src: url("/fonts/urbanist-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Urbanist";
+  src: url("/fonts/urbanist-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Urbanist";
+  src: url("/fonts/urbanist-600i.woff2") format("woff2");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Urbanist";
+  src: url("/fonts/urbanist-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -62,12 +99,8 @@
     @apply bg-nsu-mist font-sans text-nsu-text antialiased;
     font-feature-settings: "ss01";
   }
-  h1, h2 {
+  h1, h2, h3, h4 {
     @apply font-display text-nsu-navy;
-    text-wrap: balance;
-  }
-  h3, h4 {
-    @apply font-mono text-nsu-navy;
     text-wrap: balance;
   }
   ::selection {
@@ -87,41 +120,43 @@
 
 @layer components {
   /* ------------------------------------------------------------------
-   * Canonical type scale (design tokens)
-   *   Display : Sora 700, clamp(2.75rem, 6vw, 5rem)      - page H1
-   *   H2      : Sora 700, clamp(2rem, 3.6vw, 3rem)       - section titles
-   *   H3      : JetBrains Mono 600, 1.375rem / 1.25       - card titles
-   *   Eyebrow : JetBrains Mono 500, 0.75rem uppercase +0.22em, "// " prefix
-   *   Body    : Inter 400, 1.0625rem / 1.7  (long-form only)
-   *   Small   : JetBrains Mono 400, 0.875rem (meta, card body)
-   *   Button  : JetBrains Mono 600, 0.9375rem +0.01em (buttons & nav)
-   * The UI default font is JetBrains Mono (body element); Inter is used
-   * only for long-form paragraphs via font-body. Sora is reserved for
-   * large Display/H1-H2 headings.
+   * Canonical type scale (design tokens) - components consume these
+   * classes instead of re-declaring ad-hoc font utilities.
+   *   Display     : Sora 700, clamp(2rem, 5.5vw, 4.25rem)    - page hero H1
+   *   H2          : Sora 700, clamp(1.625rem, 3.6vw, 3rem)   - section title
+   *   H3          : Sora 600, clamp(1.125rem, 2.6vw, 1.375rem) - card/subsection
+   *   Eyebrow     : Mono 500, 11px uppercase +0.22em          - section label
+   *   Body        : Urbanist 400, clamp(0.9375rem, 1.2vw, 1.0625rem) / 1.7 - long-form prose
+   *   Body-mono   : Mono 400, clamp(0.8125rem, 1.1vw, 0.9375rem) / 1.7 - technical/UI body
+   *   Small       : Mono 400, 11px / 1.5                      - metadata/captions
+   *   Button      : Mono 600, 0.9375rem +0.01em               - buttons/links
+   * Chips/badges/tags: Mono 500, 11px uppercase +0.18em (one rule).
+   * Families: display = Sora, sans = JetBrains Mono, body = Urbanist.
    * Color is applied by context (nsu-navy on light, white/sky on dark).
    * ------------------------------------------------------------------ */
   .type-display {
-    @apply font-display font-bold leading-[1.02] tracking-[-0.03em];
-    font-size: clamp(2.75rem, 6vw, 5rem);
+    @apply font-display font-bold text-[clamp(2rem,5.5vw,4.25rem)] leading-[1.05] tracking-[-0.03em];
   }
   .type-h2 {
-    @apply font-display font-bold leading-[1.1] tracking-[-0.02em];
-    font-size: clamp(2rem, 3.6vw, 3rem);
+    @apply font-display font-bold text-[clamp(1.625rem,3.6vw,3rem)] leading-[1.1] tracking-[-0.02em];
   }
   .type-h3 {
-    @apply font-mono text-[1.375rem] font-semibold leading-[1.25] tracking-[-0.01em];
+    @apply font-display font-semibold text-[clamp(1.125rem,2.6vw,1.375rem)] leading-[1.25] tracking-[-0.01em];
   }
   .type-eyebrow {
-    @apply font-mono text-xs font-medium uppercase tracking-[0.22em];
+    @apply font-sans font-medium text-[11px] uppercase tracking-[0.22em];
   }
   .type-body {
-    @apply font-body text-[1.0625rem] font-normal leading-[1.7];
+    @apply font-body font-normal text-[clamp(0.9375rem,1.2vw,1.0625rem)] leading-[1.7];
+  }
+  .type-body-mono {
+    @apply font-sans font-normal text-[clamp(0.8125rem,1.1vw,0.9375rem)] leading-[1.7];
   }
   .type-small {
-    @apply font-sans text-sm font-normal;
+    @apply font-sans font-normal text-[11px] leading-[1.5];
   }
   .type-button {
-    @apply font-sans text-[0.9375rem] font-semibold tracking-[0.01em];
+    @apply font-sans font-semibold text-[0.9375rem] tracking-[0.01em];
   }
 
   /* Content images get a subtle 1px boundary + standard radius so images

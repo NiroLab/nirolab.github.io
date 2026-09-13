@@ -4,7 +4,7 @@ role: "Former Research Assistant"
 category: alumni
 order: 1
 email: saif.ahammod@gmail.com
-image: /assets/people/saif-ahammod-khan.jpg
+image: /pictures/people/members/saif-ahammod-khan.jpg
 website: https://saifahammod.github.io/
 linkedin: https://www.linkedin.com/in/saifahammod
 research_interests: "Mobile Robotics, Multi-agent Systems, Swarm Robotics, AI & Robotics"

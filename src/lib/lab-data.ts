@@ -53,8 +53,8 @@ export const RESEARCH_AREAS: ResearchArea[] = [
   },
   {
     index: 5,
-    name: "Aerial & underwater robotics",
-    gloss: "Platforms for the air and below the surface - from drones to AUVs.",
+    name: "Aerial robotics",
+    gloss: "Platforms for the air - drones and UAVs built for real missions.",
     icon: "/assets/icons/area-5.svg",
   },
   {

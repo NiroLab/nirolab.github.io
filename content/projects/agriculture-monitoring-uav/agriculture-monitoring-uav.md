@@ -4,9 +4,9 @@ description: "A fixed-wing unmanned aerial vehicle designed for precision agricu
 status: Active
 featured: false
 order: 9
-image: /assets/projects/agriculture-monitoring-uav-hero.jpg
+image: /pictures/projects/agriculture-monitoring-uav.png
 duration: "2024 - Present"
-areas: ["Aerial & underwater robotics", "Autonomous & context-aware systems"]
+areas: ["Aerial robotics", "Autonomous & context-aware systems"]
 team:
   - Md Tofazzal Hossain
   - Sadab Bin Islam

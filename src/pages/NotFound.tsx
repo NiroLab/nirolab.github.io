@@ -3,10 +3,10 @@ import { Link } from "react-router";
 export default function NotFound() {
   return (
     <div className="mx-auto flex max-w-7xl flex-col items-center px-5 py-40 text-center md:px-8">
-      <div className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+      <div className="mb-4 type-eyebrow text-nsu-blue">
         {"// ERROR 404"}
       </div>
-      <h1 className="font-display text-5xl font-bold text-nsu-navy">
+      <h1 className="font-display text-4xl font-bold text-nsu-navy md:text-5xl">
         Signal lost.
       </h1>
       <p className="mt-4 max-w-md text-nsu-slate">

@@ -2,7 +2,7 @@
 title: "First hands-on workshop: drivetrain build session"
 date: 2025-03-20
 category: events
-image: /assets/gallery/workshop-hands-on.jpg
+image: /pictures/gallery/workshop-hands-on.jpg
 alt: "Students assembling robot drivetrains during NIRO Lab's first open workshop"
 credit: "NIRO Lab media team"
 ---

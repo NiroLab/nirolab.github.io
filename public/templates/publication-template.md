@@ -34,7 +34,7 @@
               - Multi-Robot Systems
               - Edge AI computing
               - Autonomous & context-aware systems
-              - Aerial & underwater robotics
+              - Aerial robotics
               - Adaptive decision-making
               - Uncertainty quantification
               - IoT, Edge, Cloud & Blockchain
@@ -77,7 +77,7 @@
   SUBMISSION
   ----------
   Email your completed .md file (and optional .bib) to:
-      nirolaboratory@gmail.com
+      niro.laboratory@gmail.com
   Subject:  NIRO Website - [Your Name] - Publication
   Example:  NIRO Website - Jane Doe - Publication
 =====================================================================

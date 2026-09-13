@@ -27,7 +27,7 @@ export default function SectionHeader({
   return (
     <div
       className={cn(
-        "mb-12 flex flex-wrap items-end justify-between gap-6",
+        "mb-8 flex flex-wrap items-end justify-between gap-4",
         className,
       )}
     >
@@ -50,7 +50,7 @@ export default function SectionHeader({
           />
           <span
             className={cn(
-              "font-mono text-xs font-medium uppercase tracking-[0.22em]",
+              "type-eyebrow",
               dark ? "text-nsu-skylight" : "text-nsu-blue",
             )}
           >
@@ -64,7 +64,7 @@ export default function SectionHeader({
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: PRECISION_EASE, delay: 0.1 }}
           className={cn(
-            "font-display text-[clamp(2rem,3.6vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em]",
+            "type-h2",
             dark ? "text-white" : "text-nsu-navy",
           )}
         >
@@ -75,7 +75,7 @@ export default function SectionHeader({
         <Link
           to={linkTo}
           className={cn(
-            "group inline-flex items-center gap-2 text-[0.9375rem] font-semibold tracking-[0.01em]",
+            "group inline-flex items-center gap-2 type-button",
             dark
               ? "text-nsu-sky hover:text-white"
               : "text-nsu-blue hover:text-nsu-navy",

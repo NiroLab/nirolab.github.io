@@ -4,7 +4,7 @@ description: "AI-powered ROS2 robotic assistant for autonomous navigation, voice
 status: Active
 featured: false
 order: 6
-image: /assets/projects/bit-robotic-home-assistant-system-hero.jpg
+image: /pictures/projects/bit-robotic-home-assistant-system.jpg
 duration: "2025 - Present"
 funding: "University Research Grant"
 areas: ["AI-driven robotics", "Autonomous & context-aware systems"]
@@ -16,7 +16,7 @@ links:
   demo: "https://youtu.be/ztXiBMU8h5A"
 ---
 
-![BIT Robotic Home Assistant System](/assets/projects/bit-robotic-home-assistant-system-sim.jpg)
+![BIT Robotic Home Assistant System](/pictures/projects/bit-robotic-home-assistant-system-sim.jpg)
 
 ## Overview
 
@@ -34,11 +34,11 @@ BIT is an AI-powered robotic home assistant built on ROS2, Jetson SBC, STM32, an
 
 BIT uses a modular ROS2 architecture on NVIDIA Jetson, combining YOLOv5, NanoTrack, and MediaPipe for perception, and LLM/VLLMs for natural language reasoning. SLAM Toolbox and Nav2 handle autonomous navigation, while PID control and inverse kinematics manage the 6-DOF arm via a custom STM32 UART protocol.
 
-![BIT Methodology](/assets/projects/bit-robotic-home-assistant-system-methodology.jpg)
+![BIT Methodology](/pictures/projects/bit-robotic-home-assistant-system-methodology.jpg)
 
 ## Computer Vision Pipeline
 
-![BIT Computer Vision Pipeline](/assets/projects/bit-robotic-home-assistant-system-cv-pipeline.jpg)
+![BIT Computer Vision Pipeline](/pictures/projects/bit-robotic-home-assistant-system-cv-pipeline.jpg)
 
 ## Current Progress
 

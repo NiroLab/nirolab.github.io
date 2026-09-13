@@ -40,7 +40,7 @@
   scholar             Google Scholar profile URL.
   linkedin            LinkedIn profile URL.
   research_interests  Comma-separated list, in quotes.
-  image               Leave as /assets/people/<your-slug>.jpg - see
+  image               Leave as /pictures/people/members/<your-slug>.jpg (use /pictures/people/faculty/ for faculty) - see
                       IMAGE below.
 
   FILE NAMING
@@ -66,7 +66,7 @@
   email: jane.doe@northsouth.edu
   phone: "+88 02 55668200 Ext - 6000"
   office: "SAC 900"
-  image: /assets/people/jane-doe.jpg
+  image: /pictures/people/members/jane-doe.jpg
   website: https://ece.northsouth.edu/people/jane-doe/
   scholar: https://scholar.google.com/citations?user=XXXXXXXX
   linkedin: https://www.linkedin.com/in/janedoe
@@ -87,7 +87,7 @@
   SUBMISSION
   ----------
   Email your completed .md file and your 400x400 JPG (zipped) to:
-      nirolaboratory@gmail.com
+      niro.laboratory@gmail.com
   Subject:  NIRO Website - [Your Name] - Profile
   Example:  NIRO Website - Jane Doe - Profile
 =====================================================================
@@ -101,7 +101,7 @@ order:
 email:
 phone: ""
 office: ""
-image: /assets/people/your-slug.jpg
+image: /pictures/people/members/your-slug.jpg
 website:
 scholar:
 linkedin:

@@ -19,7 +19,7 @@ export default function Chip({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 font-mono text-[11px] font-medium tracking-wide",
+        "inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 font-mono text-[11px] font-medium tracking-[0.18em]",
         variant === "default" &&
           (dark
             ? "bg-nsu-line-dark/60 text-nsu-sky"

@@ -4,7 +4,7 @@ role: "Student Researcher"
 category: student
 order: 9
 email: shafwan.work1@gmail.com
-image: /assets/people/shafwan-ahmed.jpg
+image: /pictures/people/members/shafwan-ahmed.jpg
 research_interests: "Robotics, Autonomous Systems, Multi-Drone Coordination"
 ---
 

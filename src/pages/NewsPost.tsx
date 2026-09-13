@@ -71,7 +71,7 @@ export default function NewsPost() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: PRECISION_EASE }}
           >
-            <div className="mb-4 font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-skylight">
+            <div className="mb-4 type-eyebrow text-nsu-skylight">
               {"// 404 · STORY NOT FOUND"}
             </div>
             <h1 className="font-display text-4xl font-bold tracking-[-0.02em] text-white md:text-5xl">
@@ -126,7 +126,7 @@ export default function NewsPost() {
           aria-hidden
         />
 
-        <div className="relative mx-auto w-full max-w-4xl px-5 pb-16 pt-32 md:px-8 md:pb-20">
+        <div className="relative mx-auto w-full max-w-4xl px-5 pb-16 pt-28 md:px-8 md:pb-20">
           {/* breadcrumb */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -148,7 +148,7 @@ export default function NewsPost() {
             initial={{ opacity: 0, y: reduced ? 0 : 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: PRECISION_EASE }}
-            className="mb-5 flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-wide text-slate-300"
+            className="mb-5 flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-slate-300"
           >
             <time dateTime={post.date.toISOString()}>{formatNewsDate(post.date)}</time>
             <span className="text-slate-500">·</span>
@@ -173,7 +173,7 @@ export default function NewsPost() {
           </motion.div>
 
           {/* word-mask title */}
-          <h1 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.08] tracking-[-0.02em] text-white">
+          <h1 className="type-display text-white">
             {words.map((word, i) => (
               <span key={i}>
                 <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
@@ -200,7 +200,7 @@ export default function NewsPost() {
               initial={{ opacity: 0, y: reduced ? 0 : 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.9, ease: PRECISION_EASE }}
-              className="mt-5 max-w-2xl font-body text-[1.25rem] leading-[1.6] text-slate-200"
+              className="mt-5 max-w-2xl type-body text-slate-200"
             >
               {post.summary}
             </motion.p>
@@ -239,7 +239,7 @@ export default function NewsPost() {
                 "[&>p:first-of-type]:first-letter:float-left",
                 "[&>p:first-of-type]:first-letter:mr-3",
                 "[&>p:first-of-type]:first-letter:font-display",
-                "[&>p:first-of-type]:first-letter:text-[3.5rem]",
+                "[&>p:first-of-type]:first-letter:text-[2.5rem] md:[&>p:first-of-type]:first-letter:text-[3.5rem]",
                 "[&>p:first-of-type]:first-letter:font-bold",
                 "[&>p:first-of-type]:first-letter:leading-[0.9]",
                 "[&>p:first-of-type]:first-letter:text-nsu-navy",
@@ -255,10 +255,10 @@ export default function NewsPost() {
         <section className="border-t border-nsu-line bg-white py-16 md:py-20">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             {related.length > 0 && (
-              <Reveal className="mb-12">
+              <Reveal className="mb-8">
                 <div className="mb-6 flex items-center gap-3">
                   <span className="h-px w-8 bg-nsu-blue" />
-                  <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                  <span className="type-eyebrow text-nsu-blue">
                     {"// RELATED STORIES"}
                   </span>
                 </div>
@@ -342,7 +342,7 @@ function ShareRail({ title }: { title: string }) {
           <>
             <Icon className="h-4 w-4" />
             {/* tooltip micro-pop */}
-            <span className="pointer-events-none absolute left-full top-1/2 z-20 ml-3 hidden -translate-y-1/2 whitespace-nowrap rounded-md bg-nsu-ink px-2.5 py-1 font-mono text-[10px] text-white opacity-0 transition-all duration-200 group-hover:opacity-100 lg:block">
+            <span className="pointer-events-none absolute left-full top-1/2 z-20 ml-3 hidden -translate-y-1/2 whitespace-nowrap rounded-md bg-nsu-ink px-2.5 py-1 font-mono text-[11px] text-white opacity-0 transition-all duration-200 group-hover:opacity-100 lg:block">
               {b.label}
             </span>
           </>

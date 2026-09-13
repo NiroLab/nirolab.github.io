@@ -7,10 +7,10 @@ module.exports = {
       fontFamily: {
         display: ["Sora", "ui-sans-serif", "system-ui", "sans-serif"],
         // UI default: JetBrains Mono (technical/academic signature look).
-        sans: ["'JetBrains Mono'", "ui-monospace", "monospace"],
+        sans: ["'JetBrains Mono'", "ui-monospace", "'SF Mono'", "Menlo", "monospace"],
         // Long-form body text only (articles, bios, about paragraphs).
-        body: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
-        mono: ["'JetBrains Mono'", "ui-monospace", "monospace"],
+        body: ["Urbanist", "Arial", "Helvetica", "sans-serif"],
+        mono: ["'JetBrains Mono'", "ui-monospace", "'SF Mono'", "Menlo", "monospace"],
       },
       colors: {
         // NIRO Lab - technical academic robotics palette (token names kept,

@@ -6,7 +6,7 @@ order: 2
 email: lamia.iftekhar@northsouth.edu
 phone: "+88 02 55668200 Ext - 6371"
 office: "SAC 925"
-image: /assets/people/dr-lamia-iftekhar.jpg
+image: /pictures/people/faculty/dr-lamia-iftekhar.png
 website: http://lamiaiftekhar.com
 research_interests: "Multi-agent Systems, Cooperative Control, Autonomous Vehicles, Mobile Robotics, Nonlinear Dynamics"
 ---

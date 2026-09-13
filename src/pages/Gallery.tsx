@@ -217,7 +217,7 @@ export default function Gallery() {
         </>
       ) : (
         /* ------------------------------ section 5 - empty state */
-        <section className="bg-nsu-mist py-20 md:py-28">
+        <section className="bg-nsu-mist py-14 md:py-28">
           <div className="mx-auto max-w-5xl px-5 md:px-8">
             <Reveal>
               <div className="blueprint-grid relative flex flex-col items-center overflow-hidden rounded-3xl border border-nsu-line bg-white px-8 py-16 text-center md:py-20">
@@ -381,7 +381,7 @@ function GalleryTile({
               <div className="mt-1 flex items-center gap-2">
                 <time
                   dateTime={item.date.toISOString()}
-                  className="font-mono text-[10px] uppercase tracking-wide text-slate-300"
+                  className="font-mono text-[11px] uppercase tracking-[0.18em] text-slate-300"
                 >
                   {formatDate(item.date)}
                 </time>
@@ -508,7 +508,7 @@ function Lightbox({
             <div className="font-mono text-lg font-semibold text-white">
               {active.title}
             </div>
-            <div className="mt-1.5 flex flex-wrap items-center justify-center gap-2 font-mono text-[11px] uppercase tracking-wide text-slate-300">
+            <div className="mt-1.5 flex flex-wrap items-center justify-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-slate-300">
               <time dateTime={active.date.toISOString()}>{formatDate(active.date)}</time>
               <Chip dark>{CATEGORY_LABEL[active.category] ?? active.category}</Chip>
               {active.credit && <span>© {active.credit}</span>}

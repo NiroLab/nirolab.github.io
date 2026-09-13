@@ -2,7 +2,7 @@
 title: "Championship Award at BEAR Summit 2025 for Autonomous Delivery Robot"
 date: 2025-07-10
 summary: "Our AI-Enabled Indoor Autonomous Delivery Robot received the Championship Award at BEAR Summit 2025 in the Robotics Demo Digital Display segment."
-image: /assets/news/bear-summit-championship-award.jpg
+image: /pictures/news/bear-summit-championship-award.jpg
 tags: ["competition", "award"]
 pinned: true
 ---
@@ -13,12 +13,12 @@ The award recognizes the innovation, technical excellence, and real-world releva
 
 While this recognition validates the potential of our prototype, our vision extends further. We are now actively working to evolve this research prototype into a **fully refined, production-ready product prototype** suitable for real-world deployment.
 
-![BEAR Summit 2025](/assets/news/bear-summit-2025-1.jpg)
+![BEAR Summit 2025](/pictures/news/bear-summit-championship-award-1.jpg)
 
-![BEAR Summit 2025](/assets/news/bear-summit-2025-2.jpg)
+![BEAR Summit 2025](/pictures/news/bear-summit-championship-award-2.jpg)
 
-![BEAR Summit 2025](/assets/news/bear-summit-2025-3.jpg)
+![BEAR Summit 2025](/pictures/news/bear-summit-championship-award.jpg)
 
-![BEAR Summit 2025](/assets/news/bear-summit-2025-4.jpg)
+![BEAR Summit 2025](/pictures/news/bear-summit-championship-award-4.jpg)
 
-![BEAR Summit 2025](/assets/news/bear-summit-2025-5.jpg)
+![BEAR Summit 2025](/pictures/news/bear-summit-championship-award-5.jpg)

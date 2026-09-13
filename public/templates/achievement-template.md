@@ -29,7 +29,7 @@
   project  Slug of the related project on the Projects page, so the
            site can link it - e.g. nirobot, nsu-ai-sat,
            autonomous-navigation. Ask the lab if unsure.
-  image    Leave as /assets/achievements/<achievement-slug>.jpg.
+  image    Leave as /pictures/achievements/<achievement-slug>.jpg.
   summary  One sentence shown on the honors card.
 
   FILE NAMING
@@ -52,7 +52,7 @@
   rank: "Top 3"
   event: "BEAR Summit 2025"
   project: nirobot
-  image: /assets/achievements/niro-edu-bot-top-3.jpg
+  image: /pictures/achievements/niro-edu-bot-top-3.jpg
   summary: "The NIRO EDU BOT educational platform finished in the Top 3 at BEAR Summit 2025."
   ---
 
@@ -62,7 +62,7 @@
   SUBMISSION
   ----------
   Email your completed .md file and JPG (zipped) to:
-      nirolaboratory@gmail.com
+      niro.laboratory@gmail.com
   Subject:  NIRO Website - [Your Name] - Achievement
   Example:  NIRO Website - Jane Doe - Achievement
 =====================================================================
@@ -74,7 +74,7 @@ date: YYYY-MM-DD
 rank: ""
 event: ""
 project:
-image: /assets/achievements/achievement-slug.jpg
+image: /pictures/achievements/achievement-slug.jpg
 summary: ""
 ---
 

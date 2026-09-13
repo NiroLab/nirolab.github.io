@@ -4,9 +4,9 @@ description: "A coordinated multi-drone system designed for precision agricultur
 status: Active
 featured: false
 order: 3
-image: /assets/projects/swarm-drone-hero.jpg
+image: /pictures/projects/swarm-drone.jpg
 duration: "2025 - Present"
-areas: ["Multi-Robot Systems", "Aerial & underwater robotics"]
+areas: ["Multi-Robot Systems", "Aerial robotics"]
 team:
   - Dr. Shahnewaz Siddique
   - Shafwan Ahmed

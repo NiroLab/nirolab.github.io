@@ -4,7 +4,7 @@ description: "An AI-enabled mobile robot for secure autonomous delivery in indoo
 status: Active
 featured: false
 order: 2
-image: /assets/projects/autonomous-navigation-hero.jpg
+image: /pictures/projects/autonomous-navigation.jpg
 duration: "2024 - Present"
 funding: "University Research Grant"
 areas: ["Autonomous & context-aware systems", "AI-driven robotics"]

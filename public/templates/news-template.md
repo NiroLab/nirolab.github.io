@@ -25,7 +25,7 @@
   OPTIONAL FIELDS (delete if unused)
   ----------------------------------
   summary  1-2 sentence teaser shown on cards and previews.
-  image    Leave as /assets/news/<post-slug>.jpg - see IMAGE below.
+  image    Leave as /pictures/news/<post-slug>.jpg - see IMAGE below.
   tags     Short lowercase labels, e.g. ["competition", "award"].
            Common tags: competition, award, workshop, outreach,
            education, event, summit, showcase, media.
@@ -45,7 +45,7 @@
   - Name the file <post-slug>.jpg (must match the `image` field).
   - Submit the JPG together with this .md file (see README.md).
   - Extra photos can be embedded in the body with standard Markdown:
-      ![Caption](/assets/news/my-extra-photo.jpg)
+      ![Caption](/pictures/news/my-extra-photo.jpg)
     Send those JPGs too, using the same folder naming.
   - If you submit no cover image, the site shows a designed
     placeholder.
@@ -56,7 +56,7 @@
   title: "NIRO Lab wins Championship Award at BEAR Summit 2025"
   date: 2025-07-10
   summary: "Our autonomous delivery robot took the top honor at BEAR Summit 2025."
-  image: /assets/news/bear-summit-championship-award.jpg
+  image: /pictures/news/bear-summit-championship-award.jpg
   tags: ["competition", "award"]
   pinned: true
   ---
@@ -71,7 +71,7 @@
   SUBMISSION
   ----------
   Email your completed .md file and your 1200x675 cover JPG (zipped)
-  to:   nirolaboratory@gmail.com
+  to:   niro.laboratory@gmail.com
   Subject:  NIRO Website - [Your Name] - News
   Example:  NIRO Website - Jane Doe - News
 =====================================================================
@@ -81,7 +81,7 @@
 title: ""
 date: YYYY-MM-DD
 summary: ""
-image: /assets/news/post-slug.jpg
+image: /pictures/news/post-slug.jpg
 tags: []
 pinned: false
 ---

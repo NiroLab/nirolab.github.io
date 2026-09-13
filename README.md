@@ -1,9 +1,9 @@
 # NIRO Lab Website
 
-Official website of the **NSU Intelligent Robotics Lab (NIRO Lab)** - Department of Electrical and Computer Engineering, North South University, Bashundhara, Dhaka-1229, Bangladesh.
+Official website of the **NSU Intelligent Robotics Lab (NIRO Lab)** - Department of Electrical and Computer Engineering, 225 Building (Ground Floor), North South University, Bashundhara R/A, Dhaka-1229, Bangladesh.
 
 **Live site:** https://nirolab.github.io/
-**Contact:** nirolaboratory@gmail.com
+**Contact:** niro.laboratory@gmail.com
 
 Built with React 19 + TypeScript + Vite 7 + Tailwind CSS 3.4 + shadcn/ui, with GSAP, Framer Motion, Lenis, and Three.js (React Three Fiber) for motion and the hero canvas.
 
@@ -60,11 +60,19 @@ content/
 └── site.yml                  global settings (lab name, tagline, email, stats, socials, nav)
 
 public/
-├── assets/
-│   ├── people/               member photos        {slug}.jpg        400×400
-│   ├── projects/             project images       {slug}-hero.jpg   1600×900
-│   ├── news/                 news images          {slug}.jpg        1200×675
+├── pictures/                 ALL website photos live here - one folder per section
+│   ├── people/
+│   │   ├── faculty/          faculty headshots    {slug}.jpg        400×400+
+│   │   └── members/          RA/student/alumni    {slug}.jpg        400×400+
+│   ├── projects/             project images       {slug}.jpg|.png   1600×900
+│   ├── news/                 news photos          {post-slug}.jpg   1200×675
+│   │                         (extra body photos:  {post-slug}-2.jpg, -3.jpg…)
 │   ├── gallery/              gallery photos       {slug}.jpg        1200×900
+│   ├── achievements/         award photos         {slug}.jpg        800×600
+│   └── about/                About-page photos    e.g. lab-space.jpg
+├── assets/
+│   ├── brand/                NIRO vector logos - do not edit
+│   ├── icons/                UI icons - do not edit
 │   └── placeholders/         automatic fallbacks - do not edit
 └── templates/                blank fill-in templates for every content type
 ```
@@ -78,11 +86,14 @@ public/
 - **Publications / Gallery / Achievements:** `content/{type}/{slug}.md`
 - **Images:** placed at the exact path written in the file's `image:` field
 
-## Images & Placeholders
+## Images & the `pictures/` Folder
 
-- Every image slot has a designed placeholder. If the image file does not exist yet, the placeholder is shown automatically - the layout never breaks.
-- **To swap in a real photo:** save it at the exact path in the file's `image:` field (e.g. `public/assets/people/shahnewaz-siddique.jpg`). Nothing else changes.
-- Recommended sizes: person **400×400** (square), project hero **1600×900**, news **1200×675**, gallery **1200×900**, achievement **800×600**. JPG/PNG, ideally under ~500 KB.
+- **All photos live in `public/pictures/`**, organized one folder per section (`people/faculty/`, `people/members/`, `projects/`, `news/`, `gallery/`, `achievements/`, `about/`). This is the single place to manage every photo on the site.
+- **File names match the content slug**, so a photo is easy to find: `people/members/ahnaf-ojayer.jpg` belongs to `content/people/ahnaf-ojayer.md`.
+- **To replace any photo:** overwrite the existing file with a new one **keeping the exact same file name**. Nothing else changes - the site picks it up on the next build.
+- **To add a photo for new content:** name it after the slug and place it in the matching folder, then write that path in the file's `image:` field (e.g. `image: /pictures/people/members/jane-doe.jpg`).
+- If an image file is ever missing, a designed placeholder is shown automatically - the layout never breaks.
+- Recommended sizes: person **400×400** (square), project hero **1600×900**, news **1200×675**, gallery **1200×900**, achievement **800×600**. JPG, PNG, or GIF (animated GIFs play automatically wherever the image appears - e.g. `projects/hexabot.gif` for Project Hexa). Keep files lean: photos under ~500 KB, GIFs under ~4 MB.
 
 ## Content Type Reference
 
@@ -97,7 +108,7 @@ order: 1                                # optional - sort order within the categ
 email: jane.doe@northsouth.edu          # optional
 phone: "+88 02 55668200 Ext - 6000"     # optional
 office: "SAC 1000"                      # optional
-image: /assets/people/jane-doe.jpg      # optional - placeholder shown if missing
+image: /pictures/people/members/jane-doe.jpg      # optional - placeholder shown if missing
 website: https://…                      # optional
 scholar: https://…                      # optional (Google Scholar)
 linkedin: https://…                     # optional
@@ -116,7 +127,7 @@ description: "One-line summary for cards (max 200 chars)"   # required
 status: Active                          # Active | Completed | Concept
 featured: false                         # true → appears in the homepage featured band
 order: 1                                # optional
-image: /assets/projects/niro-edu-bot-hero.jpg
+image: /pictures/projects/niro-edu-bot.jpg
 duration: "October 2024 - Present"
 funding: "University Research Grant"    # optional
 areas: ["AI-driven robotics"]           # must match the lab's research areas
@@ -154,7 +165,7 @@ Optional: add a `{slug}.bib` file next to it - the site offers it as a "Cite (Bi
 title: "News Title"                     # required
 date: 2025-07-10                        # required - must match the filename date
 summary: "One or two sentences for cards."
-image: /assets/news/my-event.jpg
+image: /pictures/news/my-event.jpg
 tags: ["award", "event"]                # optional
 pinned: false                           # true → featured at the top of News
 ---
@@ -169,7 +180,7 @@ Full news article in markdown.
 title: "Photo title"                    # required
 date: 2025-07-16
 category: events                        # lab | events | research | team
-image: /assets/gallery/my-photo.jpg     # required for gallery entries
+image: /pictures/gallery/my-photo.jpg     # required for gallery entries
 alt: "Description for accessibility"
 credit: "Photo by …"                    # optional
 ---
@@ -184,7 +195,7 @@ date: 2025-07-10
 rank: "Champion"                        # e.g. Champion | Top 3 | Finalist
 event: "BEAR Summit 2025"
 project: autonomous-navigation          # optional - links the badge to a project slug
-image: /assets/gallery/bear-summit.jpg  # optional
+image: /pictures/gallery/bear-summit.jpg  # optional
 summary: "Short description of the honor."
 ---
 ```
@@ -213,7 +224,7 @@ Ready-to-fill templates with instructions and worked examples live in **`public/
 
 1. Fill in the template; prepare images at the recommended sizes.
 2. Zip the `.md` file(s) + image(s).
-3. Email to **nirolaboratory@gmail.com** with subject:
+3. Email to **niro.laboratory@gmail.com** with subject:
    `NIRO Website - [Your Name] - [Content Type]`
    (e.g. `NIRO Website - John Doe - Profile`)
 4. The coordinator places the files in the folders above and pushes - done.

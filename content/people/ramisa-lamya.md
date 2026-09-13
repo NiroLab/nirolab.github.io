@@ -4,7 +4,7 @@ role: "Student Researcher"
 category: student
 order: 4
 email: ramisalamya0@gmail.com
-image: /assets/people/ramisa-lamya.jpg
+image: /pictures/people/members/ramisa-lamya.jpg
 research_interests: "Autonomous Robotics, Mobile Robot Navigation, Machine Learning, Artificial Intelligence"
 ---
 

@@ -66,7 +66,7 @@ export default function Layout() {
       {/* scroll progress hairline, fixed just under the navbar */}
       <motion.div
         style={{ scaleX: progress }}
-        className="fixed left-0 top-[60px] z-40 h-0.5 w-full origin-left bg-nsu-sky"
+        className="fixed bottom-0 left-0 z-40 h-0.5 w-full origin-left bg-nsu-sky"
         aria-hidden
       />
       <main className="flex-1">

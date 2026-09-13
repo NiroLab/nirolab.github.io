@@ -21,7 +21,6 @@ import Reveal, { RevealGroup, RevealItem } from "@/components/Reveal";
 import Chip from "@/components/Chip";
 import { PersonImage } from "@/components/ContentImage";
 import Crosshairs from "@/components/about/Crosshairs";
-import InnovationCycle from "@/components/about/InnovationCycle";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
 
@@ -32,7 +31,7 @@ function MaskedWords({ text, delay = 0.3 }: { text: string; delay?: number }) {
   const reduced = useReducedMotion();
   const words = text.split(" ");
   return (
-    <h1 className="font-display text-[clamp(2.75rem,6vw,5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-white">
+    <h1 className="type-display text-white">
       {words.map((word, i) => (
         <span key={i}>
           <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
@@ -74,7 +73,7 @@ function Hero() {
         <circle cx="250" cy="30" r="6" fill="var(--nsu-gold)" />
       </svg>
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 py-24 md:px-8">
+      <div className="relative mx-auto w-full max-w-7xl px-5 py-16 md:px-8">
         {/* eyebrow */}
         <div className="mb-6 flex items-center gap-3">
           <motion.span
@@ -87,7 +86,7 @@ function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.25 }}
-            className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-skylight"
+            className="type-eyebrow text-nsu-skylight"
           >
             {"// ABOUT THE LAB"}
           </motion.span>
@@ -99,10 +98,10 @@ function Hero() {
           initial={{ opacity: 0, y: reduced ? 0 : 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.95, ease: PRECISION_EASE }}
-          className="mt-6 max-w-2xl text-[1.0625rem] leading-[1.7] text-slate-200"
+          className="mt-6 max-w-2xl type-body-mono text-slate-200"
         >
           The NSU Intelligent Robotics Lab (NIRO) - an innovation hub at
-          North South University, officially established in October 2024.
+          North South University.
         </motion.p>
 
         <motion.div
@@ -111,11 +110,9 @@ function Hero() {
           transition={{ duration: 0.7, delay: 1.1, ease: PRECISION_EASE }}
           className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs tracking-[0.22em] text-slate-300"
         >
-          <span>EST. OCT 2024</span>
-          <span className="h-1 w-1 rounded-full bg-nsu-gold" />
           <span>DEPT. OF ECE</span>
           <span className="h-1 w-1 rounded-full bg-nsu-gold" />
-          <span>NSU, BASHUNDHARA, DHAKA</span>
+          <span>NSU, BASHUNDHARA R/A, DHAKA</span>
         </motion.div>
       </div>
     </section>
@@ -133,7 +130,7 @@ function Story() {
   const parallaxY = useTransform(scrollYProgress, [0, 1], [-40, 40]);
 
   return (
-    <section className="relative bg-nsu-mist py-24 md:py-32" aria-label="Our story">
+    <section className="relative bg-nsu-mist py-16 md:py-32" aria-label="Our story">
       <div className="blueprint-grid absolute inset-0 opacity-60" aria-hidden />
       <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 md:px-8 lg:grid-cols-2">
         {/* image with clip reveal + parallax */}
@@ -157,14 +154,14 @@ function Story() {
           <div className="overflow-hidden rounded-2xl border border-nsu-line">
             <motion.div style={reduced ? undefined : { y: parallaxY }}>
               <img
-                src="/assets/placeholders/about-lab-space.svg"
+                src="/pictures/about/lab-space.jpg"
                 alt="Inside the NIRO Lab workspace at North South University"
                 className="aspect-[16/10] w-full scale-[1.12] object-cover"
                 loading="lazy"
               />
             </motion.div>
           </div>
-          <span className="absolute bottom-4 left-4 rounded-md bg-nsu-ink/85 px-3 py-1.5 font-mono text-[11px] tracking-wide text-nsu-sky backdrop-blur">
+          <span className="absolute bottom-4 left-4 rounded-md bg-nsu-ink/85 px-3 py-1.5 font-mono text-[11px] tracking-[0.18em] text-nsu-sky backdrop-blur">
             NIRO Lab · North South University
           </span>
         </motion.div>
@@ -173,19 +170,19 @@ function Story() {
         <Reveal>
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-nsu-blue" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+            <span className="type-eyebrow text-nsu-blue">
               {"// OUR STORY"}
             </span>
           </div>
-          <h2 className="font-display text-[clamp(2rem,3.6vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em] text-nsu-navy">
+          <h2 className="type-h2 text-nsu-navy">
             An innovation hub for intelligent machines.
           </h2>
-          <p className="mt-6 max-w-[68ch] font-body text-[1.0625rem] leading-[1.7] text-nsu-text">
+          <p className="mt-6 max-w-[68ch] type-body text-nsu-text">
             Our mission is to make robotics research accessible, impactful,
             and future-focused - transforming theoretical concepts into
             tangible, real-world solutions.
           </p>
-          <p className="mt-5 max-w-[68ch] font-body text-[1.0625rem] leading-[1.7] text-nsu-text">
+          <p className="mt-5 max-w-[68ch] type-body text-nsu-text">
             Supported by expert faculty and passionate students, the lab is
             equipped with advanced facilities for every stage of development.
             Through a structured cycle of conceptualization, simulation,
@@ -261,7 +258,7 @@ function Vision() {
   );
 
   return (
-    <section className="relative bg-nsu-mist py-24 md:py-32" aria-label="Our vision">
+    <section className="relative bg-nsu-mist py-16 md:py-32" aria-label="Our vision">
       <div
         className="pointer-events-none absolute inset-y-0 left-5 w-px bg-nsu-line md:left-8"
         aria-hidden
@@ -273,18 +270,18 @@ function Vision() {
       <Reveal className="mx-auto max-w-4xl px-5 text-center md:px-8">
         <div className="mb-8 flex items-center justify-center gap-3">
           <span className="h-px w-8 bg-nsu-blue" />
-          <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+          <span className="type-eyebrow text-nsu-blue">
             {"// OUR VISION"}
           </span>
           <span className="h-px w-8 bg-nsu-blue" />
         </div>
         <div ref={ref}>
           {reduced ? (
-            <p className="font-display text-[1.75rem] font-semibold leading-snug text-nsu-navy md:text-[2.25rem]">
+            <p className="type-h2 text-nsu-navy">
               {statement}
             </p>
           ) : (
-            <p className="font-display text-[1.75rem] font-semibold leading-snug md:text-[2.25rem]">
+            <p className="type-h2">
               {VISION_WORDS.map((w, i) => (
                 <VisionWord
                   key={i}
@@ -365,7 +362,7 @@ const PILLARS = [
 function MissionPillars() {
   const reduced = useReducedMotion();
   return (
-    <section className="bg-nsu-ice py-24 md:py-32" aria-label="Mission pillars">
+    <section className="bg-nsu-ice py-16 md:py-32" aria-label="Mission pillars">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeader
           eyebrow="OUR MISSION"
@@ -403,7 +400,7 @@ function MissionPillars() {
               <h3 className="mt-4 font-mono text-[1.375rem] font-semibold leading-[1.25] tracking-[-0.01em] text-nsu-navy">
                 {pillar.title}
               </h3>
-              <p className="mt-3 text-sm leading-[1.6] text-nsu-slate">
+              <p className="mt-3 type-body-mono text-nsu-slate">
                 {pillar.body}
               </p>
             </motion.div>
@@ -420,7 +417,7 @@ const AREA_DETAILS: string[] = [
   "Swarm coordination and distributed autonomy across robot teams. Our work spans formation control, task allocation, and communication-aware planning for fleets that must act as one.",
   "On-device inference for robots and satellites with tight power budgets. We optimize neural models and pipelines so intelligence runs where the sensors are - not in a distant data center.",
   "Robots that sense their environment and act without supervision. Research covers situational awareness, semantic mapping, and safe decision-making in dynamic, human-shared spaces.",
-  "Platforms for the air and below the surface - from drones to underwater vehicles. We build guidance, navigation, and control systems for machines operating far from easy communication.",
+  "Platforms for the air - from fixed-wing survey drones to multirotor UAVs. We build guidance, navigation, and control systems for machines operating far from easy communication.",
   "Policies that adjust to changing goals, teammates, and terrain. Our robots replan on the fly, blending classical control with learning to stay robust when conditions shift.",
   "Knowing what the robot doesn't know - principled confidence in action. We study probabilistic inference and calibration so autonomous systems can fail gracefully and ask for help.",
   "Connected infrastructure linking robots, sensors, and trusted data. Research integrates IoT telemetry, edge-cloud orchestration, and blockchain-backed integrity into robotic systems.",
@@ -433,7 +430,7 @@ function ResearchAreas() {
   return (
     <section
       id="areas"
-      className="scroll-mt-20 bg-nsu-navy py-24 md:py-32"
+      className="scroll-mt-20 bg-nsu-navy py-16 md:py-32"
       aria-label="Research areas"
     >
       <div className="mx-auto max-w-5xl px-5 md:px-8">
@@ -464,7 +461,7 @@ function ResearchAreas() {
                       transition={{ duration: 0.35, ease: PRECISION_EASE }}
                       className="h-8 w-8 shrink-0"
                     />
-                    <span className="flex-1 font-mono text-[1.25rem] font-semibold leading-snug text-white transition-colors group-hover:text-nsu-sky">
+                    <span className="flex-1 type-h3 text-white transition-colors group-hover:text-nsu-sky">
                       {area.name}
                     </span>
                     <ChevronDown
@@ -552,13 +549,20 @@ function LeaderCard({ person, index }: { person: Person; index: number }) {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8, delay: index * 0.15, ease: PRECISION_EASE }}
-      className="group flex flex-col gap-7 rounded-2xl border border-nsu-line bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-nsu-card sm:flex-row sm:p-8"
+      className="group relative flex flex-col gap-7 rounded-2xl border border-nsu-line bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-nsu-sky/60 hover:shadow-nsu-card sm:flex-row sm:p-8"
     >
+      {/* whole card links to the person's profile modal on /people;
+          icon links below sit above this overlay (z-10) and stay clickable */}
+      <Link
+        to={`/people?m=${person.slug}`}
+        aria-label={`Open ${person.name}'s profile`}
+        className="absolute inset-0 z-0 rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nsu-blue"
+      />
       <PersonImage
         src={person.imageSrc}
         name={person.name}
-        className="aspect-square w-full shrink-0 rounded-xl sm:w-44"
-        initialsClassName="text-4xl"
+        className="h-32 w-32 shrink-0 self-center rounded-full sm:h-36 sm:w-36"
+        initialsClassName="text-3xl"
       />
       <div className="min-w-0">
         <h3 className="font-mono text-[1.375rem] font-semibold tracking-[-0.01em] text-nsu-navy">
@@ -578,7 +582,7 @@ function LeaderCard({ person, index }: { person: Person; index: number }) {
           </div>
         )}
         {links.length > 0 && (
-          <div className="mt-5 flex items-center gap-2">
+          <div className="relative z-10 mt-5 flex items-center gap-2">
             {links.map(({ icon: Icon, href, label }) => (
               <a
                 key={label}
@@ -606,7 +610,7 @@ function Leadership() {
   if (leaders.length === 0) return null;
 
   return (
-    <section className="bg-nsu-mist py-24 md:py-32" aria-label="Leadership">
+    <section className="bg-nsu-mist py-16 md:py-32" aria-label="Leadership">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeader
           eyebrow="LEADERSHIP"
@@ -614,7 +618,7 @@ function Leadership() {
           linkTo="/people"
           linkLabel="Meet everyone"
         />
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-4 lg:grid-cols-2">
           {leaders.map((person, i) => (
             <LeaderCard key={person.slug} person={person} index={i} />
           ))}
@@ -658,7 +662,7 @@ function Milestones() {
 
   return (
     <section
-      className="border-t border-nsu-line bg-nsu-mist pb-24 md:pb-32"
+      className="border-t border-nsu-line bg-nsu-mist pb-16 md:pb-32"
       aria-label="Milestones"
     >
       <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -735,7 +739,7 @@ function Milestones() {
 
 /* ----------------------------------------------------------------- page */
 export default function About() {
-  // honor in-page anchors (/about#areas, /about#innovation-cycle) after mount
+  // honor in-page anchors (e.g. /about#areas) after mount
   useEffect(() => {
     const hash = window.location.hash;
     if (!hash) return;
@@ -751,7 +755,6 @@ export default function About() {
     <>
       <Hero />
       <Story />
-      <InnovationCycle />
       <Vision />
       <MissionPillars />
       <ResearchAreas />

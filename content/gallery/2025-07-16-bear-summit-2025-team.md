@@ -2,7 +2,7 @@
 title: "NIRO Lab team at BEAR Summit 2025"
 date: 2025-07-16
 category: team
-image: /assets/gallery/bear-summit-2025-team.jpg
+image: /pictures/gallery/bear-summit-2025-team.jpg
 alt: "The NIRO Lab team at their showcase booth during BEAR Summit 2025 in Dhaka"
 credit: "NIRO Lab media team"
 ---

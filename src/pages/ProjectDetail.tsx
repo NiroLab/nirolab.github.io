@@ -70,7 +70,7 @@ function useTocAndHtml(project: Project): { toc: TocItem[]; html: string } {
         i += 1;
         if (!item) return full;
         const num = String(i).padStart(2, "0");
-        return `<h2 id="${item.id}" style="scroll-margin-top:96px"><span class="mr-3 font-mono text-sm font-medium tracking-[0.2em] text-nsu-sky">${num}&thinsp;/</span>${inner}</h2>`;
+        return `<h2 id="${item.id}" style="scroll-margin-top:96px"><span class="mr-3 font-mono text-sm font-medium tracking-[0.18em] text-nsu-sky">${num}&thinsp;/</span>${inner}</h2>`;
       },
     );
     return { toc, html };
@@ -82,8 +82,8 @@ function useTocAndHtml(project: Project): { toc: TocItem[]; html: string } {
 function HeroFactsCard({ project }: { project: Project }) {
   const linkItems = [
     { key: "github", href: project.links?.github, icon: Github, label: "GitHub" },
-    { key: "demo", href: project.links?.demo, icon: Play, label: "Demo" },
     { key: "paper", href: project.links?.paper, icon: FileText, label: "Paper" },
+    { key: "demo", href: project.links?.demo, icon: Play, label: "Demo" },
   ].filter((l) => l.href);
 
   return (
@@ -94,10 +94,10 @@ function HeroFactsCard({ project }: { project: Project }) {
       className="w-full rounded-2xl border border-white/10 bg-white/[0.06] p-6 backdrop-blur-md lg:w-[340px]"
       aria-label="Project facts"
     >
-      {/* meta rail */}
+      {/* meta rail - each row rendered only when its data exists */}
       <dl className={cn("space-y-3", linkItems.length > 0 && "border-b border-white/10 pb-5")}>
         <div className="flex items-center justify-between gap-4">
-          <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400">
+          <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-slate-400">
             Status
           </dt>
           <dd>
@@ -108,7 +108,7 @@ function HeroFactsCard({ project }: { project: Project }) {
         </div>
         {project.duration && (
           <div className="flex items-center justify-between gap-4">
-            <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400">
+            <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-slate-400">
               Duration
             </dt>
             <dd className="text-right text-sm text-slate-200">
@@ -118,7 +118,7 @@ function HeroFactsCard({ project }: { project: Project }) {
         )}
         {project.funding && (
           <div className="flex items-center justify-between gap-4">
-            <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400">
+            <dt className="font-mono text-[11px] uppercase tracking-[0.18em] text-slate-400">
               Funding
             </dt>
             <dd className="text-right text-sm text-slate-200">
@@ -128,10 +128,10 @@ function HeroFactsCard({ project }: { project: Project }) {
         )}
       </dl>
 
-      {/* links */}
+      {/* links (GitHub / Paper / Demo), only when present */}
       {linkItems.length > 0 && (
         <div className="pt-5">
-          <h2 className="mb-3 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400">
+          <h2 className="mb-3 font-mono text-[11px] uppercase tracking-[0.18em] text-slate-400">
             Links
           </h2>
           <div className="flex flex-wrap gap-2">
@@ -213,17 +213,18 @@ function DetailHero({ project }: { project: Project }) {
             </motion.p>
             <WordMask
               text={project.title}
-              className="font-display text-[clamp(2.25rem,5vw,4rem)] font-bold leading-[1.05] tracking-[-0.03em] text-white"
+              className="type-display text-white"
             />
             <motion.p
               initial={{ opacity: 0, y: reduced ? 0 : 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.55, ease: PRECISION_EASE }}
-              className="mt-5 max-w-2xl font-body text-[1.0625rem] leading-[1.7] text-slate-300"
+              className="mt-5 max-w-2xl type-body text-slate-300"
             >
               {project.description}
             </motion.p>
-            {/* research-area chips (status/duration/funding live in the facts card) */}
+            {/* research-area chips (status/duration/funding/links live in the
+                glass facts card on the right) */}
             <motion.div
               initial={{ opacity: 0, y: reduced ? 0 : 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -275,7 +276,7 @@ function BodyWithToc({ project }: { project: Project }) {
   };
 
   return (
-    <section className="relative py-20 md:py-28" aria-label="Project details">
+    <section className="relative py-14 md:py-28" aria-label="Project details">
       <div className="blueprint-grid absolute inset-0 opacity-50" aria-hidden />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-12">
         {/* sticky TOC */}
@@ -289,7 +290,7 @@ function BodyWithToc({ project }: { project: Project }) {
             aria-label="Table of contents"
           >
             <div className="lg:sticky lg:top-28">
-              <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.22em] text-nsu-slate">
+              <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.22em] text-nsu-slate">
                 {"// ON THIS PAGE"}
               </p>
               <ul className="flex flex-wrap gap-x-5 gap-y-1 lg:block lg:space-y-0.5">
@@ -318,7 +319,7 @@ function BodyWithToc({ project }: { project: Project }) {
                             className="absolute left-0 top-1/2 hidden h-5 w-0.5 -translate-y-1/2 rounded-full bg-nsu-sky lg:block"
                           />
                         )}
-                        <span className="mr-2 font-mono text-[10px] text-nsu-sky/80">
+                        <span className="mr-2 font-mono text-[11px] text-nsu-sky/80">
                           {String(i + 1).padStart(2, "0")}
                         </span>
                         {item.text}
@@ -342,7 +343,7 @@ function BodyWithToc({ project }: { project: Project }) {
           {html.trim() ? (
             <Markdown
               html={html}
-              className="max-w-[72ch] [&_h2]:scroll-mt-24"
+              className="max-w-[72ch] font-sans [&_h2]:scroll-mt-24"
             />
           ) : (
             <EmptyState
@@ -363,17 +364,17 @@ function TeamStrip({ project }: { project: Project }) {
   const matchedByName = new Map(project.teamMembers.map((p) => [p.name, p]));
   return (
     <section
-      className="relative border-t border-nsu-line py-20 md:py-24"
+      className="relative border-t border-nsu-line py-14 md:py-24"
       aria-label="Project team"
     >
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <div className="mb-10 flex items-center gap-3">
           <span className="h-px w-8 bg-nsu-blue" />
-          <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+          <span className="type-eyebrow text-nsu-blue">
             {"// PROJECT TEAM"}
           </span>
         </div>
-        <RevealGroup className="flex flex-wrap gap-4" stagger={0.08}>
+        <RevealGroup className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3" stagger={0.08}>
           {project.team.map((name) => {
             const person: Person | undefined = matchedByName.get(name);
             const inner = (
@@ -382,11 +383,11 @@ function TeamStrip({ project }: { project: Project }) {
                   <PersonImage
                     src={person.imageSrc}
                     name={person.name}
-                    className="h-16 w-16 rounded-full border border-nsu-line"
+                    className="h-16 w-16 flex-none shrink-0 aspect-square rounded-full border border-nsu-line object-cover"
                     initialsClassName="text-lg"
                   />
                 ) : (
-                  <span className="flex h-16 w-16 items-center justify-center rounded-full border border-dashed border-nsu-line bg-nsu-ice font-mono text-sm text-nsu-slate">
+                  <span className="flex h-16 w-16 flex-none shrink-0 aspect-square items-center justify-center rounded-full border border-dashed border-nsu-line bg-nsu-ice font-mono text-sm text-nsu-slate">
                     {name
                       .split(/\s+/)
                       .filter(Boolean)
@@ -396,11 +397,11 @@ function TeamStrip({ project }: { project: Project }) {
                       .toUpperCase()}
                   </span>
                 )}
-                <span className="min-w-0">
-                  <span className="block truncate font-mono text-sm font-semibold text-nsu-navy">
+                <span className="min-w-0 flex-1">
+                  <span className="block break-words font-mono text-sm font-semibold leading-snug text-nsu-navy">
                     {name}
                   </span>
-                  <span className="block truncate text-xs text-nsu-slate">
+                  <span className="block break-words text-xs leading-snug text-nsu-slate">
                     {person ? person.role : "Contributor"}
                   </span>
                 </span>
@@ -412,12 +413,12 @@ function TeamStrip({ project }: { project: Project }) {
                   <Link
                     to={`/people?m=${person.slug}`}
                     title={`Open ${person.name} on the People page`}
-                    className="flex w-64 items-center gap-4 rounded-2xl border border-nsu-line bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-nsu-sky/50 hover:shadow-nsu-card"
+                    className="flex h-full w-full items-start gap-4 rounded-2xl border border-nsu-line bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-nsu-sky/50 hover:shadow-nsu-card"
                   >
                     {inner}
                   </Link>
                 ) : (
-                  <span className="flex w-64 items-center gap-4 rounded-2xl border border-dashed border-nsu-line bg-white/60 p-4">
+                  <span className="flex h-full w-full items-center gap-4 rounded-2xl border border-dashed border-nsu-line bg-white/60 p-4">
                     {inner}
                   </span>
                 )}
@@ -440,17 +441,17 @@ function RelatedAchievements({ project }: { project: Project }) {
   if (related.length === 0) return null;
   return (
     <section
-      className="relative border-t border-nsu-line py-20 md:py-24"
+      className="relative border-t border-nsu-line py-14 md:py-24"
       aria-label="Related achievements"
     >
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <div className="mb-10 flex items-center gap-3">
           <span className="h-px w-8 bg-nsu-gold" />
-          <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-gold">
+          <span className="type-eyebrow text-nsu-gold">
             {"// HONORS FOR THIS PROJECT"}
           </span>
         </div>
-        <RevealGroup className="grid gap-6 md:grid-cols-2" stagger={0.12}>
+        <RevealGroup className="grid gap-4 md:grid-cols-2" stagger={0.12}>
           {related.map((a) => (
             <RevealItem key={a.slug} y={0}>
               <motion.div
@@ -462,7 +463,7 @@ function RelatedAchievements({ project }: { project: Project }) {
                     transition: { duration: 0.7, ease: PRECISION_EASE },
                   },
                 }}
-                className="group relative flex h-full items-center gap-6 overflow-hidden rounded-2xl border border-nsu-gold/40 bg-white p-6 transition-shadow duration-300 hover:shadow-nsu-card"
+                className="group relative flex h-full items-center gap-4 overflow-hidden rounded-2xl border border-nsu-gold/40 bg-white p-6 transition-shadow duration-300 hover:shadow-nsu-card"
               >
                 <Crosshairs />
                 {/* one-time shine sweep */}
@@ -490,7 +491,7 @@ function RelatedAchievements({ project }: { project: Project }) {
                   <h3 className="mt-1 font-mono text-base font-semibold text-nsu-navy">
                     {a.title}
                   </h3>
-                  <p className="mt-1.5 font-mono text-xs tracking-wide text-nsu-slate">
+                  <p className="mt-1.5 font-mono text-xs text-nsu-slate">
                     {a.event}
                     {a.event ? " · " : ""}
                     {a.date.toLocaleDateString("en-US", {
@@ -524,11 +525,11 @@ function PrevNextNav({ project }: { project: Project }) {
 
   return (
     <section
-      className="relative overflow-hidden bg-nsu-ink py-20 md:py-24"
+      className="relative overflow-hidden bg-nsu-ink py-14 md:py-24"
       aria-label="More projects"
     >
       <div className="blueprint-grid-dark absolute inset-0" aria-hidden />
-      <div className="relative mx-auto grid max-w-7xl gap-6 px-5 md:grid-cols-2 md:px-8">
+      <div className="relative mx-auto grid max-w-7xl gap-4 px-5 md:grid-cols-2 md:px-8">
         {/* previous */}
         <Reveal y={0}>
           <motion.div
@@ -542,8 +543,8 @@ function PrevNextNav({ project }: { project: Project }) {
               className="group relative flex h-full items-center gap-5 overflow-hidden rounded-2xl border border-nsu-line-dark bg-nsu-navy/40 p-6 transition-colors duration-300 hover:border-nsu-sky/60"
             >
               <ArrowLeft className="h-6 w-6 shrink-0 text-nsu-sky transition-transform duration-300 group-hover:-translate-x-1" aria-hidden />
-              <span className="min-w-0">
-                <span className="block font-mono text-[10px] uppercase tracking-[0.22em] text-slate-400">
+              <span className="min-w-0 flex-1">
+                <span className="block font-mono text-[11px] uppercase tracking-[0.22em] text-slate-400">
                   Previous project
                 </span>
                 <span className="mt-1 block truncate font-mono text-lg font-semibold text-white">
@@ -582,7 +583,7 @@ function PrevNextNav({ project }: { project: Project }) {
                 />
               </span>
               <span className="min-w-0 flex-1">
-                <span className="block font-mono text-[10px] uppercase tracking-[0.22em] text-slate-400">
+                <span className="block font-mono text-[11px] uppercase tracking-[0.22em] text-slate-400">
                   Next project
                 </span>
                 <span className="mt-1 block truncate font-mono text-lg font-semibold text-white">

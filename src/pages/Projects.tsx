@@ -51,19 +51,19 @@ function PageHero({
             transition={{ duration: 0.5, ease: PRECISION_EASE, delay: 0.2 }}
             className="h-px w-8 origin-left bg-nsu-sky"
           />
-          <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-skylight">
+          <span className="type-eyebrow text-nsu-skylight">
             {"// RESEARCH PROJECTS"}
           </span>
         </motion.div>
         <WordMask
           text="Machines in the making."
-          className="max-w-4xl font-display text-[clamp(2.75rem,6vw,5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-white"
+          className="max-w-4xl type-display text-white"
         />
         <motion.p
           initial={{ opacity: 0, y: reduced ? 0 : 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.6, ease: PRECISION_EASE }}
-          className="mt-6 max-w-2xl text-[1.0625rem] leading-[1.7] text-slate-300"
+          className="mt-6 max-w-2xl type-body-mono text-slate-300"
         >
           From educational robots to CubeSats - active research across land,
           air, water, and orbit.
@@ -82,7 +82,7 @@ function PageHero({
               <span className="font-mono text-lg font-bold text-nsu-sky tabular-nums">
                 {chip.value}
               </span>
-              <span className="font-mono text-[10px] font-medium uppercase tracking-[0.18em] text-slate-300">
+              <span className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-slate-300">
                 {chip.label}
               </span>
             </span>
@@ -142,7 +142,7 @@ export default function Projects() {
       {/* section 2 - featured carousel (dark continuation) */}
       {featured.length > 0 && (
         <section
-          className="relative overflow-hidden bg-nsu-ink pb-24 pt-4 md:pb-28"
+          className="relative overflow-hidden bg-nsu-ink pb-16 pt-4 md:pb-28"
           aria-label="Featured projects"
         >
           <div className="blueprint-grid-dark absolute inset-0" aria-hidden />
@@ -153,7 +153,7 @@ export default function Projects() {
       )}
 
       {/* section 3 - filter + grid (light) */}
-      <section className="relative py-24 md:py-32" aria-label="All projects">
+      <section className="relative py-16 md:py-32" aria-label="All projects">
         <div className="blueprint-grid absolute inset-0 opacity-60" aria-hidden />
         <div className="relative mx-auto max-w-7xl px-5 md:px-8">
           {/* sticky filter bar */}
@@ -173,7 +173,7 @@ export default function Projects() {
 
           <div className="mt-12">
             {filtered.length > 0 ? (
-              <motion.div layout className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              <motion.div layout className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                 <AnimatePresence mode="popLayout">
                   {filtered.map((project, i) => (
                     <ProjectCardMotion
@@ -214,22 +214,22 @@ export default function Projects() {
       </section>
 
       {/* section 4 - proposal CTA (light end) */}
-      <section className="pb-24 md:pb-32" aria-label="Project proposals">
+      <section className="pb-16 md:pb-32" aria-label="Project proposals">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <RevealGroup className="relative overflow-hidden rounded-3xl border border-nsu-line bg-nsu-ice px-8 py-14 md:px-14">
             <div className="blueprint-grid absolute inset-0" aria-hidden />
-            <div className="relative flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
+            <div className="relative flex flex-col items-start gap-5 md:flex-row md:items-center md:justify-between">
               <RevealItem className="max-w-2xl">
                 <div className="mb-4 flex items-center gap-3">
                   <span className="h-px w-8 bg-nsu-blue" />
-                  <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                  <span className="type-eyebrow text-nsu-blue">
                     {"// PROPOSE A PROJECT"}
                   </span>
                 </div>
-                <h2 className="font-display text-[clamp(2rem,3.6vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em] text-nsu-navy">
+                <h2 className="type-h2 text-nsu-navy">
                   Have a project idea?
                 </h2>
-                <p className="mt-4 text-[1.0625rem] leading-[1.7] text-nsu-slate">
+                <p className="mt-4 type-body-mono text-nsu-slate">
                   We welcome proposals from students, faculty collaborators,
                   and industry partners - from semester-long course builds to
                   multi-year research platforms.

@@ -4,7 +4,7 @@ role: "Student Researcher"
 category: student
 order: 1
 email: mahtab.newaz.253@northsouth.edu
-image: /assets/people/mahtab-newaz.jpg
+image: /pictures/people/members/mahtab-newaz.jpg
 research_interests: "Embodied AI, Autonomous Navigation, Robotic Manipulation, Computer Vision, Machine Learning"
 ---
 

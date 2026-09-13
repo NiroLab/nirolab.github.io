@@ -157,20 +157,20 @@ export default function PubItem({
       <div className="flex flex-wrap items-center gap-2">
         <span
           className={cn(
-            "inline-flex items-center rounded-md px-2.5 py-1 font-mono text-[11px] font-medium uppercase tracking-wide",
+            "inline-flex items-center rounded-md px-2.5 py-1 font-mono text-[11px] font-medium uppercase tracking-[0.18em]",
             TYPE_CHIP[pub.type],
           )}
         >
           {pub.type}
         </span>
-        <span className="font-mono text-xs text-nsu-slate">
+        <span className="font-mono text-[11px] text-nsu-slate">
           <span className="italic text-nsu-navy/80">{pub.venue}</span>
           {" · "}
           <span className="tabular-nums">{pub.year}</span>
         </span>
       </div>
 
-      <h3 className="mt-2.5 font-mono text-[1.125rem] font-semibold leading-[1.35] tracking-[-0.01em] text-nsu-navy">
+      <h3 className="mt-2.5 type-h3 text-nsu-navy">
         {titleHref ? (
           <a
             href={titleHref}
@@ -185,7 +185,7 @@ export default function PubItem({
         )}
       </h3>
 
-      <p className="mt-1.5 text-sm leading-relaxed text-nsu-slate">
+      <p className="mt-1.5 type-small text-nsu-slate">
         {pub.authors.map((author, i) => (
           <span key={i}>
             <span className={cn(isMember(author) && "font-semibold text-nsu-navy")}>
@@ -202,7 +202,7 @@ export default function PubItem({
           <button
             onClick={() => setAbstractOpen((v) => !v)}
             aria-expanded={abstractOpen}
-            className="inline-flex items-center gap-1.5 font-mono text-xs font-medium uppercase tracking-wide text-nsu-blue hover:text-nsu-navy"
+            className="inline-flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-nsu-blue hover:text-nsu-navy"
           >
             Abstract
             <ChevronDown
@@ -221,7 +221,7 @@ export default function PubItem({
                 transition={{ duration: 0.3, ease: PRECISION_EASE }}
                 className="overflow-hidden"
               >
-                <p className="max-w-[68ch] pt-2 font-body text-sm leading-relaxed text-nsu-text">
+                <p className="max-w-[68ch] pt-2 type-body text-nsu-text">
                   {pub.abstract}
                 </p>
               </motion.div>
@@ -266,7 +266,7 @@ export default function PubItem({
                 className="absolute left-0 top-full z-30 mt-2 w-[min(28rem,calc(100vw-3rem))] overflow-hidden rounded-xl border border-nsu-line bg-white shadow-[0_8px_30px_-8px_rgba(16,34,44,0.25)]"
               >
                 <div className="flex items-center justify-between border-b border-nsu-line bg-nsu-mist px-4 py-2">
-                  <span className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wide text-nsu-slate">
+                  <span className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.18em] text-nsu-slate">
                     <BookOpen className="h-3.5 w-3.5" />
                     {pub.bibtex ? `${pub.slug}.bib` : "generated BibTeX"}
                   </span>
@@ -287,7 +287,7 @@ export default function PubItem({
                     {copied ? "Copied ✓" : "Copy"}
                   </button>
                 </div>
-                <pre className="max-h-64 overflow-auto bg-nsu-ice p-4 font-mono text-xs leading-relaxed text-nsu-navy [overflow-wrap:anywhere] whitespace-pre-wrap">
+                <pre className="max-h-64 overflow-auto bg-nsu-ice p-4 font-mono text-[11px] leading-relaxed text-nsu-navy [overflow-wrap:anywhere] whitespace-pre-wrap">
                   {bibtexFor(pub)}
                 </pre>
               </motion.div>

@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import {
   useSite,
-  useProjects,
   useNews,
   useAchievements,
   usePeopleGrouped,
@@ -16,7 +15,6 @@ import SectionHeader from "@/components/SectionHeader";
 import Reveal, { RevealGroup, RevealItem } from "@/components/Reveal";
 import Stat from "@/components/Stat";
 import Chip from "@/components/Chip";
-import FeaturedProjectsBand from "@/components/FeaturedProjectsBand";
 import ContentImage, { PersonImage } from "@/components/ContentImage";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
@@ -25,11 +23,39 @@ const HeroCanvas = lazy(() => import("@/components/HeroCanvas"));
 
 const PRECISION_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
+/* ------------------------------------ identity lockup (approved design) */
+function HeroLockup({ className }: { className?: string }) {
+  const reduced = useReducedMotion();
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: reduced ? 0 : 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.15, ease: PRECISION_EASE }}
+      className={cn("flex items-stretch gap-4 sm:gap-5", className)}
+    >
+      {/* aspect-[276/73] matches the SVG viewBox so the mark can never be
+          squeezed/cropped; fixed height, auto width, nothing clips it */}
+      <img
+        src="/assets/brand/niro-mark-white.svg"
+        alt="NIRO"
+        className="aspect-[276/73] h-10 w-auto self-center overflow-visible sm:h-16"
+      />
+      <span aria-hidden className="w-px self-stretch bg-white/45" />
+      <span className="font-mono text-[11px] font-medium uppercase leading-[1.7] tracking-[0.3em] text-slate-300 sm:text-xs">
+        <span className="block text-nsu-skylight">NSU</span>
+        <span className="block">Intelligent</span>
+        <span className="block">Robotics</span>
+        <span className="block">Lab</span>
+      </span>
+    </motion.div>
+  );
+}
+
 /* ------------------------------------------------ ambient orbit motif */
 const OrbitMotif = memo(function OrbitMotif() {
   return (
-    <div className="relative hidden h-[480px] w-[480px] lg:block" aria-hidden>
-      <div className="absolute inset-0 animate-[spin_24s_linear_infinite]">
+    <div className="relative hidden h-[480px] w-[480px] lg:block">
+      <div className="absolute inset-0 animate-[spin_24s_linear_infinite]" aria-hidden>
         <svg viewBox="0 0 480 480" className="h-full w-full" fill="none">
           <g transform="rotate(18 240 240)">
             <ellipse cx="240" cy="240" rx="220" ry="122" stroke="var(--nsu-sky)" strokeOpacity="0.6" strokeWidth="1.5" />
@@ -38,12 +64,13 @@ const OrbitMotif = memo(function OrbitMotif() {
         </svg>
       </div>
       {/* pulse ring every 3s */}
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 flex items-center justify-center" aria-hidden>
         <span className="absolute h-56 w-56 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite] rounded-full border border-nsu-sky/40" />
         <span className="absolute h-56 w-56 rounded-full border border-nsu-sky/25" />
       </div>
+      {/* the hero lockup lives here on desktop (right side of the hero) */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <img src="/assets/brand/niro-mark-white.svg" alt="" className="h-28 w-auto" />
+        <HeroLockup />
       </div>
     </div>
   );
@@ -61,7 +88,7 @@ function MaskedWords({
 }) {
   const reduced = useReducedMotion();
   return (
-    <h1 className="font-display text-[clamp(2.75rem,6vw,5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-white">
+    <h1 className="type-display text-white">
       {words.map((word, i) => (
         <span key={i}>
           <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
@@ -111,7 +138,7 @@ function Hero() {
     <section
       ref={ref}
       data-cursor-dot
-      className="relative flex min-h-[calc(100dvh-72px)] min-h-[680px] items-center overflow-hidden bg-hero-gradient"
+      className="relative flex min-h-[calc(100dvh-72px)] md:min-h-[680px] items-center overflow-hidden bg-hero-gradient"
       aria-label="Hero"
     >
       {/* particle canvas / static fallback */}
@@ -137,26 +164,12 @@ function Hero() {
 
       <motion.div
         style={{ y, opacity }}
-        className="relative mx-auto flex w-full max-w-7xl items-center justify-between gap-12 px-5 py-24 md:px-8"
+        className="relative mx-auto flex w-full max-w-7xl items-center justify-between gap-12 px-5 py-16 md:px-8"
       >
         <div className="max-w-4xl">
-          {/* eyebrow */}
-          <div className="mb-6 flex items-center gap-3">
-            <motion.span
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.5, ease: PRECISION_EASE }}
-              className="h-px w-8 origin-left bg-nsu-sky"
-            />
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-skylight"
-            >
-              {"// NSU INTELLIGENT ROBOTICS LAB"}
-            </motion.span>
-          </div>
+          {/* the lockup stacks above the tagline on mobile; on desktop it
+              sits in the right-side orbit motif (one instance per breakpoint) */}
+          <HeroLockup className="mb-8 lg:hidden" />
 
           <MaskedWords words={words} gradientFrom={gradientFrom} gradientTo={gradientTo} />
 
@@ -164,10 +177,10 @@ function Hero() {
             initial={{ opacity: 0, y: reduced ? 0 : 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 1.15, ease: PRECISION_EASE }}
-            className="mt-6 max-w-2xl text-[1.0625rem] leading-[1.7] text-slate-200"
+            className="mt-6 max-w-2xl type-body-mono text-slate-200"
           >
-            An innovation hub at {site.university}, Dhaka - turning ideas into
-            intelligent machines since {site.established}.
+            An innovation hub at {site.university}, Dhaka - turning ideas
+            into intelligent machines.
           </motion.p>
 
           <motion.div
@@ -176,13 +189,13 @@ function Hero() {
             transition={{ duration: 0.7, delay: 1.3, ease: PRECISION_EASE }}
             className="mt-9 flex flex-wrap gap-4"
           >
-            <a
-              href="#featured-projects"
+            <Link
+              to="/projects"
               className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-nsu-navy to-nsu-blue px-7 py-3.5 text-[0.9375rem] font-semibold tracking-[0.01em] text-white ring-1 ring-nsu-sky/40 transition-transform active:scale-[0.97]"
             >
               Explore Our Research
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+            </Link>
             <Link
               to="/people"
               className="inline-flex items-center gap-2 rounded-full border border-nsu-sky/50 px-7 py-3.5 text-[0.9375rem] font-semibold tracking-[0.01em] text-nsu-sky transition-colors hover:bg-nsu-sky/10 hover:text-white active:scale-[0.97]"
@@ -198,9 +211,9 @@ function Hero() {
             transition={{ duration: 0.7, delay: 1.5 }}
             className="mt-14 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs tracking-[0.22em] text-slate-300"
           >
-            <span>EST. 2024</span>
-            <span className="h-1 w-1 rounded-full bg-nsu-gold" />
-            <span>NSU, DHAKA</span>
+            <span>
+              ESTABLISHED ON {(site.established ?? "October 2024").toUpperCase()}
+            </span>
           </motion.div>
         </div>
 
@@ -215,7 +228,7 @@ function Hero() {
         className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2"
         aria-hidden
       >
-        <span className="font-mono text-[10px] tracking-[0.3em] text-slate-400">SCROLL</span>
+        <span className="font-mono text-[11px] tracking-[0.22em] text-slate-400">SCROLL</span>
         <span className="relative h-10 w-px overflow-hidden bg-nsu-line-dark">
           <motion.span
             animate={reduced ? {} : { y: [-16, 40] }}
@@ -266,24 +279,24 @@ function Mission() {
   });
   const words = MISSION.split(" ");
   return (
-    <section className="relative bg-nsu-mist py-24 md:py-32" aria-label="Mission">
+    <section className="relative bg-nsu-mist py-16 md:py-32" aria-label="Mission">
       <div className="pointer-events-none absolute inset-y-0 left-5 w-px bg-nsu-line md:left-8" aria-hidden />
       <div className="pointer-events-none absolute inset-y-0 right-5 w-px bg-nsu-line md:right-8" aria-hidden />
       <Reveal className="mx-auto max-w-3xl px-5 text-center md:px-8">
         <div className="mb-8 flex items-center justify-center gap-3">
           <span className="h-px w-8 bg-nsu-blue" />
-          <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+          <span className="type-eyebrow text-nsu-blue">
             {"// OUR MISSION"}
           </span>
           <span className="h-px w-8 bg-nsu-blue" />
         </div>
         <div ref={ref}>
           {reduced ? (
-            <p className="font-display text-[1.75rem] font-semibold leading-snug text-nsu-navy md:text-[2.25rem]">
+            <p className="type-h2 text-nsu-navy">
               {MISSION}
             </p>
           ) : (
-            <p className="font-display text-[1.75rem] font-semibold leading-snug md:text-[2.25rem]">
+            <p className="type-h2">
               {words.map((w, i) => (
                 <MissionWord
                   key={i}
@@ -305,7 +318,7 @@ function Mission() {
 function StatsBand() {
   const site = useSite();
   return (
-    <section className="bg-nsu-navy py-20" aria-label="Lab statistics">
+    <section className="bg-nsu-navy py-14" aria-label="Lab statistics">
       <RevealGroup className="mx-auto grid max-w-7xl grid-cols-2 gap-y-12 px-5 md:px-8 lg:grid-cols-4 lg:divide-x lg:divide-nsu-line-dark">
         {site.stats.map((stat, i) => (
           <RevealItem key={stat.label} className={cn("lg:px-10", i === 0 && "lg:pl-0")}>
@@ -325,21 +338,21 @@ function StatsBand() {
 function CycleTeaser() {
   const [active, setActive] = useState<number | null>(null);
   return (
-    <section className="relative bg-nsu-mist py-24 md:py-32" aria-label="Innovation cycle">
+    <section className="relative bg-nsu-mist py-16 md:py-32" aria-label="Innovation cycle">
       <div className="blueprint-grid absolute inset-0" aria-hidden />
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-5 md:px-8 lg:grid-cols-2">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <Reveal>
             <div className="mb-4 flex items-center gap-3">
               <span className="h-px w-8 bg-nsu-blue" />
-              <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+              <span className="type-eyebrow text-nsu-blue">
                 {"// HOW WE BUILD"}
               </span>
             </div>
-            <h2 className="font-display text-[clamp(2rem,3.6vw,3rem)] font-bold leading-[1.1] tracking-[-0.02em] text-nsu-navy">
+            <h2 className="type-h2 text-nsu-navy">
               The Robotics Innovation Cycle
             </h2>
-            <p className="mt-4 max-w-lg text-[1.0625rem] leading-[1.7] text-nsu-slate">
+            <p className="mt-4 max-w-lg type-body-mono text-nsu-slate">
               Every project at NIRO Lab travels the same disciplined loop -
               from simulation to physical testing, and back again smarter.
             </p>
@@ -367,15 +380,6 @@ function CycleTeaser() {
               ))}
             </ol>
           </RevealGroup>
-          <Reveal delay={0.2}>
-            <Link
-              to="/about#innovation-cycle"
-              className="group mt-8 inline-flex items-center gap-2 rounded-full border border-nsu-blue/40 px-6 py-3 text-[0.9375rem] font-semibold text-nsu-blue transition-colors hover:bg-nsu-ice active:scale-[0.97]"
-            >
-              See the full cycle
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
-          </Reveal>
         </div>
 
         {/* circular cycle diagram */}
@@ -417,7 +421,7 @@ function CycleTeaser() {
             })}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
               <img src="/assets/brand/niro-mark-black.svg" alt="" className="mx-auto h-12 w-auto" />
-              <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.22em] text-nsu-slate">
+              <div className="mt-2 font-mono text-[11px] uppercase tracking-[0.22em] text-nsu-slate">
                 Innovation Cycle
               </div>
             </div>
@@ -431,7 +435,7 @@ function CycleTeaser() {
 /* ------------------------------------------------------------ section 6 */
 function ResearchAreas() {
   return (
-    <section className="bg-nsu-ice py-24 md:py-32" aria-label="Research areas">
+    <section className="bg-nsu-ice py-16 md:py-32" aria-label="Research areas">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeader
           eyebrow="WHAT WE STUDY"
@@ -449,10 +453,10 @@ function ResearchAreas() {
                 <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-nsu-ice transition-colors duration-300 group-hover:bg-nsu-blue [&_img]:transition group-hover:[&_img]:invert group-hover:[&_img]:brightness-200">
                   <img src={area.icon} alt="" className="h-7 w-7" />
                 </span>
-                <h3 className="font-mono text-[1.125rem] font-semibold leading-snug text-nsu-navy">
+                <h3 className="type-h3 text-nsu-navy">
                   {area.name}
                 </h3>
-                <p className="mt-2 text-sm leading-[1.6] text-nsu-slate">{area.gloss}</p>
+                <p className="mt-2 type-body-mono text-nsu-slate">{area.gloss}</p>
               </Link>
             </RevealItem>
           ))}
@@ -474,11 +478,11 @@ function HonorsStrip() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="mb-10 flex items-center gap-3">
           <span className="h-px w-8 bg-nsu-gold" />
-          <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-gold">
+          <span className="type-eyebrow text-nsu-gold">
             {"// HONORS"}
           </span>
         </div>
-        <RevealGroup className="grid gap-6 md:grid-cols-2" stagger={0.12}>
+        <RevealGroup className="grid gap-4 md:grid-cols-2" stagger={0.12}>
           {achievements.map((a) => (
             <RevealItem key={a.slug} y={0}>
               <motion.div
@@ -486,7 +490,7 @@ function HonorsStrip() {
                   hidden: { opacity: 0, x: -24 },
                   show: { opacity: 1, x: 0, transition: { duration: 0.7, ease: PRECISION_EASE } },
                 }}
-                className="group relative flex items-center gap-6 overflow-hidden rounded-2xl border border-nsu-line-dark bg-nsu-ink/60 p-6"
+                className="group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-nsu-line-dark bg-nsu-ink/60 p-6"
               >
                 {/* one-time shine sweep */}
                 <motion.span
@@ -509,7 +513,7 @@ function HonorsStrip() {
                   <h3 className="mt-1 truncate font-mono text-base font-semibold text-white">
                     {a.title}
                   </h3>
-                  <p className="mt-1.5 font-mono text-xs tracking-wide text-slate-400">
+                  <p className="mt-1.5 font-mono text-xs text-slate-400">
                     {a.event}
                     {a.projectEntry && (
                       <>
@@ -543,8 +547,8 @@ function LeaderCard({ person }: { person: Person }) {
       <PersonImage
         src={person.imageSrc}
         name={person.name}
-        className="aspect-square w-full rounded-xl saturate-[0.85] transition duration-500 group-hover:saturate-100"
-        initialsClassName="text-5xl"
+        className="mx-auto mt-2 h-32 w-32 rounded-full saturate-[0.85] transition duration-500 group-hover:saturate-100"
+        initialsClassName="text-3xl"
       />
       <h3 className="mt-4 font-mono text-lg font-semibold text-nsu-navy">
         {person.name}
@@ -571,7 +575,7 @@ function NewsRow({ post }: { post: NewsPost }) {
         />
       </div>
       <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-3 font-mono text-[11px] tracking-wide text-nsu-slate">
+        <div className="flex items-center gap-3 font-mono text-[11px] text-nsu-slate">
           {post.date.toLocaleDateString("en-US", {
             year: "numeric",
             month: "short",
@@ -596,12 +600,12 @@ function LeadershipAndNews() {
   const news = useNews().slice(0, 3);
   const leaders = groups.founding_faculty.slice(0, 2);
   return (
-    <section className="bg-nsu-mist py-24 md:py-32" aria-label="Leadership and news">
+    <section className="bg-nsu-mist py-16 md:py-32" aria-label="Leadership and news">
       <div className="mx-auto grid max-w-7xl gap-14 px-5 md:px-8 lg:grid-cols-12">
         <Reveal className="lg:col-span-5">
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-nsu-blue" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+            <span className="type-eyebrow text-nsu-blue">
               {"// LEADERSHIP"}
             </span>
           </div>
@@ -625,7 +629,7 @@ function LeadershipAndNews() {
         <Reveal className="lg:col-span-7" delay={0.15}>
           <div className="mb-4 flex items-center gap-3">
             <span className="h-px w-8 bg-nsu-blue" />
-            <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+            <span className="type-eyebrow text-nsu-blue">
               {"// LATEST"}
             </span>
           </div>
@@ -654,15 +658,11 @@ function LeadershipAndNews() {
 
 /* ----------------------------------------------------------------- page */
 export default function Home() {
-  const { featured } = useProjects();
   return (
     <>
       <Hero />
       <Mission />
       <StatsBand />
-      <div id="featured-projects" data-cursor-dot>
-        <FeaturedProjectsBand projects={featured} />
-      </div>
       <CycleTeaser />
       <ResearchAreas />
       <HonorsStrip />

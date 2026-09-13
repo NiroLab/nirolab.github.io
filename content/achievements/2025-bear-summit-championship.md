@@ -4,7 +4,7 @@ date: 2025-07-10
 rank: "Champion"
 event: "BEAR Summit 2025"
 project: autonomous-navigation
-image: /assets/achievements/bear-championship.jpg
+image: /pictures/achievements/bear-championship.jpg
 summary: "Championship Award in the Robotics Demo Digital Display segment at BEAR Summit 2025 for the AI-Enabled Indoor Autonomous Delivery Robot."
 ---
 

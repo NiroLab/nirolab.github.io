@@ -46,7 +46,7 @@ export default function PageHero({
         <circle cx="276" cy="118" r="5" fill="var(--nsu-gold)" />
       </svg>
 
-      <div className="relative mx-auto w-full max-w-7xl px-5 py-20 md:px-8 md:py-28">
+      <div className="relative mx-auto w-full max-w-7xl px-5 py-14 md:px-8 md:py-28">
         {/* eyebrow */}
         <div className="mb-6 flex items-center gap-3">
           <motion.span
@@ -59,7 +59,7 @@ export default function PageHero({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-skylight"
+            className="type-eyebrow text-nsu-skylight"
           >
             {"// "}
             {eyebrow}
@@ -67,7 +67,7 @@ export default function PageHero({
         </div>
 
         {/* word-mask H1 */}
-        <h1 className="max-w-4xl font-display text-[clamp(2.75rem,6vw,5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-white">
+        <h1 className="max-w-4xl type-display text-white">
           {words.map((word, i) => (
             <span key={i}>
               <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
@@ -93,7 +93,7 @@ export default function PageHero({
           initial={{ opacity: 0, y: reduced ? 0 : 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.9, ease: PRECISION_EASE }}
-          className="mt-5 max-w-2xl text-[1.0625rem] leading-[1.7] text-slate-200"
+          className="mt-5 max-w-2xl type-body-mono text-slate-200"
         >
           {sub}
         </motion.p>

@@ -1,16 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Mail } from "lucide-react";
+import { Link } from "react-router";
+import { ArrowRight, Mail, GraduationCap, Globe, Linkedin } from "lucide-react";
 import type { Person } from "@/lib/content";
 import Chip from "@/components/Chip";
 import { PersonImage } from "@/components/ContentImage";
 import { cn } from "@/lib/utils";
-import CrosshairCorners from "./CrosshairCorners";
-import {
-  CATEGORY_META,
-  currentPositionOf,
-  directorBadge,
-  interestsOf,
-} from "./meta";
+import { currentPositionOf, interestsOf } from "./meta";
 
 const PRECISION_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -19,6 +14,8 @@ interface CardProps {
   index: number;
   onOpen: (slug: string) => void;
 }
+
+type PersonCardProps = Omit<CardProps, "onOpen">;
 
 /** Shared enter/exit/layout props for directory items (people.md §2). */
 function itemMotion(index: number) {
@@ -37,92 +34,80 @@ function itemMotion(index: number) {
 }
 
 /**
- * PersonCard (people.md §3): square portrait (placeholder w/ initials),
- * crosshair corners, name / role / email / ≤2 interest chips + "+n",
- * category tag. Hover: lift, sheen sweep, "View profile →" overlay,
- * border → nsu-blue. Founding-faculty variant: gold hairline top + badge.
+ * PersonCard: horizontal directory card mirroring the About Leadership
+ * design - circular portrait left, name / role / office / interest chips /
+ * contact icon links right. Whole card opens the profile modal via ?m=.
  */
-export default function PersonCard({ person, index, onOpen }: CardProps) {
-  const interests = interestsOf(person);
-  const shown = interests.slice(0, 2);
-  const extra = interests.length - shown.length;
-  const founding = person.category === "founding_faculty";
-  const badge = founding ? directorBadge(person.role) : null;
+export default function PersonCard({ person, index }: PersonCardProps) {
+  const interests = interestsOf(person).slice(0, 4);
+  const links = [
+    person.email
+      ? { icon: Mail, href: `mailto:${person.email}`, label: "Email" }
+      : null,
+    person.scholar
+      ? { icon: GraduationCap, href: person.scholar, label: "Google Scholar" }
+      : null,
+    person.website
+      ? { icon: Globe, href: person.website, label: "Website" }
+      : null,
+    person.linkedin
+      ? { icon: Linkedin, href: person.linkedin, label: "LinkedIn" }
+      : null,
+  ].filter((l): l is NonNullable<typeof l> => l !== null);
 
   return (
-    <motion.button
+    <motion.article
       {...itemMotion(index)}
-      type="button"
-      onClick={() => onOpen(person.slug)}
-      aria-label={`View profile of ${person.name}`}
-      className="group relative overflow-hidden rounded-2xl border border-nsu-line bg-white text-left transition-[border-color,box-shadow] duration-300 hover:border-nsu-blue hover:shadow-nsu-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nsu-sky"
+      className="group relative flex h-full flex-col gap-7 rounded-2xl border border-nsu-line bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-nsu-sky/60 hover:shadow-nsu-card sm:flex-row sm:p-8"
     >
-      {/* hover lift lives on the inner wrapper so it never fights Framer transforms */}
-      <span className="block transition-transform duration-300 ease-precision group-hover:-translate-y-1.5">
-        {founding && (
-          <span
-            aria-hidden
-            className="absolute inset-x-0 top-0 z-20 h-[2px] bg-gold-flare"
-          />
+      {/* whole card opens the profile modal (?m= deep link);
+          icon links below sit above this overlay (z-10) and stay clickable */}
+      <Link
+        to={`/people?m=${person.slug}`}
+        aria-label={`Open ${person.name}'s profile`}
+        className="absolute inset-0 z-0 rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nsu-blue"
+      />
+      <PersonImage
+        src={person.imageSrc}
+        name={person.name}
+        className="h-32 w-32 shrink-0 self-center rounded-full sm:h-36 sm:w-36"
+        initialsClassName="text-3xl"
+      />
+      <div className="min-w-0">
+        <h3 className="font-mono text-[1.375rem] font-semibold tracking-[-0.01em] text-nsu-navy">
+          {person.name}
+        </h3>
+        <p className="mt-1 text-sm font-medium text-nsu-blue">{person.role}</p>
+        {person.office && (
+          <p className="mt-1 font-mono text-xs text-nsu-slate">
+            Office {person.office}
+          </p>
         )}
-
-        {/* portrait */}
-        <span className="relative block">
-          <div className="relative aspect-square overflow-hidden [&_img]:transition-transform [&_img]:duration-500 group-hover:[&_img]:scale-[1.04]">
-            <PersonImage
-              src={person.imageSrc}
-              name={person.name}
-              className="h-full w-full"
-              initialsClassName="text-5xl"
-            />
-            {/* sheen sweep */}
-            <span
-              aria-hidden
-              className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-500 group-hover:translate-x-full"
-            />
-            {/* "View profile →" slides up on hover */}
-            <span
-              aria-hidden
-              className="absolute inset-x-0 bottom-0 flex translate-y-full items-center justify-center gap-1.5 bg-gradient-to-t from-nsu-ink/85 to-nsu-navy/40 py-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-white transition-transform duration-300 ease-precision group-hover:translate-y-0"
-            >
-              View profile
-              <ArrowRight className="h-3.5 w-3.5" />
-            </span>
-          </div>
-          <CrosshairCorners />
-          {badge && (
-            <span className="absolute left-3 top-3 z-20">
-              <Chip variant="gold">{badge}</Chip>
-            </span>
-          )}
-        </span>
-
-        {/* body */}
-        <span className="block p-5">
-          <span className="block font-mono text-lg font-semibold leading-snug tracking-[-0.01em] text-nsu-navy">
-            {person.name}
-          </span>
-          <span className="mt-1 block text-sm leading-relaxed text-nsu-slate">
-            {person.role}
-          </span>
-          {person.email && (
-            <span className="mt-2 flex items-center gap-1.5 font-mono text-[11px] text-nsu-slate/90 [overflow-wrap:anywhere]">
-              <Mail className="h-3 w-3 shrink-0 text-nsu-blue" />
-              {person.email}
-            </span>
-          )}
-          <span className="mt-3 flex flex-wrap items-center gap-1.5">
-            {shown.map((interest) => (
+        {interests.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {interests.map((interest) => (
               <Chip key={interest}>{interest}</Chip>
             ))}
-            {extra > 0 && <Chip className="bg-nsu-mist text-nsu-slate">+{extra} more</Chip>}
-            <Chip variant="concept" className="ml-auto">
-              {CATEGORY_META[person.category].label}
-            </Chip>
-          </span>
-        </span>
-      </span>
-    </motion.button>
+          </div>
+        )}
+        {links.length > 0 && (
+          <div className="relative z-10 mt-5 flex items-center gap-2">
+            {links.map(({ icon: Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("mailto:") ? undefined : "_blank"}
+                rel="noreferrer"
+                aria-label={`${person.name} - ${label}`}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-nsu-line text-nsu-blue transition-colors hover:border-nsu-blue hover:bg-nsu-ice"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </motion.article>
   );
 }
 
@@ -138,7 +123,7 @@ export function AlumniRow({ person, index, onOpen }: CardProps) {
       type="button"
       onClick={() => onOpen(person.slug)}
       aria-label={`View profile of ${person.name}`}
-      className="group relative flex w-full items-center gap-4 overflow-hidden rounded-xl border border-nsu-line bg-white px-4 py-3 text-left transition-[border-color,box-shadow] duration-300 hover:border-nsu-blue hover:shadow-nsu-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nsu-sky"
+      className="group relative flex h-full w-full items-center gap-4 overflow-hidden rounded-xl border border-nsu-line bg-white px-4 py-3 text-left transition-[border-color,box-shadow] duration-300 hover:border-nsu-blue hover:shadow-nsu-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nsu-sky"
     >
       <span className="relative block h-14 w-14 shrink-0 overflow-hidden rounded-full">
         <PersonImage
@@ -149,10 +134,10 @@ export function AlumniRow({ person, index, onOpen }: CardProps) {
         />
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block truncate font-mono text-[0.9375rem] font-semibold text-nsu-navy">
+        <span className="block line-clamp-1 break-words font-mono text-[0.9375rem] font-semibold leading-snug text-nsu-navy">
           {person.name}
         </span>
-        <span className="block truncate text-sm text-nsu-slate">{position}</span>
+        <span className="block line-clamp-2 break-words text-sm leading-snug text-nsu-slate">{position}</span>
       </span>
       <Chip className="hidden shrink-0 sm:inline-flex">Alumni</Chip>
       <ArrowRight

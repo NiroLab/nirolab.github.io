@@ -54,7 +54,7 @@ export default function NewsCard({
         />
       </div>
       <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wide text-nsu-slate">
+        <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.18em] text-nsu-slate">
           <time dateTime={post.date.toISOString()}>{formatNewsDate(post.date)}</time>
           {isAwardPost(post) && (
             <Medal className="h-3.5 w-3.5 text-nsu-gold" aria-label="Award story" />
@@ -64,7 +64,7 @@ export default function NewsCard({
             {post.readingTime} min
           </span>
         </div>
-        <h3 className="mt-1 line-clamp-2 font-mono text-[1.0625rem] font-semibold leading-snug tracking-[-0.01em] text-nsu-navy transition-colors group-hover:text-nsu-blue">
+        <h3 className="mt-1 line-clamp-2 type-h3 text-nsu-navy transition-colors group-hover:text-nsu-blue">
           {post.title}
         </h3>
         {post.summary && (

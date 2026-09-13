@@ -273,11 +273,9 @@ function loadNews(): NewsPost[] {
       readingTime: readingTime(entry.body),
     });
   }
-  // pinned first, then newest first
-  return posts.sort((a, b) => {
-    if (a.pinned !== b.pinned) return a.pinned ? -1 : 1;
-    return b.date.getTime() - a.date.getTime();
-  });
+  // strictly newest first by date - `pinned` only adds a visual badge,
+  // it never reorders ahead of newer posts
+  return posts.sort((a, b) => b.date.getTime() - a.date.getTime());
 }
 
 function loadGallery(): GalleryItem[] {
@@ -330,9 +328,9 @@ function loadSite(): SiteConfig {
       fullName: "NSU Intelligent Robotics Lab",
       tagline:
         "Advancing robotics research through innovation and collaboration",
-      email: "nirolaboratory@gmail.com",
+      email: "niro.laboratory@gmail.com",
       address:
-        "NIRO Lab, North South University, Bashundhara, Dhaka-1229, Bangladesh",
+        "225 Building (Ground Floor), North South University, Bashundhara R/A, Dhaka-1229, Bangladesh",
       nav: [{ label: "Home", path: "/" }],
     });
   }
@@ -354,9 +352,9 @@ function loadSite(): SiteConfig {
       fullName: "NSU Intelligent Robotics Lab",
       tagline:
         "Advancing robotics research through innovation and collaboration",
-      email: "nirolaboratory@gmail.com",
+      email: "niro.laboratory@gmail.com",
       address:
-        "NIRO Lab, North South University, Bashundhara, Dhaka-1229, Bangladesh",
+        "225 Building (Ground Floor), North South University, Bashundhara R/A, Dhaka-1229, Bangladesh",
       nav: [{ label: "Home", path: "/" }],
     });
   }
@@ -439,7 +437,7 @@ export function usePublications(): PublicationsResult {
   };
 }
 
-/** News: pinned first, then date desc. */
+/** News: strictly date-descending (pinned is a badge, not an ordering). */
 export function useNews(): NewsPost[] {
   return news;
 }

@@ -99,7 +99,7 @@ export default function FeaturedCarousel({ projects }: { projects: Project[] }) 
       <AnimatePresence initial={false}>
         <motion.div
           key={project.slug}
-          className="absolute inset-0"
+          className="absolute inset-3 rounded-xl bg-white p-2 sm:inset-4"
           initial={{ opacity: 0, x: reduced ? 0 : 24 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0 }}
@@ -109,8 +109,7 @@ export default function FeaturedCarousel({ projects }: { projects: Project[] }) 
             src={project.imageSrc}
             type="project"
             alt=""
-            dark
-            className="h-full w-full object-cover"
+            className="h-full w-full rounded-lg border-0 object-cover"
           />
         </motion.div>
       </AnimatePresence>
@@ -144,7 +143,7 @@ export default function FeaturedCarousel({ projects }: { projects: Project[] }) 
             }}
             className="flex items-center gap-3"
           >
-            <span className="inline-flex items-center gap-1.5 rounded-md bg-nsu-gold/15 px-2.5 py-1 font-mono text-[11px] font-medium tracking-wide text-nsu-gold">
+            <span className="inline-flex items-center gap-1.5 rounded-md bg-nsu-gold/15 px-2.5 py-1 font-mono text-[11px] font-medium tracking-[0.18em] text-nsu-gold">
               <FeaturedStar className="h-3 w-3" />
               FEATURED
             </span>
@@ -152,7 +151,7 @@ export default function FeaturedCarousel({ projects }: { projects: Project[] }) 
               {project.status.toUpperCase()}
             </Chip>
             {project.duration && (
-              <span className="hidden font-mono text-[11px] tracking-wide text-slate-300 sm:inline">
+              <span className="hidden font-mono text-[11px] tracking-[0.18em] text-slate-300 sm:inline">
                 {project.duration}
               </span>
             )}

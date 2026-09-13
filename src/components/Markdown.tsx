@@ -23,15 +23,15 @@ export default function Markdown({
   return (
     <div
       className={cn(
-        "markdown-body max-w-[68ch] font-body text-[1.0625rem] leading-[1.7] text-nsu-text",
-        "[&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:tracking-[-0.01em] [&_h2]:text-nsu-navy",
-        "[&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:font-mono [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:text-nsu-navy",
+        "markdown-body max-w-[68ch] type-body text-nsu-text",
+        "[&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:font-display [&_h2]:text-[clamp(1.625rem,3.6vw,3rem)] [&_h2]:font-bold [&_h2]:leading-[1.1] [&_h2]:tracking-[-0.02em] [&_h2]:text-nsu-navy",
+        "[&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:font-display [&_h3]:text-[1.375rem] [&_h3]:font-semibold [&_h3]:leading-[1.25] [&_h3]:tracking-[-0.01em] [&_h3]:text-nsu-navy",
         "[&_p]:mb-5",
         "[&_a]:font-medium [&_a]:text-nsu-blue [&_a]:underline [&_a]:decoration-nsu-blue/30 [&_a]:underline-offset-4 hover:[&_a]:decoration-nsu-blue",
         "[&_ul]:mb-5 [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mb-2",
         "[&_ol]:mb-5 [&_ol]:list-decimal [&_ol]:pl-6",
         "[&_strong]:font-semibold [&_strong]:text-nsu-navy",
-        "[&_code]:rounded [&_code]:bg-nsu-ice [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-[0.875rem] [&_code]:text-nsu-navy [&_code]:[overflow-wrap:anywhere]",
+        "[&_code]:rounded [&_code]:bg-nsu-ice [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-[0.9375rem] [&_code]:text-nsu-navy [&_code]:[overflow-wrap:anywhere]",
         "[&_pre]:mb-5 [&_pre]:overflow-x-auto [&_pre]:rounded-xl [&_pre]:bg-nsu-ink [&_pre]:p-5 [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:text-nsu-ice",
         "[&_table]:mb-6 [&_table]:w-full [&_table]:border-collapse [&_table]:text-[0.9375rem]",
         "[&_th]:border [&_th]:border-nsu-line [&_th]:bg-nsu-ice [&_th]:px-4 [&_th]:py-2.5 [&_th]:text-left [&_th]:font-semibold [&_th]:text-nsu-navy",

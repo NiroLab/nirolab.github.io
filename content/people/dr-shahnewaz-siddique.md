@@ -6,7 +6,7 @@ order: 1
 email: shahnewaz.siddique@northsouth.edu
 phone: "+88 02 55668200 Ext - 1515"
 office: "SAC 1019"
-image: /assets/people/dr-shahnewaz-siddique.jpg
+image: /pictures/people/faculty/dr-shahnewaz-siddique.jpg
 website: https://ece.northsouth.edu/people/dr-shahnewaz-siddique/
 scholar: https://scholar.google.com/citations?hl=en&user=6XLqr5QAAAAJ
 research_interests: "Controls, Robotics, Intelligent Systems, Artificial Intelligence, Modeling and Simulation"

@@ -66,7 +66,7 @@ export default function Navbar() {
           </Link>
 
           {/* desktop links */}
-          <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
+          <nav className="hidden items-center gap-4 lg:flex" aria-label="Primary">
             {site.nav.map((item) => (
               <NavLink
                 key={item.path}
@@ -74,7 +74,7 @@ export default function Navbar() {
                 end={item.path === "/"}
                 className={({ isActive }) =>
                   cn(
-                    "group relative text-[0.9375rem] font-semibold tracking-[0.01em] transition-colors",
+                    "group relative type-button transition-colors",
                     isActive ? "text-white" : "text-slate-100/70 hover:text-white",
                   )
                 }
@@ -164,7 +164,7 @@ export default function Navbar() {
                           to={item.path}
                           onClick={() => setOpen(false)}
                           className={cn(
-                            "flex items-baseline gap-4 rounded-lg border-l-2 px-3 py-3 font-mono text-2xl font-semibold transition-colors",
+                            "flex items-baseline gap-4 rounded-lg border-l-2 px-3 py-3 font-mono text-xl font-semibold transition-colors md:text-2xl",
                             active
                               ? "border-nsu-sky bg-white/5 text-white"
                               : "border-transparent text-slate-200 hover:bg-white/5 hover:text-white",

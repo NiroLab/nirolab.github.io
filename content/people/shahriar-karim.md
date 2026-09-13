@@ -6,7 +6,7 @@ order: 1
 email: shahriar.karim@northsouth.edu
 phone: "+88 02 55668200 Ext - 6373"
 office: "SAC 1045B"
-image: /assets/people/shahriar-karim.jpg
+image: /pictures/people/faculty/shahriar-karim.jpg
 website: https://ece.northsouth.edu/~shahriar.karim/
 research_interests: "AI & Robotics, Modeling and Simulation, Bioinformatics, Signals and Image Processing"
 ---

@@ -2,14 +2,14 @@
 title: "NIRO Showcasing at NSU AI and Robotics Day"
 date: 2025-11-08
 summary: "NIRO Lab presented its latest projects with hands-on demonstrations at the inaugural NSU AI and Robotics Day on November 8, 2025."
-image: /assets/news/niro-nsu-ai-robotics-day.jpg
+image: /pictures/news/niro-nsu-ai-robotics-day.jpg
 tags: ["event", "showcase"]
 pinned: false
 ---
 
 The NSU Intelligent Robotics Lab (NIRO Lab) showcased its cutting-edge projects at the **NSU AI and Robotics Day**, held on November 8, 2025 at North South University, Dhaka. This inaugural event brought together students, faculty, and industry professionals to explore advancements in artificial intelligence and robotics.
 
-![NIRO Lab showcasing at NSU AI and Robotics Day](/assets/news/nsu-ai-robotics-day-2025.jpeg)
+![NIRO Lab showcasing at NSU AI and Robotics Day](/pictures/news/niro-nsu-ai-robotics-day.jpg)
 
 ## Highlighting Excellence in Robotics
 

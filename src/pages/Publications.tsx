@@ -212,7 +212,7 @@ export default function Publications() {
                   aria-label="Search publications"
                   className="w-full rounded-full border border-nsu-line bg-white py-2.5 pl-10 pr-16 text-sm text-nsu-text outline-none transition-colors placeholder:text-nsu-slate/70 focus:border-nsu-blue/50 focus:ring-2 focus:ring-nsu-sky/20"
                 />
-                <kbd className="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 items-center gap-1 rounded-md border border-nsu-line bg-nsu-ice px-1.5 py-0.5 font-mono text-[10px] text-nsu-slate md:inline-flex">
+                <kbd className="pointer-events-none absolute right-3 top-1/2 hidden -translate-y-1/2 items-center gap-1 rounded-md border border-nsu-line bg-nsu-ice px-1.5 py-0.5 font-mono text-[11px] text-nsu-slate md:inline-flex">
                   <Command className="h-3 w-3" />K
                 </kbd>
               </div>
@@ -315,7 +315,7 @@ export default function Publications() {
                       >
                         {/* sticky year header w/ ghost numeral */}
                         <div className="relative mb-2 flex items-end justify-between lg:sticky lg:top-[132px] lg:z-10 lg:bg-nsu-mist/90 lg:py-2 lg:backdrop-blur-sm">
-                          <h2 className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-nsu-blue">
+                          <h2 className="type-eyebrow text-nsu-blue">
                             {"// "}
                             {groupYear}
                             <span className="ml-3 text-nsu-slate">
@@ -350,7 +350,7 @@ export default function Publications() {
         </>
       ) : (
         /* ------------------------------ section 4 - empty state */
-        <section className="bg-nsu-mist py-20 md:py-28">
+        <section className="bg-nsu-mist py-14 md:py-28">
           <div className="mx-auto max-w-4xl px-5 md:px-8">
             <Reveal>
               <div className="blueprint-grid relative flex flex-col items-center overflow-hidden rounded-3xl border border-nsu-line bg-white px-8 py-16 text-center md:py-20">

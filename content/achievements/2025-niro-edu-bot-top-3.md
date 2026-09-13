@@ -4,7 +4,7 @@ date: 2025-07-10
 rank: "Top 3"
 event: "BEAR Summit 2025"
 project: nirobot
-image: /assets/achievements/niro-edu-bot-top-3.jpg
+image: /pictures/achievements/niro-edu-bot-top-3.jpg
 summary: "The NIRO EDU BOT educational platform finished in the Top 3 at BEAR Summit 2025."
 ---
 

@@ -4,7 +4,7 @@ description: "Training robots to play chase using reinforcement learning."
 status: Active
 featured: false
 order: 5
-image: /assets/projects/pursuit-evasion-hero.jpg
+image: /pictures/projects/pursuit-evasion.jpg
 duration: "October 2025 - Present"
 areas: ["Multi-Robot Systems", "Adaptive decision-making"]
 team:

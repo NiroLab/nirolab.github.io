@@ -50,7 +50,7 @@ export default function Stat({
     <div ref={ref} className={cn("relative", className)}>
       <div
         className={cn(
-          "font-mono text-[clamp(2.5rem,5vw,4rem)] font-bold leading-none tabular-nums",
+          "font-mono text-[clamp(2rem,5vw,4rem)] font-bold leading-none tabular-nums",
           dark ? "text-white" : "text-nsu-navy",
         )}
       >
@@ -59,7 +59,7 @@ export default function Stat({
       </div>
       <div
         className={cn(
-          "mt-3 flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.22em]",
+          "mt-3 flex items-center gap-2 type-eyebrow",
           dark ? "text-nsu-sky" : "text-nsu-blue",
         )}
       >

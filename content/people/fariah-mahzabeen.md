@@ -6,7 +6,7 @@ order: 4
 email: fariah.mahzabeen01@northsouth.edu
 phone: "+88 02 55668200 Ext - 6192"
 office: "SAC 11105"
-image: /assets/people/fariah-mahzabeen.jpg
+image: /pictures/people/faculty/fariah-mahzabeen.jpg
 website: https://ece.northsouth.edu/people/dr-fariah-mahzabeen/
 research_interests: "Artificial Intelligence, Robotics, Embedded Systems, IoT, Human-Computer Interaction, Semiconductor Technology"
 ---

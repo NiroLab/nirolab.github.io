@@ -4,9 +4,9 @@ description: "A 3U cubesat for onboard detection and tracking of Space Resident 
 status: Active
 featured: true
 order: 8
-image: /assets/projects/nsu-ai-sat-hero.jpg
+image: /pictures/projects/nsu-ai-sat.png
 duration: "2024 - Present"
-areas: ["Edge AI computing", "Aerial & underwater robotics"]
+areas: ["Edge AI computing", "Aerial robotics"]
 team:
   - Dr. Shahnewaz Siddique
 ---
