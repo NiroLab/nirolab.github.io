@@ -158,6 +158,8 @@ abstract: "2-4 sentences"               # optional
 
 Optional: add a `{slug}.bib` file next to it - the site offers it as a "Cite (BibTeX)" download automatically.
 
+**Mentioned in bios (deduplication + grouping):** if a person's bio (the markdown body of their `content/people/*.md` file) contains a publication's exact title - typically in a `## Publications` section - that paper is automatically linked back to them. On the Publications page the paper appears only once (duplicate entries with the same title are merged), with a "Listed by" line under the title naming every person who mentioned it, linked to their profile. Matching is case-insensitive and ignores trailing punctuation, but the title text must otherwise match exactly.
+
 ### News - `content/news/{YYYY-MM-DD-slug}.md`
 
 ```yaml

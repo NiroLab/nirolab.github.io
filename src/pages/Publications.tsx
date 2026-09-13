@@ -43,6 +43,7 @@ const SAMPLE_PUB: Publication = {
   code: undefined,
   abstract:
     "An illustrative example of how a publication from the lab will appear here once our first papers are published.",
+  mentionedBy: [],
   body: "",
   html: "",
   bibtex: null,

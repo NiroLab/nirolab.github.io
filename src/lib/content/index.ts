@@ -70,6 +70,8 @@ export interface Publication extends PublicationFrontmatter, Base {
   html: string;
   /** raw BibTeX from an optional sibling {slug}.bib */
   bibtex: string | null;
+  /** lab members who mention this publication in their bio (deduped) */
+  mentionedBy: { name: string; slug: string }[];
 }
 
 export interface NewsPost extends NewsFrontmatter, Base {
@@ -252,9 +254,38 @@ function loadPublications(): Publication[] {
       body: entry.body,
       html: renderMarkdown(entry.body),
       bibtex: bibs.get(slug) ?? null,
+      mentionedBy: [],
     });
   }
-  return pubs.sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+  const seen = new Set<string>();
+  return pubs
+    .map((pub) => ({ ...pub, mentionedBy: [] as Publication["mentionedBy"] }))
+    .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title))
+    .filter((pub) => {
+      const key = normalizeTitle(pub.title);
+      if (seen.has(key)) return false; // same paper listed twice: show once
+      seen.add(key);
+      return true;
+    });
+}
+
+/** case/whitespace-insensitive title key for matching and dedupe */
+function normalizeTitle(title: string): string {
+  return title.toLowerCase().replace(/\s+/g, " ").replace(/[.\s]+$/, "").trim();
+}
+
+/** attach every lab member whose bio mentions the publication title */
+function attachPublicationMentions(
+  pubs: Publication[],
+  members: Person[],
+): void {
+  for (const pub of pubs) {
+    const key = normalizeTitle(pub.title);
+    pub.mentionedBy = members
+      .filter((m) => normalizeTitle(m.body).includes(key))
+      .map((m) => ({ name: m.name, slug: m.slug }))
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }
 }
 
 function loadNews(): NewsPost[] {
@@ -366,6 +397,7 @@ function loadSite(): SiteConfig {
 const people = loadPeople();
 const projects = loadProjects(people);
 const publications = loadPublications();
+attachPublicationMentions(publications, people);
 const news = loadNews();
 const gallery = loadGallery();
 const achievements = loadAchievements(projects);

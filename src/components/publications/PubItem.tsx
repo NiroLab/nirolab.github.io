@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -184,6 +185,26 @@ export default function PubItem({
           pub.title
         )}
       </h3>
+
+      {/* grouped lab members who mention this paper in their bios */}
+      {pub.mentionedBy.length > 0 && (
+        <p className="mt-1.5 flex flex-wrap items-baseline gap-x-1.5 font-mono text-[11px] leading-[1.6] text-nsu-slate">
+          <span className="font-medium uppercase tracking-[0.18em] text-nsu-blue">
+            Listed by
+          </span>
+          {pub.mentionedBy.map((m, i) => (
+            <span key={m.slug}>
+              <Link
+                to={`/people?m=${m.slug}`}
+                className="font-medium text-nsu-navy underline decoration-nsu-blue/30 underline-offset-2 transition-colors hover:text-nsu-blue hover:decoration-nsu-blue"
+              >
+                {m.name}
+              </Link>
+              {i < pub.mentionedBy.length - 1 ? "," : ""}
+            </span>
+          ))}
+        </p>
+      )}
 
       <p className="mt-1.5 type-small text-nsu-slate">
         {pub.authors.map((author, i) => (

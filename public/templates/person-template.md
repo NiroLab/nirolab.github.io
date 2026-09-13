@@ -118,3 +118,13 @@ NIRO Lab (NSU Intelligent Robotics Lab).
 ## Research Focus
 
 Describe your research focus, current projects, and interests.
+
+## Publications
+
+<!-- Optional: list your publications by their EXACT titles (one per line,
+     matching the title in content/publications/*.md). Each matching paper
+     will show your name under its title on the Publications page. Delete
+     this section if you have no publications to list. -->
+
+- Exact Paper Title One
+- Exact Paper Title Two

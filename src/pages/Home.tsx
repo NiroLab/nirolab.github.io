@@ -439,7 +439,7 @@ function ResearchAreas() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeader
           eyebrow="WHAT WE STUDY"
-          title="Research across the robotics stack"
+          title="Machines that sense, decide, and act"
           linkTo="/about#areas"
           linkLabel="All areas"
         />
