@@ -211,9 +211,10 @@ function Hero() {
             transition={{ duration: 0.7, delay: 1.5 }}
             className="mt-14 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs tracking-[0.22em] text-slate-300"
           >
-            <span>
-              ESTABLISHED ON {(site.established ?? "October 2024").toUpperCase()}
-            </span>
+
+          <span>Estd</span>  
+          <span className="h-1 w-1 rounded-full bg-nsu-gold" />
+          <span>{(site.established ?? "October 2024").toUpperCase()}</span>
           </motion.div>
         </div>
 
