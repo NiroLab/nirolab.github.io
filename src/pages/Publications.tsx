@@ -209,7 +209,7 @@ export default function Publications() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   type="search"
-                  placeholder="Search title, author, venue…"
+                  placeholder="Search publications…"
                   aria-label="Search publications"
                   className="w-full rounded-full border border-nsu-line bg-white py-2.5 pl-10 pr-16 text-sm text-nsu-text outline-none transition-colors placeholder:text-nsu-slate/70 focus:border-nsu-blue/50 focus:ring-2 focus:ring-nsu-sky/20"
                 />

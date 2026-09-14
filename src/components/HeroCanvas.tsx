@@ -55,12 +55,23 @@ export default function HeroCanvas({ className }: { className?: string }) {
       canvas.height = Math.max(1, Math.round(H * dpr));
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       // relative geometry (preview: base at 0.68w / 0.58h)
-      arm.baseX = W * 0.68;
-      arm.baseY = H * 0.58;
-      const scale = Math.min(1, W / 1100, H / 700);
-      arm.L1 = 130 * scale;
-      arm.L2 = 105 * scale;
-      arm.L3 = 80 * scale;
+      if (W < 640) {
+        // mobile framing: bigger sketch pinned to the bottom-right corner,
+        // anchored so the arm's full reach (+ labels) stays on-canvas
+        const scale = Math.max(0.5, Math.min(1, W / 1100, H / 700));
+        arm.baseX = Math.min(W * 0.8, W - 220 * scale - 28);
+        arm.baseY = H * 0.94;
+        arm.L1 = 130 * scale;
+        arm.L2 = 105 * scale;
+        arm.L3 = 80 * scale;
+      } else {
+        arm.baseX = W * 0.68;
+        arm.baseY = H * 0.58;
+        const scale = Math.min(1, W / 1100, H / 700);
+        arm.L1 = 130 * scale;
+        arm.L2 = 105 * scale;
+        arm.L3 = 80 * scale;
+      }
       arm.trail = [];
     };
 

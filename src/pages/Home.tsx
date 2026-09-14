@@ -16,6 +16,7 @@ import Reveal, { RevealGroup, RevealItem } from "@/components/Reveal";
 import Stat from "@/components/Stat";
 import Chip from "@/components/Chip";
 import ContentImage, { PersonImage } from "@/components/ContentImage";
+import { roleWithoutLeadership } from "@/components/people/meta";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
 
@@ -211,10 +212,9 @@ function Hero() {
             transition={{ duration: 0.7, delay: 1.5 }}
             className="mt-14 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs tracking-[0.22em] text-slate-300"
           >
-
-          <span>Estd</span>  
-          <span className="h-1 w-1 rounded-full bg-nsu-gold" />
-          <span>{(site.established ?? "October 2024").toUpperCase()}</span>
+            <span>
+              ESTABLISHED ON {(site.established ?? "October 2024").toUpperCase()}
+            </span>
           </motion.div>
         </div>
 
@@ -226,7 +226,7 @@ function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8 }}
-        className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2"
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
         aria-hidden
       >
         <span className="font-mono text-[11px] tracking-[0.22em] text-slate-400">SCROLL</span>
@@ -511,10 +511,10 @@ function HonorsStrip() {
                   <span className="bg-gold-flare bg-clip-text font-mono text-lg font-bold text-transparent">
                     {a.rank}
                   </span>
-                  <h3 className="mt-1 truncate font-mono text-base font-semibold text-white">
+                  <h3 className="mt-1 break-words font-mono text-sm font-semibold text-white md:text-base">
                     {a.title}
                   </h3>
-                  <p className="mt-1.5 font-mono text-xs text-slate-400">
+                  <p className="mt-1.5 break-words font-mono text-xs text-slate-400">
                     {a.event}
                     {a.projectEntry && (
                       <>
@@ -554,7 +554,7 @@ function LeaderCard({ person }: { person: Person }) {
       <h3 className="mt-4 font-mono text-lg font-semibold text-nsu-navy">
         {person.name}
       </h3>
-      <p className="mt-0.5 text-sm font-medium text-nsu-blue">{person.role}</p>
+      <p className="mt-0.5 text-sm font-medium text-nsu-blue">{roleWithoutLeadership(person.role)}</p>
       {person.research_interests && (
         <p className="mt-2 line-clamp-1 text-sm text-nsu-slate">
           {person.research_interests}

@@ -174,7 +174,7 @@ function FilterBar({
       className="sticky top-[60px] z-30 border-b border-nsu-line bg-white/80 backdrop-blur-md"
     >
       <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-2 gap-y-3 px-5 py-3 md:px-8">
-        <div role="tablist" aria-label="Filter members by category" className="flex flex-wrap items-center gap-1.5">
+        <div role="tablist" aria-label="Filter members by category" className="flex w-full flex-nowrap items-center gap-1.5 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:w-auto md:flex-wrap md:overflow-visible">
           {pills.map((pill) => {
             const active = filter === pill.key;
             return (
@@ -184,7 +184,7 @@ function FilterBar({
                 aria-selected={active}
                 onClick={() => setFilter(pill.key)}
                 className={cn(
-                  "relative rounded-full px-3.5 py-1.5 text-sm font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nsu-sky",
+                  "relative shrink-0 rounded-full px-3.5 py-1.5 text-sm font-semibold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nsu-sky",
                   active ? "text-white" : "text-nsu-slate hover:text-nsu-navy",
                 )}
               >
@@ -212,13 +212,13 @@ function FilterBar({
         </div>
 
         {/* search - filters name / role / interest, expands on focus */}
-        <div className="relative ml-auto">
+        <div className="relative ml-auto w-full md:w-auto">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-nsu-slate" />
           <input
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search name or interest…"
+            placeholder="Search people…"
             aria-label="Search members by name or research interest"
             className="w-full rounded-full border border-nsu-line bg-white py-2 pl-9 pr-8 text-sm text-nsu-text placeholder:text-nsu-slate/70 transition-[width,border-color,box-shadow] duration-300 focus:border-nsu-blue focus:shadow-nsu-card focus:outline-none sm:w-[180px] sm:focus:w-[260px]"
           />

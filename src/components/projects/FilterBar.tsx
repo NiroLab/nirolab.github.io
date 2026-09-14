@@ -48,7 +48,7 @@ export default function FilterBar({
       <div
         role="tablist"
         aria-label="Filter by status"
-        className="flex flex-wrap items-center gap-1 rounded-full border border-nsu-line bg-white p-1"
+        className="flex flex-nowrap items-center gap-1 overflow-x-auto rounded-full border border-nsu-line bg-white p-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:flex-wrap md:overflow-visible"
       >
         {statuses.map((facet) => {
           const active = facet.value === status;
@@ -59,7 +59,7 @@ export default function FilterBar({
               aria-selected={active}
               onClick={() => onStatus(facet.value)}
               className={cn(
-                "relative rounded-full px-4 py-2 font-mono text-[11px] font-medium uppercase tracking-[0.18em] transition-colors duration-200",
+                "relative shrink-0 rounded-full px-4 py-2 font-mono text-[11px] font-medium uppercase tracking-[0.18em] transition-colors duration-200",
                 active ? "text-white" : "text-nsu-slate hover:text-nsu-navy",
               )}
             >

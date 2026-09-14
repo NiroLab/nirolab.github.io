@@ -92,7 +92,7 @@ export default function FeaturedCarousel({ projects }: { projects: Project[] }) 
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
-      className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-nsu-line-dark bg-nsu-ink outline-none focus-visible:ring-2 focus-visible:ring-nsu-sky sm:aspect-[16/8] lg:aspect-[16/7]"
+      className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-nsu-line-dark bg-nsu-ink outline-none focus-visible:ring-2 focus-visible:ring-nsu-sky sm:aspect-[16/8] lg:aspect-[16/7]"
     >
       <Crosshairs dark />
       {/* image layer - cross-fade + parallax drift */}
@@ -127,7 +127,7 @@ export default function FeaturedCarousel({ projects }: { projects: Project[] }) 
       <AnimatePresence initial={false} mode="wait">
         <motion.div
           key={project.slug}
-          className="absolute inset-x-0 bottom-0 p-6 sm:p-10 lg:max-w-2xl"
+          className="absolute inset-x-0 bottom-0 p-5 pb-20 sm:p-10 lg:max-w-2xl"
           initial="hidden"
           animate="show"
           exit={{ opacity: 0, transition: { duration: 0.2 } }}
@@ -170,7 +170,7 @@ export default function FeaturedCarousel({ projects }: { projects: Project[] }) 
               hidden: { opacity: 0, y: reduced ? 0 : 24 },
               show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: PRECISION_EASE } },
             }}
-            className="mt-3 max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base"
+            className="mt-3 max-w-xl text-sm leading-relaxed text-slate-300 line-clamp-3 sm:line-clamp-none sm:text-base"
           >
             {project.description}
           </motion.p>

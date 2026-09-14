@@ -55,7 +55,7 @@ export default function Footer() {
           </g>
           <circle cx="600" cy="120" r="6" fill="var(--nsu-gold)" />
         </svg>
-        <div className="relative mx-auto max-w-7xl px-5 py-16 md:px-8">
+        <div className="relative mx-auto max-w-7xl px-5 py-16 pb-24 md:px-8 md:pb-16">
           <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
             {/* brand */}
             <div>
