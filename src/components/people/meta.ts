@@ -34,6 +34,12 @@ export function interestsOf(person: Person): string[] {
 }
 
 /** Founding-faculty badge derived from the role text (Director / Co-Director). */
+
+/** Role text with the leadership title stripped - the title shows only as a badge. */
+export function roleWithoutLeadership(role: string): string {
+  return role.replace(/\s*&\s*Lab (Co-)?Director/i, "").trim();
+}
+
 export function directorBadge(role: string): string | null {
   if (/co[- ]director/i.test(role)) return "Co-Director";
   if (/director/i.test(role)) return "Director";

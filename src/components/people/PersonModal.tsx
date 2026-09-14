@@ -17,7 +17,12 @@ import Markdown from "@/components/Markdown";
 import { PersonImage } from "@/components/ContentImage";
 import CrosshairCorners from "./CrosshairCorners";
 import { startLenis, stopLenis } from "@/lib/lenis";
-import { CATEGORY_META, interestsOf } from "./meta";
+import {
+  CATEGORY_META,
+  directorBadge,
+  interestsOf,
+  roleWithoutLeadership,
+} from "./meta";
 
 const PRECISION_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -202,8 +207,13 @@ export default function PersonModal({
               animate="show"
               className="min-w-0"
             >
-              <motion.div variants={bodyItem} className="mb-2">
+              <motion.div variants={bodyItem} className="mb-2 flex flex-wrap items-center gap-2">
                 <Chip dark>{CATEGORY_META[person.category].label}</Chip>
+                {directorBadge(person.role) && (
+                  <span className="rounded-full border border-nsu-sky/50 bg-white/5 px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-nsu-skylight">
+                    {directorBadge(person.role)}
+                  </span>
+                )}
               </motion.div>
               <motion.h2
                 variants={bodyItem}
@@ -212,7 +222,7 @@ export default function PersonModal({
                 {person.name}
               </motion.h2>
               <motion.p variants={bodyItem} className="mt-1.5 text-sm text-slate-300 sm:text-base">
-                {person.role}
+                {roleWithoutLeadership(person.role)}
               </motion.p>
               {links.length > 0 && (
                 <motion.div variants={bodyItem} className="mt-4 flex items-center gap-2">

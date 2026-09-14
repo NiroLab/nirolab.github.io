@@ -1,25 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
-import {
-  ChevronDown,
-  Globe,
-  GraduationCap,
-  Linkedin,
-  Mail,
-} from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import {
   useSite,
-  usePeople,
   useProjects,
   useAchievements,
-  type Person,
 } from "@/lib/content";
 import { RESEARCH_AREAS } from "@/lib/lab-data";
 import SectionHeader from "@/components/SectionHeader";
 import Reveal, { RevealGroup, RevealItem } from "@/components/Reveal";
 import Chip from "@/components/Chip";
-import { PersonImage } from "@/components/ContentImage";
 import Crosshairs from "@/components/about/Crosshairs";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
@@ -520,114 +511,6 @@ function ResearchAreas() {
   );
 }
 
-/* ------------------------------------------------------------ section 7 */
-function LeaderCard({ person, index }: { person: Person; index: number }) {
-  const reduced = useReducedMotion();
-  const interests = (person.research_interests ?? "")
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean)
-    .slice(0, 4);
-  const links = [
-    person.email
-      ? { icon: Mail, href: `mailto:${person.email}`, label: "Email" }
-      : null,
-    person.scholar
-      ? { icon: GraduationCap, href: person.scholar, label: "Google Scholar" }
-      : null,
-    person.website
-      ? { icon: Globe, href: person.website, label: "Website" }
-      : null,
-    person.linkedin
-      ? { icon: Linkedin, href: person.linkedin, label: "LinkedIn" }
-      : null,
-  ].filter((l): l is NonNullable<typeof l> => l !== null);
-
-  return (
-    <motion.article
-      initial={{ opacity: 0, x: reduced ? 0 : index === 0 ? -32 : 32 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, delay: index * 0.15, ease: PRECISION_EASE }}
-      className="group relative flex flex-col gap-7 rounded-2xl border border-nsu-line bg-white p-7 transition-all duration-300 hover:-translate-y-1.5 hover:border-nsu-sky/60 hover:shadow-nsu-card sm:flex-row sm:p-8"
-    >
-      {/* whole card links to the person's profile modal on /people;
-          icon links below sit above this overlay (z-10) and stay clickable */}
-      <Link
-        to={`/people?m=${person.slug}`}
-        aria-label={`Open ${person.name}'s profile`}
-        className="absolute inset-0 z-0 rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nsu-blue"
-      />
-      <PersonImage
-        src={person.imageSrc}
-        name={person.name}
-        className="h-32 w-32 shrink-0 self-center rounded-full sm:h-36 sm:w-36"
-        initialsClassName="text-3xl"
-      />
-      <div className="min-w-0">
-        <h3 className="font-mono text-[1.375rem] font-semibold tracking-[-0.01em] text-nsu-navy">
-          {person.name}
-        </h3>
-        <p className="mt-1 text-sm font-medium text-nsu-blue">{person.role}</p>
-        {person.office && (
-          <p className="mt-1 font-mono text-xs text-nsu-slate">
-            Office {person.office}
-          </p>
-        )}
-        {interests.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-2">
-            {interests.map((interest) => (
-              <Chip key={interest}>{interest}</Chip>
-            ))}
-          </div>
-        )}
-        {links.length > 0 && (
-          <div className="relative z-10 mt-5 flex items-center gap-2">
-            {links.map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target={href.startsWith("mailto:") ? undefined : "_blank"}
-                rel="noreferrer"
-                aria-label={`${person.name} - ${label}`}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-nsu-line text-nsu-blue transition-colors hover:border-nsu-blue hover:bg-nsu-ice"
-              >
-                <Icon className="h-4 w-4" />
-              </a>
-            ))}
-          </div>
-        )}
-      </div>
-    </motion.article>
-  );
-}
-
-function Leadership() {
-  const people = usePeople();
-  const leaders = people
-    .filter((p) => p.category === "founding_faculty")
-    .slice(0, 2);
-  if (leaders.length === 0) return null;
-
-  // return (
-  //   <section className="bg-nsu-mist py-16 md:py-32" aria-label="Leadership">
-  //     <div className="mx-auto max-w-7xl px-5 md:px-8">
-  //       <SectionHeader
-  //         eyebrow="LEADERSHIP"
-  //         title="Guided by experienced faculty"
-  //         linkTo="/people"
-  //         linkLabel="Meet everyone"
-  //       />
-  //       <div className="grid gap-4 lg:grid-cols-2">
-  //         {leaders.map((person, i) => (
-  //           <LeaderCard key={person.slug} person={person} index={i} />
-  //         ))}
-  //       </div>
-  //     </div>
-  //   </section>
-  // );
-}
-
 /* ------------------------------------------------------------ section 8 */
 function Milestones() {
   const site = useSite();
@@ -758,7 +641,6 @@ export default function About() {
       <Vision />
       <MissionPillars />
       <ResearchAreas />
-      <Leadership />
       <Milestones />
     </>
   );

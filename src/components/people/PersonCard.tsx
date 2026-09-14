@@ -5,7 +5,12 @@ import type { Person } from "@/lib/content";
 import Chip from "@/components/Chip";
 import { PersonImage } from "@/components/ContentImage";
 import { cn } from "@/lib/utils";
-import { currentPositionOf, interestsOf } from "./meta";
+import {
+  currentPositionOf,
+  directorBadge,
+  interestsOf,
+  roleWithoutLeadership,
+} from "./meta";
 
 const PRECISION_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -40,6 +45,7 @@ function itemMotion(index: number) {
  */
 export default function PersonCard({ person, index }: PersonCardProps) {
   const interests = interestsOf(person).slice(0, 4);
+  const badge = directorBadge(person.role);
   const links = [
     person.email
       ? { icon: Mail, href: `mailto:${person.email}`, label: "Email" }
@@ -67,6 +73,11 @@ export default function PersonCard({ person, index }: PersonCardProps) {
         aria-label={`Open ${person.name}'s profile`}
         className="absolute inset-0 z-0 rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-nsu-blue"
       />
+      {badge && (
+        <span className="absolute left-4 top-4 z-10 rounded-full border border-nsu-sky/50 bg-nsu-navy px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-nsu-skylight">
+          {badge}
+        </span>
+      )}
       <PersonImage
         src={person.imageSrc}
         name={person.name}
@@ -77,7 +88,9 @@ export default function PersonCard({ person, index }: PersonCardProps) {
         <h3 className="font-mono text-[1.375rem] font-semibold tracking-[-0.01em] text-nsu-navy">
           {person.name}
         </h3>
-        <p className="mt-1 text-sm font-medium text-nsu-blue">{person.role}</p>
+        <p className="mt-1 text-sm font-medium text-nsu-blue">
+          {roleWithoutLeadership(person.role)}
+        </p>
         {person.office && (
           <p className="mt-1 font-mono text-xs text-nsu-slate">
             Office {person.office}
