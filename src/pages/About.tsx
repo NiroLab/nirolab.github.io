@@ -609,23 +609,23 @@ function Leadership() {
     .slice(0, 2);
   if (leaders.length === 0) return null;
 
-  // return (
-  //   <section className="bg-nsu-mist py-16 md:py-32" aria-label="Leadership">
-  //     <div className="mx-auto max-w-7xl px-5 md:px-8">
-  //       <SectionHeader
-  //         eyebrow="LEADERSHIP"
-  //         title="Guided by experienced faculty"
-  //         linkTo="/people"
-  //         linkLabel="Meet everyone"
-  //       />
-  //       <div className="grid gap-4 lg:grid-cols-2">
-  //         {leaders.map((person, i) => (
-  //           <LeaderCard key={person.slug} person={person} index={i} />
-  //         ))}
-  //       </div>
-  //     </div>
-  //   </section>
-  // );
+  return (
+    <section className="bg-nsu-mist py-16 md:py-32" aria-label="Leadership">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <SectionHeader
+          eyebrow="LEADERSHIP"
+          title="Guided by experienced faculty"
+          linkTo="/people"
+          linkLabel="Meet everyone"
+        />
+        <div className="grid gap-4 lg:grid-cols-2">
+          {leaders.map((person, i) => (
+            <LeaderCard key={person.slug} person={person} index={i} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 /* ------------------------------------------------------------ section 8 */
