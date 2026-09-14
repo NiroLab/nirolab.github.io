@@ -3,9 +3,10 @@ title: "NSU AI SAT"
 description: "A 3U cubesat for onboard detection and tracking of Space Resident Objects (SROs) in LEO orbit."
 status: Active
 featured: true
-order: 8
-image: /pictures/projects/nsu-ai-sat.png
+order: 1
+image: /pictures/projects/nsu-ai-sat.gif
 duration: "2024 - Present"
+funding: "Asia-Pacific Space Cooperation Organization (APSCO)"
 areas: ["Edge AI computing", "Aerial robotics"]
 team:
   - Dr. Shahnewaz Siddique

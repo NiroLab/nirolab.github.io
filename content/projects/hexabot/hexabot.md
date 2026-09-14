@@ -17,6 +17,8 @@ team:
 
 Wheeled robotics platforms face fundamental limitations when navigating unstructured terrain. While effective on flat surfaces, wheeled systems lose traction, stability, and maneuverability across irregular ground conditions that characterize real-world environments. This constraint restricts deployment scenarios for autonomous systems in search and rescue, agricultural inspection, environmental monitoring, and disaster response applications where terrain adaptability becomes critical for operational success.
 
+![Hexapod robot cad](/pictures/projects/hexbot2.gif)
+
 Project Hex addresses these limitations through bio-inspired hexapod locomotion. The six-legged configuration with three degrees of freedom per leg delivers superior stability and terrain adaptation compared to wheeled alternatives. Powered by 18 high-torque servos coordinated through Arduino microcontroller architecture, the platform achieves dynamic gait generation and obstacle traversal capabilities. The LiPo battery system provides sustained operation while maintaining power efficiency across varied locomotion patterns.
 
 The modular design framework supports progressive capability expansion. Standardized interfaces enable integration of Raspberry Pi computational modules, LiDAR ranging systems, and depth sensors for autonomous navigation and environmental mapping. This extensibility transforms the base hexapod into a research platform for exploring legged robot autonomy, terrain-adaptive control algorithms, and sensor fusion techniques in challenging operational contexts.

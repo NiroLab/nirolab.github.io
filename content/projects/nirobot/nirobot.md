@@ -2,9 +2,9 @@
 title: "NIRO Educational Bot: An Affordable Modular Robotics Platform"
 description: "A contextually innovative, modular robotics platform making quality STEM education accessible through open-source, cost-effective design."
 status: Active
-featured: true
-order: 1
-image: /pictures/projects/nirobot.jpg
+featured: false
+order: 8
+image: /pictures/projects/nirobot.gif
 duration: "October 2024 - Present"
 funding: "University Research Grant"
 areas: ["AI-driven robotics", "Autonomous & context-aware systems"]

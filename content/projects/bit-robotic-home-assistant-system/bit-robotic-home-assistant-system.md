@@ -4,7 +4,7 @@ description: "AI-powered ROS2 robotic assistant for autonomous navigation, voice
 status: Active
 featured: false
 order: 6
-image: /pictures/projects/bit-robotic-home-assistant-system.jpg
+image: /pictures/projects/bit-robotic-home-assistant-system-sim.gif
 duration: "2025 - Present"
 funding: "University Research Grant"
 areas: ["AI-driven robotics", "Autonomous & context-aware systems"]
@@ -16,7 +16,7 @@ links:
   demo: "https://youtu.be/ztXiBMU8h5A"
 ---
 
-![BIT Robotic Home Assistant System](/pictures/projects/bit-robotic-home-assistant-system-sim.jpg)
+![BIT Robotic Home Assistant System](/pictures/projects/bit-robotic-home-assistant-system-sim.gif)
 
 ## Overview
 
