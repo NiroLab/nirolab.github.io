@@ -51,8 +51,8 @@ export default function Navbar() {
         animate={{ y: hidden && !open ? "-100%" : "0%" }}
         transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "sticky top-0 z-50 w-full border-b bg-[rgba(11,20,26,0.72)] backdrop-blur-md transition-[height,border-color] duration-300",
-          compressed ? "h-[60px] border-nsu-line-dark" : "h-[72px] border-transparent",
+          "sticky top-0 z-50 w-full border-b border-nsu-line-dark bg-[rgba(11,20,26,0.85)] backdrop-blur-md transition-[height,border-color] duration-300",
+          compressed ? "h-[60px]" : "h-[72px]",
         )}
       >
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-5 md:px-8">
@@ -66,30 +66,40 @@ export default function Navbar() {
           </Link>
 
           {/* desktop links */}
-          <nav className="hidden items-center gap-4 lg:flex" aria-label="Primary">
-            {site.nav.map((item) => (
+          {/* desktop links: indexed mono (approved nav style 2) */}
+          <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
+            {site.nav.map((item, i) => (
               <NavLink
                 key={item.path}
                 to={item.path}
                 end={item.path === "/"}
                 className={({ isActive }) =>
                   cn(
-                    "group relative type-button transition-colors",
-                    isActive ? "text-white" : "text-slate-100/70 hover:text-white",
+                    "group relative font-mono text-xs font-medium uppercase tracking-[0.18em] transition-colors",
+                    isActive ? "text-white" : "text-slate-300/60 hover:text-white",
                   )
                 }
               >
                 {({ isActive }) => (
-                  <span className="relative pb-1">
+                  <span className="relative flex items-baseline gap-2 pb-1">
+                    <span
+                      aria-hidden
+                      className={cn(
+                        "text-[10px] tracking-[0.08em] transition-colors",
+                        isActive ? "text-nsu-sky" : "text-nsu-sky/70",
+                      )}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     {item.label}
                     {isActive ? (
                       <motion.span
                         layoutId="nav-active-underline"
                         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                        className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-nsu-sky"
+                        className="absolute -bottom-1 left-0 h-0.5 w-3/5 rounded-full bg-nsu-sky"
                       />
                     ) : (
-                      <span className="absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-nsu-sky/60 transition-all duration-300 group-hover:w-full" />
+                      <span className="absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-nsu-sky/60 transition-all duration-300 group-hover:w-3/5" />
                     )}
                   </span>
                 )}
