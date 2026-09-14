@@ -27,6 +27,7 @@ import {
 } from "@/components/people/meta";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
+import ContourCanvas from "@/components/ContourCanvas";
 
 const PRECISION_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -58,6 +59,7 @@ function Hero({ counts }: { counts: Record<PersonCategory, number> }) {
   return (
     <section className="relative overflow-hidden bg-hero-gradient" aria-label="People hero">
       <div className="blueprint-grid-dark absolute inset-0 opacity-50" aria-hidden />
+      <ContourCanvas className="absolute inset-0" />
       <svg
         viewBox="0 0 300 300"
         className="absolute -right-20 -top-20 h-72 w-72 opacity-25"

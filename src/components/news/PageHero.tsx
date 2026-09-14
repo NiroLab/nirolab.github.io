@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Chip from "@/components/Chip";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
+import ContourCanvas from "@/components/ContourCanvas";
 
 const PRECISION_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -33,6 +34,7 @@ export default function PageHero({
       aria-label={title}
     >
       <div className="blueprint-grid-dark absolute inset-0 opacity-40" aria-hidden />
+      <ContourCanvas className="absolute inset-0" />
       {/* orbit-ring decoration */}
       <svg
         viewBox="0 0 300 300"

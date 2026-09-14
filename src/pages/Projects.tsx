@@ -10,6 +10,7 @@ import FeaturedCarousel from "@/components/projects/FeaturedCarousel";
 import FilterBar from "@/components/projects/FilterBar";
 import { ProjectCardMotion } from "@/components/projects/ProjectCard";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import ContourCanvas from "@/components/ContourCanvas";
 
 const PRECISION_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 const STATUS_ORDER = ["All", "Active", "Completed", "Concept"] as const;
@@ -33,6 +34,7 @@ function PageHero({
   return (
     <section className="relative overflow-hidden bg-hero-gradient" aria-label="Projects hero">
       <div className="blueprint-grid-dark absolute inset-0" aria-hidden />
+      <ContourCanvas className="absolute inset-0" />
       {/* ambient glow */}
       <div
         aria-hidden

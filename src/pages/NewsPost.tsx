@@ -21,6 +21,7 @@ import Reveal from "@/components/Reveal";
 import { copyText } from "@/components/publications/PubItem";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
+import ContourCanvas from "@/components/ContourCanvas";
 
 const PRECISION_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -65,6 +66,7 @@ export default function NewsPost() {
     return (
       <section className="relative overflow-hidden bg-hero-gradient">
         <div className="blueprint-grid-dark absolute inset-0 opacity-40" aria-hidden />
+        <ContourCanvas className="absolute inset-0" />
         <div className="relative mx-auto flex min-h-[60dvh] max-w-3xl flex-col items-center justify-center px-5 py-32 text-center md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -125,6 +127,7 @@ export default function NewsPost() {
           className="absolute inset-0 bg-gradient-to-t from-nsu-ink via-nsu-ink/70 to-nsu-ink/30"
           aria-hidden
         />
+        <ContourCanvas className="absolute inset-0" />
 
         <div className="relative mx-auto w-full max-w-4xl px-5 pb-16 pt-28 md:px-8 md:pb-20">
           {/* breadcrumb */}

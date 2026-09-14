@@ -25,6 +25,7 @@ import WordMask from "@/components/projects/WordMask";
 import { Crosshairs } from "@/components/projects/ProjectCard";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
+import ContourCanvas from "@/components/ContourCanvas";
 
 const PRECISION_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -182,6 +183,7 @@ function DetailHero({ project }: { project: Project }) {
         className="absolute inset-0 bg-gradient-to-t from-nsu-ink via-nsu-ink/80 to-nsu-ink/30"
       />
       <div className="blueprint-grid-dark absolute inset-0" aria-hidden />
+      <ContourCanvas className="absolute inset-0" />
 
       <div className="relative mx-auto w-full max-w-7xl px-5 pb-14 pt-28 md:px-8 md:pb-20">
         {/* back link */}

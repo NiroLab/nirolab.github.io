@@ -21,6 +21,7 @@ import Reveal, { RevealGroup, RevealItem } from "@/components/Reveal";
 import Crosshairs from "@/components/about/Crosshairs";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { cn } from "@/lib/utils";
+import ContourCanvas from "@/components/ContourCanvas";
 
 const PRECISION_EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -34,6 +35,7 @@ function Hero() {
       aria-label="Contact"
     >
       <div className="blueprint-grid-dark absolute inset-0 opacity-60" aria-hidden />
+      <ContourCanvas className="absolute inset-0" />
       <svg
         viewBox="0 0 500 500"
         className="absolute -bottom-32 -right-24 h-[420px] w-[420px] opacity-25"
