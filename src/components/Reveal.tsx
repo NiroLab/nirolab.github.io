@@ -27,7 +27,7 @@ export default function Reveal({
     <Component
       initial={{ opacity: 0, y: reduced ? 0 : y }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: "some" }}
       transition={{ duration: 0.8, delay, ease: PRECISION_EASE }}
       className={className}
     >
@@ -50,7 +50,7 @@ export function RevealGroup({
     <motion.div
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: "some" }}
       variants={{
         hidden: {},
         show: { transition: { staggerChildren: stagger } },
